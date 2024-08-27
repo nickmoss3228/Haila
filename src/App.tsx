@@ -33,7 +33,6 @@ function App() {
           <Route path="/List/irregulars" element={<Irregulars/>}/>
           <Route path="/List/phrasals" element={<Phrasals/>}/>
           <Route path="/List/repetition" element={<Repetition/>}/>
-          <Route path="/List/units" element={<Units/>}/>
           <Route path="/List/levels/aspects" element={<Aspects/>}/>
         </Routes>
       </Router>
