@@ -1,0 +1,95 @@
+.gridlist {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    font-size: 28px;
+    padding: 30px;
+    animation: fadeIn 1s ease-in-out forwards;
+    
+}
+
+.listgriditem {
+    width: 460px;
+    height: 200px;
+    background-color: rgb(247, 173, 167);
+    margin: 30px;
+    margin-left: 100px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 10px 10px 30px 0px rgba(89, 89, 89, 0.7);
+}
+
+.listgriditem a {
+    color: black;
+}
+
+.item-alphabet {
+    background-image: url("../assets/alphabet-preview.PNG");
+    height: 100%;
+}
+
+.item-tenses {
+    background-image: url("../assets/tenses-preview3.PNG");
+    height: 100%;
+    background-position:top ;
+    background-size: 550px;
+    background-repeat: no-repeat;
+}
+
+.item-vowels {
+    background-image: url("../assets/vowels-preview2.PNG");
+    height: 100%;
+    background-size: 530px;
+    background-position: center; 
+}
+
+.item-cons {
+    background-image: url("../assets/consonants-preview2.PNG");
+    height: 100%;
+    background-size: 550px; 
+    background-position: center;
+}
+
+.item-audio {
+    background-image: url("../assets/audio-preview2.png");
+    height: 100%;
+    background-position: left;
+    background-size: 460px;
+}
+
+.item-irregulars {
+    background-image: url("../assets/irregulars-preview.PNG");
+    height: 100%;
+    background-size: 700px;
+}
+
+.main-component {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hidden-content {
+    position: absolute;
+    bottom: 0;  /* Start at the bottom */
+    left: 0;
+    right: 0;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    transform: translateY(100%);  /* Initially hidden (slid down) */
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.listgriditem:hover .hidden-content {
+    transform: translateY(0);  /* Slide up into view */
+    opacity: 1;
+}

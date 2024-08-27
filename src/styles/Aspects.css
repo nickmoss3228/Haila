@@ -1,0 +1,17 @@
+.catwrap {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 200px;
+}
+.categories {
+
+}
+
+.category-item {
+    margin-right: 50px;
+    width: 300px;
+    height: 200px;
+    box-shadow: 10px 10px 30px 0px rgba(89, 89, 89, 0.7);
+}

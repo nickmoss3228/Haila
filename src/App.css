@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+#root{
+  background-color: var(--primarycolor);
+  --primarycolor: #F4F4F4;
+  --secondarycolor: #f08a73;
+  font-family: Montserrat;
+  /* #FC6745 = prime color before reworking*/
+  /* #FCD19C;= secondary - orange from Figma */
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #F4F4F4;;
+  box-sizing: border-box;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;  /* Start state */
+  }
+  100% {
+      opacity: 1;  /* End state */
+  }
+}
+ .navbar {
+  align-items:flex-start;
+  position: relative;
+  display:flex;
+  flex-direction: column;
+  border-radius: 6px;
+  color: rgb(0, 0, 0);
+  padding: 40px;
+}
+.logo {
+  position: relative;
+  left: 100px;
+  background-color: var(--primarycolor);
+}
+
+.menu {
+  display: flex;
+  background-color: transparent;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  padding: 10px 0 0 0 ;
+  animation: fadeIn 1s ease-in-out forwards;
+} 
+ .barcont {
+  display: flex;
+  justify-content: center;
+  animation: fadeIn 1s ease-in-out forwards;
+} 
+
+.background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 30px;
+  font-family: inherit;
+  font-weight: 600;
+  text-align: center;
+  text-overflow: clip;
+  color: white;
+}
+.homepage {
+  display: flex;
+  position: relative;
+  margin-top: 200px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  background-color: var(--secondarycolor);
+  border-radius: 80px;
+  height: 200px;
+  
+}
+
+.btn-enter {
+  background-color: var(--secondarycolor);
+  border: none;
+  font-family: inherit;
+  width: 200px;
+  height: 50px;
+  border-radius: 80px;
+  font-size: 24px;
+  cursor: pointer;
+  margin-top: 50px;
+  color: white  ;
+}
+a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+a:active {
+  color: #FC6745;
+}
+
+.alphcont{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.filter {
+  margin-bottom: 1rem;
+  position: relative;
+  right: 7rem;
+  font-size: 24px;
+  cursor: pointer;
+  font-family: Montserrat;  
+}
+
+.menubar {
+  background-color:  var(--primarycolor);
+  color: rgb(0, 0, 0);
+  display: flex;
+  width: 300px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  font-family: Montserrat;
+  border-radius: 9px;
+  margin: 30px;
+  text-decoration: none;
+}
+.link {
+  text-decoration: none;
+}
+
+.vowels {
+  font-size: 24px;
+  cursor: pointer;
+  font-family: Montserrat;
+}
+
+.cons {
+  font-size: 24px;
+  cursor: pointer;
+  font-family: Montserrat;
+}
+.alphabet {
+  color:white;
+  margin: auto;
+  justify-content: space-between;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.group {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  border-radius: 5px;
+  
+} 
+
+.letters {
+  background-color: rgb(246, 132, 101);
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  min-width: 50px;
+  box-shadow: 10px 6px 2px #1313131a;
+  border-radius: 60px;
+  margin-right: 3rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.bottom {
+  height: 342px;
+  background-color: #FC6745;
+}
+
+.link {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+} 
+
+@media only screen and (max-width: 670px) {
+
+  #root {
+    background-color: var(--primarycolor);
+  }
+  .menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    min-height: 50px;
+  }
+  .link {
+    height: 30px;
+    text-decoration: none;
+    color: rgb(56, 56, 56);
+  }
+
+  .alphcont {
+    height: auto;
+    display: flex;
+  }
+
+  .letters {
+    padding: 20px;
+    font-size: 34px;  
+  }
+  .group {    
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    border-radius: 5px;
+    
+  }
+  .menubar {
+    width: 300px;
+    background-color: white;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: Montserrat;
+    text-align: center;
+  }
+  .alphabet {
+    color:white;
+    margin: auto;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+  }
+  .letters {
+    background-color: rgb(246, 132, 101);
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    min-width: 50px;
+    box-shadow: 10px 6px 2px #1313131a;
+    border-radius: 30px;
+    margin-right: 0.5rem;
+    margin-bottom: 30px; 
+    margin-top: 10px;   
+  }
+  .vowels {
+  
+  }
+  .cons{
+  
+  }
+
+}

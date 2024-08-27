@@ -1,0 +1,68 @@
+table, th, tr  {
+    display: relative;
+    border: none;
+    width: 80%;
+    height: auto;
+    position: relative
+  }
+  
+  td {
+    justify-content: center;
+    /* border: 1px solid black; */
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    border-collapse: collapse;
+    border-top: 1px solid black;
+  }
+  
+  .noBorder {
+    border:none;
+  }
+  
+  .leftCorner{
+    border-left: none;
+    border-top: none;
+  }
+  
+  .rightCorner {
+    border-right: none;
+    border-top: none;
+  }
+  
+  .leftBottomCorner {
+    border-left: none;
+    border-bottom: none;
+  }
+  
+  .rightBottomCorner{
+    border-right: none;
+    border-bottom: none;
+  }
+  
+  .tables {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 102vh;
+    width: 100%;
+    border-collapse: collapse;
+    padding-top: 10px;
+  }
+  
+  .consSounds {
+    background-color: white;
+    margin-right: 80px;
+    border-radius: 50px;
+  }
+
+  .consSounds2 {
+    background-color: white;
+    margin-right: 80px;
+    border-radius: 50px;
+  }
+  
+  .diphthongs {
+    background-color: white;
+    border-radius: 50px;
+  } 
