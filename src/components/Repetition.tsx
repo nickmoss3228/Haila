@@ -5,7 +5,7 @@ import { IoPlay } from "react-icons/io5";
 import { IoPause } from "react-icons/io5";
 
 
-const Repetition = () => {
+const Repetition = ({audio}) => {
     // state
     const [isPlaying, setIsPlaying] = useState(false)
     const [duration, setDuration] = useState<number>(0);
@@ -87,7 +87,7 @@ const Repetition = () => {
   return (
     <div className={styles.main}>
         <div className={styles.audioPlayer}>
-            <audio ref={audioPlayer}/>
+            <audio ref={audioPlayer} src={audio}/>
 
             <button onClick={handlePlayPause} className={styles.playPause}>
                 {isPlaying ? <IoPause className={styles.pause} /> : <IoPlay className={styles.play} />}

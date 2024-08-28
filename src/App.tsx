@@ -12,9 +12,8 @@ import Repetition from './components/Repetition.tsx'
 import Alphabet from './pages/Alphabet.tsx'
 import List from './pages/List.tsx'
 import Levels from './pages/Levels.tsx'
-import Beginner from './pages/Aspects.tsx'
 import Aspects from './pages/Aspects.tsx'
-import Units from './pages/Units.tsx'
+// import AudioPlayer from './components/AudioPlayer.tsx'
 
 function App() {
   return (
@@ -25,6 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/List" element={<List/>} />
+          {/* <Route path="/Audioplayer" element={<AudioPlayer/>} /> */}
           <Route path="/List/alphabet" element={<Alphabet/>} /> 
           <Route path="/List/levels" element={<Levels/>} />
           <Route path="/List/vowels" element={<Vowels/>} />
