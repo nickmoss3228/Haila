@@ -7,6 +7,10 @@ img {
   background-color: inherit;
 }
 
+.closebutton {
+  color: white;
+}
+
 .menubartenses {
   background-color:  var(--primarycolor);
   color: rgb(0, 0, 0);

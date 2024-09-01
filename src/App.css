@@ -189,6 +189,31 @@ a:active {
   color: rgb(255, 255, 255);
 } 
 
+.audiolist {
+  width: 60%;
+}
+
+.btn-unit-number {
+  background-color: var(--secondarycolor);
+  border: none;
+  width: 150px;
+  height: 60px;
+  margin: 10px;
+  border-radius: 14px;
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+}
+
+.btn-unit-number:hover {
+  background-color: #FC6745;
+}
+
+.audiolist-name {
+  font-size: 38px;
+  font-weight: 700;
+}
+
 @media only screen and (max-width: 670px) {
 
   #root {
