@@ -4,7 +4,6 @@
     font-size: 28px;
     padding: 30px;
     animation: fadeIn 1s ease-in-out forwards;
-    
 }
 
 .listgriditem {
@@ -92,4 +91,52 @@
 .listgriditem:hover .hidden-content {
     transform: translateY(0);  /* Slide up into view */
     opacity: 1;
+}
+
+@media only screen and (max-width: 670px) {
+    .gridlist {
+        margin-top: 50px;
+        padding: 0px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .listgriditem {
+        width: 80%;
+        height: 160px;
+        background-color: rgb(247, 173, 167);
+        margin: 10px;
+        /* margin-left: 0px; */
+        position: relative;
+        overflow: hidden;
+        box-shadow: 10px 10px 30px 0px rgba(89, 89, 89, 0.7);
+    }
+
+    .item-alphabet {
+        font-size: 20px;
+        height: 100%;
+        background-size: 550px;
+    }
+    .item-tenses {
+        font-size: 20px;
+        background-size: 400px;
+    }
+    .item-vowels {
+        font-size: 20px;
+        background-size: 350px;
+    }
+    .item-cons {
+        font-size: 20px;
+        background-size: 350px;
+    }
+    .item-audio {
+        font-size: 20px;
+        background-size: 330px;
+    }
+    .item-irregulars {
+        font-size: 20px;
+        background-size: 600px;
+    }
 }

@@ -19,9 +19,9 @@ const LevelSelector = ({onChange}) => {
   };
 
     return (
-      <div>
+      <div className='level-container'>
         <button className='blank'></button>
-        <h1>Select the Level:</h1>
+        <h1 className='header-levels'>Select the Level:</h1>
         {levels.map(level => (
           <button 
             key={level} 
@@ -31,7 +31,7 @@ const LevelSelector = ({onChange}) => {
             <div className="lvlname">
               {/* {level} */}
             </div> 
-            <div className='hidden-content'>
+            <div className='hidden-content-levels'>
               <div className="lvlname"> {level}</div> 
             </div>
           </button>

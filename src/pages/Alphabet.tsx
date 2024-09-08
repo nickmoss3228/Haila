@@ -6,17 +6,7 @@ const Alphabet = () => {
   return (  
     <>
         <div className='menu'>
-{/* 
-            <Link to={"Vowels"} className='link'> 
-              <div className="vowels">Vowels</div>
-            </Link> */}
-
             <div className="menubar">The English Alphabet</div>  
-{/* 
-            <Link to={"Cons"} className='link'>
-              <div className="cons">Consonants</div>
-            </Link> */}
-            
         </div>
 
       <div className="alphcont">

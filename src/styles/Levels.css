@@ -38,7 +38,7 @@
     border: none;
     width: 400px;
     height: 300px;
-    margin-right: 40px;
+    margin: 10px;
     background-color: rgb(246, 118, 103);
     cursor: pointer; 
     box-shadow: 10px 10px 30px 0px rgba(89, 89, 89, 0.7);
@@ -141,7 +141,7 @@
     color: #ffffff;
 }
 
-.hidden-content {
+.hidden-content-levels {
     position: absolute;
     bottom: 0;  /* Start at the bottom */
     left: 0;
@@ -156,7 +156,7 @@
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.btn-choose:hover .hidden-content {
+.btn-choose:hover .hidden-content-levels {
     transform: translateY(0);  /* Slide up into view */
     opacity: 1;
 }
@@ -177,4 +177,85 @@
 .practical-aspect {
     background-color: #e79087;
     background-image: linear-gradient(315deg, #d67f75 0%, #e7b75f 74%);
+}
+
+@media only screen and (max-width: 667px) {
+    .btn-choose {
+        width: 330px;
+        margin-bottom: 30px;
+    }
+    .hidden-content-levels {
+        transform: translateY(0);  /* Fully visible */
+        opacity: 1;
+    }
+    .btn-unit-number {
+        width: 200px;
+        height: 50px;
+        font-family: inherit;
+    }
+    .unitgrid {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .header-levels {
+        text-align: center;
+        font-size: 24px;
+    }
+    .btn-back {
+        width: 100px;
+        position: relative;
+        left: 0;
+        margin-top: 30px;
+        margin-right: 0;
+    }
+    .audioplayer-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000; /* Adjust this value as needed to ensure it's above other elements */
+      }
+
+    .level-container {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0;
+    }
+    .levels {
+
+    }
+    .aspect-select {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+    }
+    .audiolist {
+        width: 100%;
+    }
+    .audios {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: scroll;
+    }
+    .btn-choose-unit {
+        margin: 0;
+        width: 330px;
+        margin-bottom: 30px;
+    }   
+    .audiolist-name {
+        font-size: 24px;
+        text-align:center;
+    }
+
 }

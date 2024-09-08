@@ -26,7 +26,7 @@ const UnitSelector = ({ aspect, data, onChange, level }) => {
 
   return (
     <div>
-      <h1>Select the Unit for {aspect}:</h1>
+      <h1 className='header-levels'>Select the Unit for {aspect}:</h1>
       <div className='unitgrid'>
         {units.map((unit, index) => {
           const unitNumber = index + 1; // Assuming units are numbered starting from 1

@@ -49,6 +49,13 @@ const List = () => {
                 </Link>
             </div>
 
+            {/* <div className="listgriditem">
+                <Link to="gerundinfinitive">
+                    <div className="item-ger-inf">Gerund/Infinitive</div> 
+                    <div className="hidden-content">Verbs that use Gerund/Infinitive form.</div>
+                </Link>
+            </div> */}
+
         </div>
     </div>
   )

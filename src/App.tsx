@@ -13,6 +13,7 @@ import Alphabet from './pages/Alphabet.tsx'
 import List from './pages/List.tsx'
 import Levels from './pages/Levels.tsx'
 import Aspects from './pages/Aspects.tsx'
+import GerundInfinitive from './pages/GerundInfinitive.tsx'
 // import AudioPlayer from './components/AudioPlayer.tsx'
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/List" element={<List/>} />
-          {/* <Route path="/Audioplayer" element={<AudioPlayer/>} /> */}
+          <Route path="/List/gerundinfinitive" element={<GerundInfinitive/>} />
           <Route path="/List/alphabet" element={<Alphabet/>} /> 
           <Route path="/List/levels" element={<Levels/>} />
           <Route path="/List/vowels" element={<Vowels/>} />

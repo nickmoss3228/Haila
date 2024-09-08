@@ -24,17 +24,18 @@ const AudioList = ({ aspect, unit, data, level }) => {
       <div className='audiolist-name'>{aspect} - {unit}</div>
       <ul className='audios'>
         {audioNumbers.split(', ').map(audio => (
-          // <li key={audio}>
-          //   <div>{audio}</div>
             <button onClick={() => playAudio(audio)} className='btn-unit-number'>{audio}</button>
-          // </li>
         ))}
       </ul>
-
-      <AudioPlayer
-        src={getAudioSource(currentAudio)}
-        onPlay={e => console.log("onPlay")}
-      />
+      <div className="audioplayer-container">
+        <AudioPlayer
+          src={getAudioSource(currentAudio)}
+          onPlay={e => console.log("onPlay")}
+          className='player'
+          // showSkipControls={true}
+        />
+      </div>
+      
 
     </div>
   );

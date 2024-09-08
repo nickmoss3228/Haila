@@ -9,18 +9,18 @@ const Modal = ({tense, onClose}) => {
         <div className="modal-content">
 
         <div className="upper">
+
+            <button className="close-button" onClick={onClose}>
+                X
+            </button>
            
-            <div className="name">
+            <div className="modal-name">
                 {tense.name}
             </div>
             
             <div className="useCase">
                 {tense.useCase}
             </div>
-
-            <button className="close-button" onClick={onClose}>
-                X
-            </button>
 
         </div>
            
