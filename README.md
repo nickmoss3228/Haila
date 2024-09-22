@@ -1,1 +1,1 @@
-123
+An app for the CHICAGA school activities.
