@@ -19,10 +19,9 @@ img {
   text-align: center;
   justify-content: center;
   align-items: center;
-  font-size: 36px;
-  font-weight: 500;
+  font-size: 40px;
+  font-weight: 400;
   font-family: Montserrat;
-  margin-top: 20px;
 }
 
 .title {
@@ -60,7 +59,7 @@ img {
 }
 
 .grid-item:hover {
-    box-shadow: 0 0 3px black;
+  box-shadow: 2px 4px rgba(1, 6, 11, 0.3),
 }
 
 .useCase {

@@ -30,14 +30,14 @@
 .groupPres {
     color: rgb(44, 44, 44);
     font-size: inherit;
-    margin-left: 500px;
+    margin-left: 440px;
     font-size: 36px;
     animation: fadeIn 1s ease-in-out forwards;
 } 
 .groupPerf {
     color:  rgb(44, 44, 44);
     font-size: inherit;
-    margin-right:500px;
+    margin-right:440px;
     font-size: 36px;
     animation: fadeIn 1s ease-in-out forwards;
 } 
@@ -57,9 +57,6 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
 }
 
-.menubar {
-    margin: 0px;
-}
 .verbs-main {
     display: flex;
     justify-content: center;
@@ -114,7 +111,7 @@
     }
 
     .verblist {
-        width: 380px;
+        /* width: 380px; */
     }
     .versions {
         display: flex;
@@ -134,17 +131,20 @@
         overflow: hidden;
     }
     .group {
-        color: white;
+        color: rgb(0, 0, 0);
         font-size: inherit;
+        text-align: center;
     }   
     .groupPres {
-        color: white;
+        color: rgb(0, 0, 0);
         font-size: inherit;
         margin-left: 10px;
+        text-align: center;
     } 
     .groupPerf {
-        color: white;
+        color: rgb(0, 0, 0);
         font-size: inherit;
         margin-right: 10px;
+        text-align: center;
     } 
 }

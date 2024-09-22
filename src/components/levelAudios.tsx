@@ -33,23 +33,34 @@ export const levelAudios = {
             },
         },
         {
-            "Video Listening/Revise And Check":{
-                "Unit 2": "Meet the students, 2.28",
-                "Unit 4": "Beaulieu Motor Museum, 4.25",
-                "Unit 6": "A day in th life of a New York tour guide, 6.20",
-                "Unit 8": "Singing in a choir, 8.19",
-                "Unit 10":"Buildings with a past, 10.19",
-                "Unit 12": "Strangers on a train - Part 3, Strangers on a Train - Part 4, 12.13",
+            "Video Listening":{
+                "Unit 2": "Meet the Students",
+                "Unit 4": "Beaulieu Motor Museum",
+                "Unit 6": "A day in th life of a New York tour guide",
+                "Unit 8": "Singing in a choir",
+                "Unit 10": "Buildings with a past",
+                "Unit 12": "Strangers on a train - Part 3, Strangers on a Train - Part 4, Strangers on a Train - Part 5",
         },
         }, 
+
+        {
+            "Revise And Check":{
+                "Revise And Check 1-2": "Revise And Check 1-2",
+                "Revise And Check 3-4": "Revise And Check 3-4",
+                "Revise And Check 5-6": "Revise And Check 5-6",
+                "Revise And Check 7-8": "Revise And Check 7-8",
+                "Revise And Check 9-10": "Revise And Check 9-10",
+                "Revise And Check 11-12": "Revise And Check 11-12",
+        },
+        },
         {
             "Practical English":{
-                "Practical English 1":"Checking Into a Hotel, Booking a table, UsefulPhrases1",
-                "Practical English 2": "Buying Lunch, UsefulPhrases2",
-                "Practical English 3": "Telling the Time, A Night Out, UsefulPhrases3",
-                "Practical English 4": "Saying the Date, Talking on the Phone, UsefulPhrases4",
-                "Practical English 5": "Inviting and Offering, Meeting an old friend, UsefulPhrases5",
-                "Practical English 6": "Asking for Directions and Giving Directions, Where's Jenny's hotel?, UsefulPhrases6",
+                "Practical English 1": "Checking Into a Hotel - a, Checking Into a Hotel - b, Checking Into a Hotel - c, Booking a table - a, Booking a table - b, UsefulPhrases1",
+                "Practical English 2": "Buying Lunch (Rob), Buying Lunch (Jenny), Buying Lunch - e, UsefulPhrases2",
+                "Practical English 3": "Telling the Time - a, Telling the Time - l&r, A night out, UsefulPhrases3",
+                "Practical English 4": "Saying the date - a, Saying the date - c, Saying the date - d, Talking on the Phone, UsefulPhrases4",
+                "Practical English 5": "Inviting and Offering, Meeting an old friend, Pronunciation, UsefulPhrases5",
+                "Practical English 6": "Asking for and giving - a, Asking for and giving - b, Asking for and giving - d, Where's Jenny's hotel, UsefulPhrases6",
         }
         }
     ],
@@ -85,21 +96,31 @@ export const levelAudios = {
     }
     },
     {
-            "Video Listening/Revise And Check":{
-                "Unit 2": "Have a safe journey, 2.18",
-                "Unit 4": "The island of Okinawa, 4.23",
-                "Unit 6": "A London busker, 6.25",
-                "Unit 8": "A haunted castle, 8.25",
-                "Unit 10":"It's written in the cards: Part 1-4, It's written in the cards: Part 5, 10.21",
-                "Unit 12": "Judi Dench - a life in acting, 12.14",
-    }},{
-            "Practical English":{
-                "Practical English 1":"1.46, Introduction, 1.47, Checking In, 1.48, 1.49, 1.50, Jenny talks to Rob, 1.51, 1.52, 1.53",
-                "Practical English 2": "Rob and Jenny meet, 3.27, Buying a coffee, 3.28, 3.29, 3.30, 3.31",
-                "Practical English 3": "5.22, Meeting in the street, 5.23, 5.24, Buying Clothes, 5.25, 5.26, Jenny's on the phone, 5.27, 5.28,",
-                "Practical English 4": "A free morning, 7.19, 7.20, Asking the way, 7.21, 7.22, Jenny and Rob go sightseeing, 7.23, 7.24",
-                "Practical English 5": "An invitation to dinner, 9.21, 9.22, 9.23, 9.24, Ordering a meal, 9.25, 9.26, The end of the meal, 9.27, 9.28",
-                "Practical English 6": "Jenny's last morning, 11.14, 11.15, Getting to the Airport, 11.16, 11.17, Saying goodbye, 11.18, 11.19",
+        "Video Listening":{
+            "Unit 2": "Have a safe journey",
+            "Unit 4": "The island of Okinawa",
+            "Unit 6": "A London busker",
+            "Unit 8": "A haunted castle",
+            "Unit 10": "It's written in the cards - Parts 1-4, It's written in the cards - Part 5",
+            "Unit 12": "Judi Dench - a life in acting",  
+    }},
+    {
+        "Revise And Check":{
+            "Revise And Check 1-2": "Revise And Check 1-2",
+            "Revise And Check 3-4": "Revise And Check 3-4",
+            "Revise And Check 5-6": "Revise And Check 5-6",
+            "Revise And Check 7-8": "Revise And Check 7-8",
+            "Revise And Check 9-10": "Revise And Check 9-10",
+            "Revise And Check 11-12": "Revise And Check 11-12",
+    }},
+    {
+        "Practical English":{
+            "Practical English 1": "Vocabulary - in a hotel, Introduction, Checking In, Checking in - listen and repeat, Would you like..., Can you..., Jenny talks to Rob, Social English phrases - 1",
+            "Practical English 2": "Rob and Jenny meet, Buying a coffee, Buying a coffee - listen and repeat, First day in the office, Social English phrases - 2",
+            "Practical English 3": "Vocabulary - clothes, Meeting in the street, Apologizing, Buying Clothes, Buying clothes - listen and repeat, Jenny's on the phone, Social English phrases - 3",
+            "Practical English 4": "A free morning, Vocabulary - directions, Asking the way, Asking the way - listen and repeat, Jenny and Rob go sightseeing, Social English phrases - 4",
+            "Practical English 5": "An invitation to dinner, Responding to what somebody says - 1, Responding to what somebody says - 2, Vocabulary - understanding a menu, Ordering a meal, Ordering a meal - listen and repeat, The end of the meal, Social English phrases - 5",
+            "Practical English 6": "Jenny's last morning, Vocabulary - public transport, Getting to the airport, Getting to the airport - listen and repeat, Saying goodbye, Social English phrases - 6",
     }}
     ],
     "Pre-Intermediate": [{
@@ -131,21 +152,30 @@ export const levelAudios = {
             "Unit 11":"11.1, 11.2, 11.3, 11.15, 11.17",
             "Unit 12":"12.2",
         }},{
-        "Video Listening/Revise And Check":{
-            "Unit 2": "Happy Ending, Sad Ending, 2.21, 2.22, 2.23",
-            "Unit 4": "The history of the weekend, 4.25",
-            "Unit 6": "What do our dreams really mean, 6.21",
-            "Unit 8": "Girl1-2, Girl3, Girl4, 8.27",
-            "Unit 10": "Invented by women, 10.15",
-            "Unit 12": "Pub Quiz, 12.10",
-        }},{
+            "Video Listening":{
+                "Unit 2": "Happy Ending, Sad Ending",
+                "Unit 4": "The history of the weekend",
+                "Unit 6": "What do our dreams really mean",
+                "Unit 8": "Girl - Parts 1&2, Girl - Part 3, Girl - Part 4",
+                "Unit 10": "Invented by women", 
+                "Unit 12": "Pub Quiz",
+        }},
+        {
+            "Revise And Check":{
+                "Revise And Check 1-2": "Revise And Check 1-2",
+                "Revise And Check 3-4": "Revise And Check 3-4",
+                "Revise And Check 5-6": "Revise And Check 5-6",
+                "Revise And Check 7-8": "Revise And Check 7-8",
+                "Revise And Check 9-10": "Revise And Check 9-10",
+                "Revise And Check 11-12": "Revise And Check 11-12",
+            }},{
         "Practical English":{
-            "Practical English 1": "Introduction, 1.30, Calling reception, 1.31, 1.32, 1.33, Jenny and Rob meet again, 1.34,",
-            "Practical English 2": "In the New York office, 3.20, 3.21, At the restaurant, 3.22, 3.23, Holly and Rob make friends, 3.24, 3.25",
-            "Practical English 3": "Rob has a problem, 5.21, 5.22, 5.23, Taking something back to the shop, 5.24, 5.25, 5.26, Rob decides to do some exercise, 5.26, 5.27",
-            "Practical English 4": "Running in the park, 7.18, 7.19, Going to pharmacy, 7.20, 7.21, Dinner at Jenny's apartment, 7.22, 7.23, 7.24",
-            "Practical English 5": "Holly and Rob in Brooklyn, 9.17, 9.18, Asking how to get there, 9.19, 9.20, Rob is late again, 9.21, 9.22,",
-            "Practical English 6": "Rob and Jenny talk about the future, 11.23, On the phone, 11.24, 11.25, In central park again, 11.26, 11.27",
+            "Practical English 1": "Introduction, Calling reception, Calling reception - listen and repeat, Jenny and Rob meet again, Social English Phrases - 1",
+            "Practical English 2": "In the New York office, At the restaurant, Vocabulary - restaurant, At the restaurant - listen and repeat, Holly and Rob make friends, Social English Phrases - 2",
+            "Practical English 3": "Rob has a problem, Making suggestions, Vocabulary - shopping, Taking something back to a shop, Taking something back to the shop - listen and repeat, Rob decides to do some exercise, Social English Phrases - 3",
+            "Practical English 4": "Running in Central Park, Vocabulary - feeling ill, Going to pharmacy, Going to pharmacy - listen and repeat, Dinner at Jenny's apartment, Have got, Social English Phrases - 4",
+            "Practical English 5": "Holly and Rob in Brooklyn, Vocabulary - directions, Asking how to get there, Asking how to get there - listen and repeat, 9.20, Rob is late again, Social English Phrases - 5",
+            "Practical English 6": "Rob and Jenny talk about the future, On the phone, On the phone - listen and repeat, In Central Park again, Social English Phrases - 6",
         }},],
     Intermediate: [{
         Listening: {
@@ -172,19 +202,29 @@ export const levelAudios = {
             "Unit 9":"9.7, 9.8, 9.9, 9.10, 9.11, ",
             "Unit 10":"10.5, 10.6"
         }},{
-        "Video Listening/Revise And Check":{
-            "Unit 2": "The great OUP bake sale, 2.21",
-            "Unit 4": "Interview with Alex Rawlings, 4.21",
-            "Unit 6": "A dat with a personal stylist, 6.21",
-            "Unit 8": "Complains1, Complains2, 8.22",
-            "Unit 10": "Queens of crime, 10.17",
-        }}, {
+            "Video Listening":{
+                "Unit 2": "The great OUP bake sale",
+                "Unit 4": "Interview with Alex Rawlings - part 1, Interview with Alex Rawlings - part 2, Interview with Alex Rawlings - part 3",
+                "Unit 6": "A day with a personal stylist - part 1, A day with a personal stylist - part 2",
+                "Unit 8": "How to complain - part 1, How to complain - part 2",
+                "Unit 10": "Queens of crime",
+            
+        }}, 
+        {
+            "Revise And Check":{
+                "Revise And Check 1-2": "Revise And Check 1-2",
+                "Revise And Check 3-4": "Revise And Check 3-4",
+                "Revise And Check 5-6": "Revise And Check 5-6",
+                "Revise And Check 7-8": "Revise And Check 7-8",
+                "Revise And Check 9-10": "Revise And Check 9-10",
+                
+            }},{
         "Practical English":{
-            "Practical English 1": "Introduction, 1.26, Reacting to what people say, 1.27, 1.28, 1.29, Harry finds out more about Rob, 1.30, 1.31",
-            "Practical English 2": "Rob's interview, 3.28, Giving opinions, 3.29, 3.30, 3.31, A surprise for Kerri, 3.32, 3.33",
-            "Practical English 3": "Jenny has a coffee with a friend, 5.23, Permissions and requests, 5.24, 5.25, 5.26, Paul arrives, 5.27, 5.28,",
-            "Practical English 4": "Paul and Rob catch up, 7.23, Making suggestions, 7.24, 7.25, 7.26, The morning after the night before, 7.27, 7.28",
-            "Practical English 5": "Jenny gets a surprise, 9.21, Indirect questions, 9.22, 9.23, 9.24, Rob gets serious, 9.25, 9.26",
+            "Practical English 1": "Introduction, Reacting to what people say, Reacting to what people say - listen and check, Reacting to what people say - listen and repeat, Harry finds out more about Rob, Social English phrases - 1",
+            "Practical English 2": "Rob's interview, Giving opinions, Giving opinions - listen and check, Giving opinions - listen and repeat, A surprise for Kerri, Social English phrases - 2",
+            "Practical English 3": "Jenny has a coffee with a friend, Permissions and requests, Permissions and requests - listen and check, Permissions and requests - listen and repeat, Paul arrives, Social English phrases - 3",
+            "Practical English 4": "Paul and Rob catch up, Making suggestions, Making suggestions - listen and check, Making suggestions - listen and repeat, The morning after the night before, Social English phrases - 4",
+            "Practical English 5": "Jenny gets a surprise, Indirect questions, Indirect questions - listen and check, Indirect questions - listen and repeat, Rob gets serious, Social English phrases - 5",
         }},
     ]
 };  

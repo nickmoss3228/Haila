@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AspectSelector = ({onChange, level}) => {
-  const aspects = ['Listening', 'Vocabulary', 'Video Listening/Revise And Check', 'Practical English'];
+  const aspects = ['Listening', 'Vocabulary', 'Video Listening','Revise And Check', 'Practical English'];
 
   const getAspectsClass = (level) => {
     switch(level) {
@@ -9,8 +9,10 @@ const AspectSelector = ({onChange, level}) => {
         return "listening-aspect";
       case "Vocabulary":
         return "vocabulary-aspect";
-      case 'Video Listening/Revise And Check':
-        return "videolistening-rac-aspect"
+      case 'Video Listening':
+        return "videolistening-aspect"
+      case 'Revise And Check': 
+        return "rac-aspect"
       case "Practical English":
         return "practical-aspect"
     }

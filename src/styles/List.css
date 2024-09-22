@@ -15,50 +15,57 @@
     position: relative;
     overflow: hidden;
     box-shadow: 10px 10px 30px 0px rgba(89, 89, 89, 0.7);
+    transition: all 0.3s ease;
 }
 
 .listgriditem a {
     color: black;
 }
 
+.listgriditem:hover{
+    transform: scale(1.04);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
 .item-alphabet {
-    background-image: url("../assets/alphabet-preview.PNG");
+    background-image: url("../assets/newpics/alphprev.PNG");
     height: 100%;
+    background-size: 800px;
 }
 
 .item-tenses {
-    background-image: url("../assets/tenses-preview3.PNG");
+    background-image: url("../assets/newpics/tensprev.PNG");
     height: 100%;
-    background-position:top ;
-    background-size: 550px;
+    background-position:top;
+    background-size: 470px;
     background-repeat: no-repeat;
 }
 
 .item-vowels {
-    background-image: url("../assets/vowels-preview2.PNG");
+    background-image: url("../assets/newpics/vowprev.PNG");
     height: 100%;
     background-size: 530px;
     background-position: center; 
 }
 
 .item-cons {
-    background-image: url("../assets/consonants-preview2.PNG");
+    background-image: url("../assets/newpics/consprev.PNG");
     height: 100%;
-    background-size: 550px; 
+    background-size: 510px; 
     background-position: center;
 }
 
 .item-audio {
-    background-image: url("../assets/audio-preview2.png");
+    background-image: url("../assets/newpics/audioprev.png");
     height: 100%;
     background-position: left;
     background-size: 460px;
 }
 
 .item-irregulars {
-    background-image: url("../assets/irregulars-preview.PNG");
+    background-image: url("../assets/newpics/irregprev.PNG");
     height: 100%;
-    background-size: 700px;
+    background-size: 900px;
 }
 
 .main-component {
@@ -79,7 +86,7 @@
     left: 0;
     right: 0;
     height: 100px;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
     padding: 10px;
     box-sizing: border-box;

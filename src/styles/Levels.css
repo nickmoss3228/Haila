@@ -36,7 +36,7 @@
 
 .btn-choose {
     border: none;
-    width: 400px;
+    width: 350px;
     height: 300px;
     margin: 10px;
     background-color: rgb(246, 118, 103);
@@ -105,7 +105,6 @@
 }
 
 .unitselector {
-    display: flex;
     flex-direction: column;
 }
 
@@ -161,6 +160,9 @@
     opacity: 1;
 }
 
+
+
+
 .listening-aspect {
     background-color: #ff4e00;
     background-image: linear-gradient(315deg, #ff4d00e0 0%, #ec9f05 74%);
@@ -168,16 +170,22 @@
 }
 .vocabulary-aspect {
     background-color: #f8ef42;
-    background-image: linear-gradient(315deg, #f8ef42 0%, #0fd64f 74%);
+    background-image: linear-gradient(315deg, #f8ef42 0%, #109e3d 74%);
 }
-.videolistening-rac-aspect { 
-    background-color: #7a7adb;
-    background-image: linear-gradient(315deg, #7a7adb 0%, #170e13 74%);
+.videolistening-aspect { 
+    background-color: #5dd6d4;
+    background-image: linear-gradient(315deg, #72d7d7 0%, #2e3e5e 74%);
 }
 .practical-aspect {
     background-color: #e79087;
     background-image: linear-gradient(315deg, #d67f75 0%, #e7b75f 74%);
 }
+.rac-aspect {
+    background-color: #f8ef42;
+    background-image: linear-gradient(315deg, #1c266f 0%, #241b29 74%);
+}
+
+
 
 @media only screen and (max-width: 667px) {
     .btn-choose {
@@ -210,13 +218,7 @@
         margin-top: 30px;
         margin-right: 0;
     }
-    .audioplayer-container {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000; /* Adjust this value as needed to ensure it's above other elements */
-      }
+
 
     .level-container {
         height: auto;
@@ -225,10 +227,24 @@
         justify-content: center;
         align-items: center;
         margin-right: 0;
+        margin-top: 50px;
     }
-    .levels {
 
+    .aspect-select {
+        margin-top: 50px;
     }
+
+    .btn-back {
+        margin-top: 80px;
+    }
+    .audioplayer-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000; /* Adjust this value as needed to ensure it's above other elements */
+      }
+
     .aspect-select {
         display: flex;
         flex-direction: column;

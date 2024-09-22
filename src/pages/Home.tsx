@@ -8,17 +8,14 @@ const Home = () => {
       <div className="background">
 
         <div className="homepage">
-        <span>Study with ease
-          <br/>
-          with a new set of apps designed for you!
-        </span>
+          <span>Study with ease
+            <br/>
+            with a new set of apps designed for you!
+          </span>
         </div>
-
-        <div className="enter">
-          <button className="btn-enter">
-            <Link to='/List'>Start</Link>
-          </button>
-        </div>
+            <Link to='/List' className="btn-enter">
+              <span>Start</span>
+            </Link>
 
       </div>
     </>

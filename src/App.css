@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 
-#root{
-  background-color: var(--primarycolor);
-  --primarycolor: #F4F4F4;
+:root {
+  --primarycolor: #f0f3ff;
   --secondarycolor: #f08a73;
+  /* Other global variables can be defined here */
+}
+
+#root {
+  background-color: var(--primarycolor);
   font-family: Montserrat;
-  /* #FC6745 = prime color before reworking*/
-  /* #FCD19C;= secondary - orange from Figma */
+  /* Other styles for #root */
 }
 
 html, body {
@@ -15,7 +18,7 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: #F4F4F4;;
+  background-color: var(--primarycolor);
   box-sizing: border-box;
   animation: fadeIn 1s ease-in-out forwards;
 }
@@ -28,11 +31,120 @@ html, body {
   100% {
       opacity: 1;  /* End state */
   }
+
+  
 }
- .navbar {
-  align-items:flex-start;
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+.background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background-color: #f0f3ff;
+  overflow: hidden;
+}
+
+.homepage {
+  background-color: white;
+  border-radius: 30px;
+  padding: 60px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin-bottom: 50px;
   position: relative;
-  display:flex;
+  animation: float 6s ease-in-out infinite;
+}
+
+.homepage::before,
+.homepage::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.homepage::before {
+  background-color: #ffd700;
+  top: -30px;
+  left: -30px;
+}
+
+.homepage::after {
+  background-color: #ff6b6b;
+  bottom: -30px;
+  right: -30px;
+}
+
+.homepage span {
+  font-size: 36px;
+  color: #4a4e69;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.btn-enter {
+  background-color: #4ecdc4;
+  color: white;
+  border: none;
+  padding: 20px 40px;
+  font-size: 22px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+.btn-enter:hover {
+  background-color: #45b7ae;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(78, 205, 196, 0.4);
+}
+
+.btn-enter:active {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(78, 205, 196, 0.4);
+}
+
+.btn-enter::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+.btn-enter:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-enter span {
+  position: relative;
+  z-index: 2;
+}
+
+ .navbar {
+  align-items: flex-start;
+  position: relative;
+  display: flex;
   flex-direction: column;
   border-radius: 6px;
   color: rgb(0, 0, 0);
@@ -60,7 +172,7 @@ html, body {
   animation: fadeIn 1s ease-in-out forwards;
 } 
 
-.background {
+/* .background {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,8 +183,8 @@ html, body {
   text-align: center;
   text-overflow: clip;
   color: white;
-}
-.homepage {
+} */
+/* .homepage {
   display: flex;
   position: relative;
   margin-top: 200px;
@@ -84,9 +196,9 @@ html, body {
   border-radius: 80px;
   height: 200px;
   
-}
+} */
 
-.btn-enter {
+/* .btn-enter {
   background-color: var(--secondarycolor);
   border: none;
   font-family: inherit;
@@ -97,7 +209,7 @@ html, body {
   cursor: pointer;
   margin-top: 50px;
   color: white  ;
-}
+} */
 a {
   color: rgb(255, 255, 255);
   text-decoration: none;
@@ -110,7 +222,6 @@ a:active {
 .alphcont{
   display: flex;
   justify-content: center;
-  margin-top: 10px;
 }
 
 .filter {
@@ -126,14 +237,14 @@ a:active {
   background-color:  var(--primarycolor);
   color: rgb(0, 0, 0);
   display: flex;
-  width: 300px;
+  width: 400px;
   text-align: center;
   justify-content: center;
   align-items: center;
   font-size: 28px;
   font-family: Montserrat;
   border-radius: 9px;
-  margin: 30px;
+  margin-bottom: 20px;
   text-decoration: none;
 }
 .link {
@@ -164,7 +275,6 @@ a:active {
   justify-content: center;
   font-size: 36px;
   border-radius: 5px;
-  
 } 
 
 .letters {
@@ -220,6 +330,30 @@ a:active {
   #root {
     background-color: var(--primarycolor);
   }
+  .navbar {
+    align-items: center; /* Center align items in navbar for mobile */
+    padding: 20px; /* Reduce padding for mobile */
+  }
+  .homepage {
+    border-radius: 40px;
+    padding: 20px;
+    max-width: 250px;
+    margin-bottom: 20px;
+    position: relative;
+    animation: float 6s ease-in-out infinite;
+    margin-top: 30px;
+  }
+  .homepage span {
+    font-size: 28px;
+  }
+
+  .homepage::before, .homepage::after {
+    width: 80px;
+    height: 80px;
+  }
+  .background {
+    
+  }
   .menu {
     display: flex;
     flex-direction: row;
@@ -228,15 +362,21 @@ a:active {
   }
 
   .logo {
-    background-color: var(--primarycolor);
-    position: static;
-    display: flex;
-    justify-content: center;
+    position: static; /* Remove relative positioning */
+    left: auto; /* Reset left property */
+    margin: 0 auto; /* Center horizontally */
+    display: block; /* Ensure it's a block-level element */
+    text-align: center; /* Center any text within the logo */
   }
   .link {
     height: 30px;
     text-decoration: none;
     color: rgb(56, 56, 56);
+  }
+  .menu {
+    width: 100%; /* Full width for the menu */
+    justify-content: center; /* Center menu items */
+    margin-top: 20px; /* Add some space between logo and menu */
   }
 
   /* .letters {
