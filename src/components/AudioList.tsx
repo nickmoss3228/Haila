@@ -2,52 +2,47 @@ import React, {useState, useEffect} from 'react';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 
-const AudioList = ({ aspect, unit, data, level }) => {
+const AudioList = ({ aspect, unit, data, level}) => {
 
   const audioNumbers = data[unit];
   console.log(audioNumbers)
   const aspectshow = aspect;
   console.log(aspectshow)
 
-  const [currentMedia, setCurrentMedia] = useState({ type: null, source: null });
+  const [currentMedia, setCurrentMedia] = useState({ audio: null, video: null });
+  const [activePlayer, setActivePlayer] = useState(null); // 'audio' or 'video'
 
   useEffect(() => {
     console.log("Current media state:", currentMedia);
+    console.log("Active player:", activePlayer);
   }, [currentMedia]);
 
   const playMedia = (mediaNumber) => {
-    const mediaSource = getMediaSource(mediaNumber);
-  
-    if (mediaSource) {
-      setCurrentMedia({ type: mediaSource.type, source: mediaSource.source });
-    } else {
-      console.error(`Error: No media found for media number ${mediaNumber}`);
-      setCurrentMedia({ type: null, source: null });
-    }
-  };
-  
-  const getMediaSource = (fileName) => {
-    const videoPath = `/${level}/Video/${aspect}/${fileName}.mp4`;
-    const audioPath = `/${level}/studentsbook/${fileName}.mp3`;
+    const mediaSources = getMediaSource(mediaNumber);
+    console.log(mediaSources)
+    let newActivePlayer = null;
 
-    const videoPathObject = {
-      type: "video",
-      source: videoPath
-    }
-    const audioPathObject = {
-      type: "audio",
-      source: audioPath
-    }
-    return fileName ? audioPathObject : videoPathObject 
-    // if (audioPath) {
-    //   return { type: 'audio', source: audioPath };
-    // } else if (videoPath) {
-    //   return { type: 'video', source: videoPath };
-    // }
-    // return null;
+    if (aspect === "Video Listening" || aspect === "Practical English" || aspect === "Revise And Check") {
+      newActivePlayer = 'video';
+      
+    } else if (aspect === "Listening" || aspect === "Vocabulary") {
+      newActivePlayer = 'audio';
+    } 
+
+    setCurrentMedia(mediaSources);
+    setActivePlayer(newActivePlayer);
   };
 
-  //return ? audioPathObject : videoPathObject 
+  const getMediaSource = (mediaNumber) => {
+    const videoPath = `/${level}/Video/${aspect}/${mediaNumber}.mp4`;
+    const audioPath = `/${level}/studentsbook/${mediaNumber}.mp3`;
+
+    return {
+      video: videoPath,
+      audio: audioPath,
+    };
+  };
+  
 
   return (
     <div className='audiolist-render'>
@@ -64,17 +59,17 @@ const AudioList = ({ aspect, unit, data, level }) => {
         ))}
       </ul>
       <div className="media-player-container">
-        {currentMedia.type === 'audio' && currentMedia.source && (
+        {activePlayer === 'audio' && currentMedia.audio && (
           <AudioPlayer
-            src={currentMedia.source}
+            src={currentMedia.audio}
             onPlay={e => console.log("onPlay")}
             style={{height: "120px"}}
             className='player'
           />
         )}
-        {currentMedia.type === 'video' && currentMedia.source && (
+        {activePlayer === 'video' && currentMedia.video && (
           <video
-            src={currentMedia.source}
+            src={currentMedia.video}
             controls
             style={{width: "100%", maxHeight: "360px"}}
             className='video-player'
