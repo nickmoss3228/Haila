@@ -153,8 +153,9 @@ html, body {
 
 .logo {
   position: relative;
-  left: 100px;
+  left: 150px;
   background-color: var(--primarycolor);
+  width: 500px;
 }
 
 .menu {
@@ -241,7 +242,7 @@ a:active {
   text-align: center;
   justify-content: center;
   align-items: center;
-  font-size: 28px;
+  font-size: 36px;
   font-family: Montserrat;
   border-radius: 9px;
   margin-bottom: 20px;
@@ -288,6 +289,11 @@ a:active {
   margin-right: 3rem;
   margin-bottom: 20px;
   color: white;
+  transition: transform 0.1s ease-in-out;
+}
+
+.letters:active {
+  transform: scale(0.9);
 }
 
 .bottom {
@@ -316,10 +322,17 @@ a:active {
   cursor: pointer;
   color: white;
   font-size: 24px;
+  font-family: inherit;
 }
 
 .btn-unit-number:hover {
   background-color: #FC6745;
+}
+.btn-unit-number:active {
+  
+}
+.btn-unit-number::after {
+  background-color: #FC6745
 }
 
 .audiolist-name {

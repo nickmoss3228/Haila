@@ -19,7 +19,7 @@ const AspectSelector = ({onChange, level}) => {
   }
 
   return (
-    <div className='aspect-select'>
+    <div className='aspect-wrapper'>
       <h1 className='header-levels'>Select the aspect of {level}:</h1>
       {aspects.map(aspect => (
         <button 

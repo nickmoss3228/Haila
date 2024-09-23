@@ -6,7 +6,6 @@ const Home = () => {
   return (  
     <>
       <div className="background">
-
         <div className="homepage">
           <span>Study with ease
             <br/>
@@ -16,7 +15,6 @@ const Home = () => {
             <Link to='/List' className="btn-enter">
               <span>Start</span>
             </Link>
-
       </div>
     </>
   )

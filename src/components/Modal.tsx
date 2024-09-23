@@ -23,32 +23,28 @@ const Modal = ({tense, onClose}) => {
             </div>
 
         </div>
-           
+        
+        <img src={tense.img} alt="" className="tenseimg"/>
             
-            <img src={tense.img} alt="" className="tenseimg">
-                
-            </img>
-            
-            <div className="grammar">
-                {tense.grammar}
+        <div className="grammar">
+            {tense.grammar}
+        </div>
+
+        <div className="info-container">
+            <div className="examples">
+                {tense.sentencesPos}
+                <br/>
+                {tense.sentencesNeg}
+                <br/>
+                {tense.sentencesQuest}  
+                <br/>
             </div>
 
-            <div className="info-container">
-                <div className="examples">
-                    {tense.sentencesPos}
-                    <br/>
-                    {tense.sentencesNeg}
-                    <br/>
-                    {tense.sentencesQuest}  
-                    <br/>
-                </div>
-
-                <div className="expressions">
-                    {tense.expressions}
-                </div>
+            <div className="expressions">
+                {tense.expressions}
             </div>
+        </div>
            
-            
         </div>
     </div>
   )

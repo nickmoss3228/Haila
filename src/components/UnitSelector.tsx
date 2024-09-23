@@ -25,7 +25,7 @@ const UnitSelector = ({ aspect, data, onChange, level }) => {
   const units = Object.keys(data);
 
   return (
-    <div>
+    <div className='unit-wrapper'>
       <h1 className='header-levels'>Select the Unit for {aspect}:</h1>
       <div className='unitgrid'>
         {units.map((unit, index) => {

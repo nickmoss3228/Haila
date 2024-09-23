@@ -5,9 +5,9 @@ const Alphabet = () => {
     
   return (  
     <>
-        <div className='menu'>
-            <div className="menubar">The English Alphabet</div>  
-        </div>
+      <div className='menu'>
+          <div className="menubar">The English Alphabet</div>  
+      </div>
 
       <div className="alphcont">
         <div className="alphabet">

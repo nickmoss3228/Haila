@@ -51,6 +51,7 @@
 
 .filterButton{
     background-color: #ffffff;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 .filterButton.active {
@@ -83,6 +84,11 @@
 .grid-item {
     padding: 20px;
     animation: fadeIn 1s ease-in-out forwards;
+    transition: all 0.1s ease;
+    
+}
+.grid-item:active {
+    transform: scale(0.965);
 }
 
 @media only screen and (max-width: 667px) {
@@ -100,7 +106,8 @@
     .filterButton {
         background-color: white;
         border-radius: 6px;
-        min-width: 240px;
+        /* min-width: 240px; */
+        width: fit-content;
         min-height: 40px;
         cursor: pointer;  
         margin: 6px;  
@@ -108,11 +115,10 @@
         margin-right: 10px; 
         font-family: Montserrat;
         font-size: 19px;
+        white-space: nowrap;
+        overflow: hidden;
     }
 
-    .verblist {
-        /* width: 380px; */
-    }
     .versions {
         display: flex;
         justify-content: space-around;

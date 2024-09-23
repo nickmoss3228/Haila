@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 img {
-    width: 400px;
+  width: 400px;
 }
 .backdrop{
   background-color: inherit;
@@ -25,20 +25,18 @@ img {
 }
 
 .title {
-    font-family: Montserrat;
-    width: 500px;
-    text-align: center;
-    /* justify-content: center;
-    align-items: center; */
-    background-color: white;
-    margin: 0px;
+  font-family: Montserrat;
+  width: 500px;
+  text-align: center;
+  background-color: white;
+  margin: 0px;
 }
 
 .tenses-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: fadeIn 0.6s ease-in-out forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.6s ease-in-out forwards;
 }
 .grid-container {
   display: grid;
@@ -48,14 +46,14 @@ img {
   height: 100%;
 }
 .grid-item {
-    font-family: Montserrat;
-    color: black;
-    font-size: 24px;
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    padding: 20px;
-    text-align: center;
-    cursor: pointer;
+  font-family: Montserrat;
+  color: black;
+  font-size: 24px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
 }
 
 .grid-item:hover {
@@ -63,24 +61,21 @@ img {
 }
 
 .useCase {
-    max-width:400px;
+  max-width:400px;
 }
 
-  @media only screen and (max-width: 667px) {
-    .grid-container {
-      grid-template-columns: repeat(1, 1fr);
-      /* padding: 10px;
-      width: auto; */
-    }
-    .tenses-main {
-      margin-top: 20px;
-    }
-    .grid-item {
-      padding: 10px;
-    }
-    img {
-      width: 320px;
-    }
-
-    
+@media only screen and (max-width: 667px) {
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr);
   }
+  .tenses-main {
+    margin-top: 20px;
+  }
+  .grid-item {
+    padding: 10px;
+  }
+  img {
+    width: 320px;
+  }
+  
+}

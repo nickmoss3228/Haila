@@ -22,21 +22,3 @@ const Aspects = () => {
 }
 
 export default Aspects
-
-{/* {Object.keys(item[category]).map((unit, unitIdx) => (
-    <div key={unitIdx}>
-        <h3>{unit.toUpperCase()}</h3>
-        <p>{item[category][unit]}</p>
-    </div>
-))} */}
-// {beginnerAudios.map((item, index) => {
-//     return (
-//         <div key={index} className='categories'>
-//             {Object.keys(item).map((category, idx) => (
-//                 <div key={idx} className='category-item'>
-//                     {category}
-//                 </div>
-//             ))}
-//         </div>
-//     );
-// })}

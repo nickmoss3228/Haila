@@ -14,12 +14,3 @@ const Letter = ({group, index}) => {
 }
 
 export default Letter
-
-
-{/* {alphabet.map((group, index) => (
-    <div key={index} className='group'>
-        {group.map((letter, letterIndex) => (
-            <div key={letterIndex} className='letters' onClick={playAudio}>{letter}</div>
-        ))}
-    </div>
-))} */}

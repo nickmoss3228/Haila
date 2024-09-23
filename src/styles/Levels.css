@@ -47,6 +47,7 @@
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
+
 }
 .btn-choose:hover {
     transform: scale(1.03);
@@ -110,7 +111,10 @@
 }
 
 .unitselector {
-    flex-direction: column;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .beginner-level {
@@ -165,7 +169,15 @@
     opacity: 1;
 }
 
-
+.aspect-select {
+    width: 70%;
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    /* align-items: center;
+    justify-content: center;
+    display: flex; */
+}
 
 
 .listening-aspect {
@@ -187,7 +199,7 @@
 }
 .rac-aspect {
     background-color: #f8ef42;
-    background-image: linear-gradient(315deg, #1c266f 0%, #241b29 74%);
+    background-image: linear-gradient(315deg, #e3603f 0%, #342346 74%);
 }
 
 
@@ -278,5 +290,15 @@
         font-size: 24px;
         text-align:center;
     }
+    .player {
+        position: absolute;
+        bottom: 0;
+    }
+    /* .rhap_volume-container img {
+        
+    }  
+    .rhap_main-controls {
+
+    }  */
 
 }

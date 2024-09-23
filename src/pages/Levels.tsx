@@ -58,13 +58,14 @@ return (
     {!level && <LevelSelector onChange={handleLevelChange}/>}
 
     {level && !aspect && (
-      <div>
+      <div className='aspect-select'>
         <button onClick={goBackToLevel} className='btn-back'>
           <IoArrowBack style={{width: "80px", border: "none", height:"40px", cursor:"pointer"}}/>
         </button>
         <AspectSelector onChange={handleAspectChange} level={level} />
       </div>
     )}
+
     {aspect && !unit && (
       <div className='unitselector'>
         <button onClick={goBackToAspect} className='btn-back'>
@@ -73,6 +74,7 @@ return (
         <UnitSelector aspect={aspect} data={getAudiosForAspect()} onChange={handleUnitChange} level={level}/>
     </div>
     )}
+
     {aspect && unit && (
     <div className='audiolist'>
       <button onClick={goBackToUnit} className='btn-back'>
@@ -81,6 +83,7 @@ return (
       <AudioList aspect={aspect} unit={unit} level={level} data={getAudiosForAspect()} />
     </div>
     )}
+    
   </div>
 );
 }

@@ -82,4 +82,3 @@ const AudioList = ({ aspect, unit, data, level}) => {
 };
 
 export default AudioList;
-

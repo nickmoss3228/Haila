@@ -28,9 +28,6 @@ const LevelSelector = ({onChange}) => {
             onClick={() => onChange(level)} 
             className={`btn-choose ${getLevelClass(level)}`}
           >
-            <div className="lvlname">
-              {/* {level} */}
-            </div> 
             <div className='hidden-content-levels'>
               <div className="lvlname"> {level}</div> 
             </div>
