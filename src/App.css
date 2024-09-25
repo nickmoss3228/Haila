@@ -51,6 +51,85 @@ html, body {
   overflow: hidden;
 }
 
+.sticker-normal img {
+  width: 290px;
+  height: 250px;
+  position: absolute;
+  top: 650px;
+  right: 100px;
+  transform: rotate(15deg);
+  animation: fadeIn 1s ease-in-out forwards;
+
+}
+
+.sticker-normal img:hover {
+  transform: scale(1.1);
+}
+
+.sticker-side img {
+  width: 230px;
+  height: 260px;
+  position: absolute;
+  top: 60px;
+  right: 700px;
+  transform: rotate(340deg);
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.sticker-side img:hover {
+  transform: scale(1.1);
+}
+
+.sticker-side2 img {
+  width: 330px;
+  height: 360px;
+  position: absolute; 
+  left: 100px;
+  bottom: 100px;
+  transform: rotate(350deg);
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.sticker-side2 img:hover {
+  transform: scale(1.1);
+}
+
+.sticker-side3 img {
+  width: 400px;
+  height: 420px;
+  position: absolute; 
+  right: 100px;
+  top: 60px;
+  transform: rotate(330deg);
+  animation: fadeIn 1s ease-in-out forwards;
+}
+.sticker-side3 img:hover {
+  transform: scale(1.1);
+}
+
+.alphabet-sticker-1 img {
+  position: absolute;
+  width: 280px;
+  height: 300px;
+  transform: rotate(350deg);
+  left: 130px;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+.alphabet-sticker-2 img {
+  position: absolute;
+  width: 300px;
+  height: 320px;
+  transform: rotate(330deg);
+  animation: fadeIn 1s ease-in-out forwards;
+}
+.alphabet-sticker-3 img {
+  position: absolute;
+  width: 300px;
+  height: 320px;
+  transform: rotate(330deg);
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
 .homepage {
   background-color: white;
   border-radius: 30px;
@@ -155,7 +234,6 @@ html, body {
   position: relative;
   left: 150px;
   background-color: var(--primarycolor);
-  width: 500px;
 }
 
 .menu {
@@ -307,7 +385,10 @@ a:active {
 } 
 
 .audiolist {
-  width: 60%;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-unit-number {
@@ -360,6 +441,9 @@ a:active {
   }
   .homepage span {
     font-size: 28px;
+  }
+  .sticker-normal img, .sticker-side img, .sticker-side2 img, .sticker-side3 img, .alphabet-sticker-1 img, .alphabet-sticker-2 img, .alphabet-sticker-3 img {
+    display: none;
   }
 
   .homepage::before, .homepage::after {
@@ -449,3 +533,4 @@ a:active {
   }
 
 }
+

@@ -52,17 +52,32 @@ export const levelAudios = {
                 "Revise And Check 9-10": "Revise And Check 9-10",
                 "Revise And Check 11-12": "Revise And Check 11-12",
         },
-        },
-        {
+        },{
             "Practical English":{
-                "Practical English 1": "Checking Into a Hotel - a, Checking Into a Hotel - b, Checking Into a Hotel - c, Booking a table - a, Booking a table - b, UsefulPhrases1",
-                "Practical English 2": "Buying Lunch (Rob), Buying Lunch (Jenny), Buying Lunch - e, UsefulPhrases2",
-                "Practical English 3": "Telling the Time - a, Telling the Time - l&r, A night out, UsefulPhrases3",
-                "Practical English 4": "Saying the date - a, Saying the date - c, Saying the date - d, Talking on the Phone, UsefulPhrases4",
-                "Practical English 5": "Inviting and Offering, Meeting an old friend, Pronunciation, UsefulPhrases5",
-                "Practical English 6": "Asking for and giving - a, Asking for and giving - b, Asking for and giving - d, Where's Jenny's hotel, UsefulPhrases6",
+                "Practical English 1": "Checking Into a Hotel - a, Checking Into a Hotel - b, Checking Into a Hotel - c, Booking a table - a, Booking a table - b, Useful Phrases 1",
+                "Practical English 2": "Buying Lunch (Rob), Buying Lunch (Jenny), Buying Lunch - e, Useful Phrases 2",
+                "Practical English 3": "Telling the Time - a, Telling the Time - l&r, A night out, Useful Phrases 3",
+                "Practical English 4": "Saying the date - a, Saying the date - c, Saying the date - d, Talking on the Phone, Useful Phrases 4",
+                "Practical English 5": "Inviting and Offering, Meeting an old friend, Pronunciation, Useful Phrases 5",
+                "Practical English 6": "Asking for and giving - a, Asking for and giving - b, Asking for and giving - d, Where's Jenny's hotel, Useful Phrases 6",
         }
-        }
+        },{
+            Workbook: {
+                "Unit 1":"1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7",
+                "Unit 2":"2.1, 2.2, 2.3, 2.4",
+                "Unit 3":"3.1, 3.2, 3.3, 3.4, 3.5",
+                "Unit 4":"4.1, 4.2, 4.3",
+                "Unit 5":"5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7",
+                "Unit 6":"6.1, 6.2, 6.3, 6.4, 6.5",
+                "Unit 7":"7.1, 7.2, 7.3",
+                "Unit 8":"8.1, 8.2, 8.3, 8.4",
+                "Unit 9":"9.1, 9.2, 9.3, 9.4, 9.5",
+                "Unit 10":"10.1, 10.2",
+                "Unit 11":"11.1, 11.2, 11.3, 11.20",
+                "Unit 12":"12.1"
+            }
+        },
+        
     ],
 
     Elementary: [{
@@ -121,7 +136,23 @@ export const levelAudios = {
             "Practical English 4": "A free morning, Vocabulary - directions, Asking the way, Asking the way - listen and repeat, Jenny and Rob go sightseeing, Social English phrases - 4",
             "Practical English 5": "An invitation to dinner, Responding to what somebody says - 1, Responding to what somebody says - 2, Vocabulary - understanding a menu, Ordering a meal, Ordering a meal - listen and repeat, The end of the meal, Social English phrases - 5",
             "Practical English 6": "Jenny's last morning, Vocabulary - public transport, Getting to the airport, Getting to the airport - listen and repeat, Saying goodbye, Social English phrases - 6",
-    }}
+    }},
+    {
+        Workbook :{
+                "Unit 1":"1.1, 1.2, 1.3, 1.4, 1.5, 1.6",
+                "Unit 2":"2.1, 2.2, 2.3",
+                "Unit 3":"3.1, 3.2, 3.3, 3.4",
+                "Unit 4":"4.1, 4.2, 4.3, 4.4",
+                "Unit 5":"5.1, 5.2, 5.3, 5.4",
+                "Unit 6":"6.1, 6.2, 6.3, 6.4, 6.5, 6.6",
+                "Unit 7":"7.1, 7.2, 7.3, 7.4",
+                "Unit 8":"8.1, 8.2, 8.3",
+                "Unit 9":"9.1, 9.2, 9.3, 9.4, 9.5",
+                "Unit 10":"10.1, 10.2, 10.3",
+                "Unit 11":"11.1, 11.2, 11.3",
+                "Unit 12":"12.1, 12.2, 12.3, 12.4, 12.5"
+            }
+        }
     ],
     "Pre-Intermediate": [{
         Listening: {
@@ -176,7 +207,23 @@ export const levelAudios = {
             "Practical English 4": "Running in Central Park, Vocabulary - feeling ill, Going to pharmacy, Going to pharmacy - listen and repeat, Dinner at Jenny's apartment, Have got, Social English Phrases - 4",
             "Practical English 5": "Holly and Rob in Brooklyn, Vocabulary - directions, Asking how to get there, Asking how to get there - listen and repeat, 9.20, Rob is late again, Social English Phrases - 5",
             "Practical English 6": "Rob and Jenny talk about the future, On the phone, On the phone - listen and repeat, In Central Park again, Social English Phrases - 6",
-        }},],
+        }},
+        {
+            Workbook :{
+                    "Unit 1":"1.1, 1.2, 1.3",
+                    "Unit 2":"2.1, 2.2, 2.3",
+                    "Unit 3":"3.1, 3.2, 3.3, 3.4, 3.5",
+                    "Unit 4":"4.1, 4.2, 4.3",
+                    "Unit 5":"5.1, 5.2, 5.3, 5.4, 5.5",
+                    "Unit 6":"6.1, 6.2, 6.3, 6.4, 6.5",
+                    "Unit 7":"7.1, 7.2, 7.3, 7.4",
+                    "Unit 8":"8.1, 8.2, 8.3, 8.4, 8.5",
+                    "Unit 9":"9.1, 9.2, 9.3, 9.4",
+                    "Unit 10":"10.1, 10.2, 10.3, 10.4",
+                    "Unit 11":"11.1, 11.2, 11.3, 11.4",
+                    "Unit 12":"12.1, 12.2, 12.3"
+                }
+            }],
     Intermediate: [{
         Listening: {
             "Unit 1":"1.7, 1.8, 1.9, 1.25",
@@ -226,5 +273,19 @@ export const levelAudios = {
             "Practical English 4": "Paul and Rob catch up, Making suggestions, Making suggestions - listen and check, Making suggestions - listen and repeat, The morning after the night before, Social English phrases - 4",
             "Practical English 5": "Jenny gets a surprise, Indirect questions, Indirect questions - listen and check, Indirect questions - listen and repeat, Rob gets serious, Social English phrases - 5",
         }},
+        {
+        Workbook :{
+                "Unit 1":"1.1, 1.2, 1.3",
+                "Unit 2":"2.1, 2.2, 2.3",
+                "Unit 3":"3.1, 3.2, 3.3, 3.4, 3.5",
+                "Unit 4":"4.1, 4.2",
+                "Unit 5":"5.1, 5.2, 5.3",
+                "Unit 6":"6.1, 6.2",
+                "Unit 7":"7.1, 7.2, 7.3",
+                "Unit 8":"8.1, 8.2",
+                "Unit 9":"9.1, 9.2, 9.3",
+                "Unit 10":"10.1, 10.2"
+            }
+        }
     ]
 };  

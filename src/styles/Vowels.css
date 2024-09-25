@@ -12,6 +12,7 @@
   place-items: center;
   width: 60%;
   animation: fadeIn 1s ease-in-out forwards;
+  margin-top: 60px
 }
 
 .accent {

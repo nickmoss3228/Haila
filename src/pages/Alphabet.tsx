@@ -1,4 +1,5 @@
 import Letter from '../components/letter'
+import Look from '../assets/stickers/look.png'
 
 const Alphabet = () => {
     const alphabet = [["Aa", "Bb", "Cc", "Dd"], ["Ee", "Ff", "Gg"], ["Hh", "Ii", "Jj", "Kk"], ["Ll", "Mm", "Nn", "Oo" ,"Pp"], ["Qq", "Rr", "Ss"], ["Tt", "Uu", "Vv", "Ww"], ["Xx", "Yy", "Zz"]]
@@ -7,6 +8,9 @@ const Alphabet = () => {
     <>
       <div className='menu'>
           <div className="menubar">The English Alphabet</div>  
+      </div>
+      <div className="alphabet-sticker-1">
+        <img src={Look} alt="sticker" />
       </div>
 
       <div className="alphcont">

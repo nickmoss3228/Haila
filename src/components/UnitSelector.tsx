@@ -21,7 +21,6 @@ const UnitSelector = ({ aspect, data, onChange, level }) => {
     return colorScheme[colorIndex];
   };
 
-
   const units = Object.keys(data);
 
   return (

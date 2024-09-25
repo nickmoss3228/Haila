@@ -1,10 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/List.css'
+import Himan from "../assets/stickers/hi-pepe.png"
+import Fish from "../assets/stickers/importantfish.png"
+import Peace from "../assets/stickers/peace.png"
 
 const List = () => {
   return (
     <div className='list'>
+        <div className="sticker-pos1">
+            <img src={Himan} alt="sticker" />
+        </div>
+        <div className="sticker-pos2">
+            <img src={Fish} alt="sticker" />
+        </div>
+        <div className="sticker-pos3">
+            <img src={Peace} alt="sticker" />
+        </div>
         <div className="gridlist">
             <div className="listgriditem">
                 <Link to="./alphabet">

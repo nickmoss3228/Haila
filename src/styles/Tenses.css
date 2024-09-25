@@ -56,6 +56,15 @@ img {
   cursor: pointer;
 }
 
+.sticker-tenses img {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  top: -30px;
+  right: 150px;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
 .grid-item:hover {
   box-shadow: 2px 4px rgba(1, 6, 11, 0.3),
 }
@@ -67,6 +76,13 @@ img {
 @media only screen and (max-width: 667px) {
   .grid-container {
     grid-template-columns: repeat(1, 1fr);
+  }
+  .menubartenses {
+    margin-top: 50px;
+    font-size: 32px;
+  }
+  .sticker-tenses {
+    display: none;
   }
   .tenses-main {
     margin-top: 20px;

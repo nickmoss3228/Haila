@@ -106,8 +106,7 @@
     .filterButton {
         background-color: white;
         border-radius: 6px;
-        /* min-width: 240px; */
-        width: fit-content;
+        min-width: 240px;
         min-height: 40px;
         cursor: pointer;  
         margin: 6px;  
@@ -119,6 +118,9 @@
         overflow: hidden;
     }
 
+    .verblist {
+        /* width: 380px; */
+    }
     .versions {
         display: flex;
         justify-content: space-around;

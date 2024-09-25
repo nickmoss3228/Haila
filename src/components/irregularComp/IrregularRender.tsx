@@ -1,6 +1,6 @@
 import React from 'react'
 
-const IrregularRender = ({verb,index,level}) => { 
+const IrregularRender = ({verb, index, level}) => { 
 
 const playVerb1 = () => {
   const verbSound = new Audio(`/irregulars/${verb.file1}.mp3`)

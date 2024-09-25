@@ -187,21 +187,35 @@
 }
 .vocabulary-aspect {
     background-color: #f8ef42;
-    background-image: linear-gradient(315deg, #f8ef42 0%, #109e3d 74%);
+    background-image: linear-gradient(315deg, #ede558 0%, #109e3d 74%);
 }
 .videolistening-aspect { 
     background-color: #5dd6d4;
-    background-image: linear-gradient(315deg, #72d7d7 0%, #2e3e5e 74%);
+    background-image: linear-gradient(315deg, hsl(180, 69%, 67%) 0%, #203153 60%);
 }
 .practical-aspect {
     background-color: #e79087;
-    background-image: linear-gradient(315deg, #d67f75 0%, #e7b75f 74%);
+    background-image: linear-gradient(315deg, hsl(6, 60%, 30%) 0%, #c59f58 74%);
 }
 .rac-aspect {
     background-color: #f8ef42;
     background-image: linear-gradient(315deg, #e3603f 0%, #342346 74%);
 }
+.workbook-aspect {
+    background-color: #0dd9e8;
+    background-image: linear-gradient(315deg, #d380c8 0%, #342346 74%);
+}
 
+.btn-unit-number {
+    width: 200px;
+    min-height: 80px;
+    max-height: 150px;
+}
+
+.audiolist-name {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
 
 
 @media only screen and (max-width: 667px) {
@@ -214,9 +228,10 @@
         opacity: 1;
     }
     .btn-unit-number {
-        width: 200px;
-        height: 50px;
+        width: 380px;
+        height: auto;
         font-family: inherit;
+        
     }
     .unitgrid {
         display: flex;
@@ -236,7 +251,6 @@
         margin-right: 0;
     }
 
-
     .level-container {
         height: auto;
         display: flex;
@@ -247,10 +261,24 @@
         margin-top: 50px;
     }
 
-    .aspect-select {
-        margin-top: 50px;
+    .unitselector {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .audiolist {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
+    .player {
+        position:absolute;
+        left: 0;
+        bottom: 0;
+    }
     .btn-back {
         margin-top: 80px;
     }
