@@ -14,6 +14,7 @@ import List from './pages/List.tsx'
 import Levels from './pages/Levels.tsx'
 import Aspects from './pages/Aspects.tsx'
 import GerundInfinitive from './pages/GerundInfinitive.tsx'
+import ScrollToTheTop from './components/ScrollToTheTop.tsx'
 // import AudioPlayer from './components/AudioPlayer.tsx'
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
     <AppContextProvider>
       <Router>
         <Navbar/>
+        <ScrollToTheTop />
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/List" element={<List/>} />

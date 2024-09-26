@@ -6,12 +6,32 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+*.mp4
 
 node_modules
 public
 dist
 dist-ssr
 *.local
+*.mp4
+public/Beginner/Video/Practical English/*.mp4
+public/Beginner/Video/Video Listening/*.mp4
+public/Beginner/Video/Revise And Check/*.mp4
+
+public/Elementary/Video/Practical English/*.mp4
+public/Elementary/Video/Video Listening/*.mp4
+public/Elementary/Video/Revise And Check/*.mp4
+
+public/Pre-Intermediate/Video/Practical English/*.mp4
+public/Pre-Intermediate/Video/Video Listening/*.mp4
+public/Pre-Intermediate/Video/Revise And Check/*.mp4
+
+public/Intermediate/Video/Practical English/*.mp4
+public/Intermediate/Video/Video Listening/*.mp4
+public/Intermediate/Video/Revise And Check/*.mp4
+
+public/Pre-Intermediate/Video
+public/Intermediate/Video
 
 # Editor directories and files
 .vscode/*
