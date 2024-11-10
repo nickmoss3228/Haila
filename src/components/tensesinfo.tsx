@@ -30,7 +30,7 @@ export const tensesInfo = [
         sentencesPos: "My friends always go out on Friday evening. She does housework every day.", 
         sentencesNeg:"They don’t watch TV. Peter doesn’t play videogames.",
         sentencesQuest:"Do you like watching TV? Does Sheila go to the park?", 
-        expressions: "Always,often,usually,sometimes,hardly ever,never,every day,every month,once a day,twice a year,three times a week"
+        expressions: "Always, often, usually, sometimes, hardly ever, never, every day"
     },
     {
         name: "Future Simple", 
@@ -40,26 +40,26 @@ export const tensesInfo = [
         sentencesPos: "I will go to the store later.", 
         sentencesNeg:"She won't read the book tonight.",
         sentencesQuest:"Will they finish their homework before dinner?", 
-        expressions: "next (week, month, year), tomorrow, in X's time (amount of time, i.e. two week's time), in year"
+        expressions: "next (week, month, year), tomorrow, in X's time (amount of time)"
     },
     {
         name: "Past Continuous", 
         useCase: "An action that is finished in the past and continued for some time.", 
         img: pastContinuousImg, 
         grammar: "was/were + Ving", 
-        sentencesPos: "He was eating lunch. I was studying English when my wife came home from work.", 
+        sentencesPos: "I was studying English when my wife came home from work.", 
         sentencesNeg:"They weren’t paying attention when the teacher asked them a question.",
         sentencesQuest:"Was she playing tennis yesterday at 2PM?", 
-        expressions: "When, While, As, All night yesterday,  This time yesterday, Yesterday evening"
+        expressions: "When, While, As, All night yesterday, This time yesterday, Yesterday evening"
     },
     {
         name: "Present Continuous", 
         useCase: "Now, at the moment, future arrangements", 
         img: presentContinuousImg, 
         grammar: "be + Ving", 
-        sentencesPos: "We’re watching TV at the moment. He’s staying with us today.", 
-        sentencesNeg:"My friends aren’t sleeping now. Sheila’s making a cake today.",
-        sentencesQuest:"Are you eating spaghetti? Is Gabriel planning to visit?", 
+        sentencesPos: "We’re watching TV at the moment. ", 
+        sentencesNeg:"Sheila’s making a cake today.",
+        sentencesQuest:"Is Gabriel planning to visit?", 
         expressions: "now, at the moment, today, this month, this year"
     },
     {
@@ -87,10 +87,10 @@ export const tensesInfo = [
         useCase: "Recent events, Past experiences, Unfinished actions", 
         img: presentPerfectImg, 
         grammar: "have/has + V3", 
-        sentencesPos: "I’ve finished my homework! He’s been to Italy 3 times", 
-        sentencesNeg:"She hasn’t read the book yet. We haven’t visited Eiffel tower.",
-        sentencesQuest:"Have they watched this new movie? Has he been to Spain?", 
-        expressions: "for/since, already (+), just (+), yet (-, ?)"
+        sentencesPos: "He’s been to Italy 3 times", 
+        sentencesNeg:"She hasn’t read the book yet.",
+        sentencesQuest:"Have they watched this new movie?", 
+        expressions: "for/since, already (+), just (+), yet (-, ?)" 
     },
     {
         name: "Future Perfect", 
@@ -107,10 +107,10 @@ export const tensesInfo = [
         useCase: "Something started in the past and continued up until a point in the past", 
         img: pastPerfectContImg, 
         grammar: "had been + Ving", 
-        sentencesPos: "I had been working on my computer for three hours when my boss called me.", 
+        sentencesPos: "I had been working on my computer for three hours.", 
         sentencesNeg:"He had not been playing tennis for one hour.",
         sentencesQuest:"How long had she been taking care of her sick uncle?", 
-        expressions: "since 2 o’clock, since last month, since 2001, before, till, until, all morning, the whole evening"
+        expressions: "since last month, before, until, all morning"
     },
     {
         name: "Present Perfect Continuous", 
@@ -127,8 +127,8 @@ export const tensesInfo = [
         useCase: "An action that will be continuing until a certain point of time in the future", 
         img: futurePerfectContImg, 
         grammar: "Will have been + Ving", 
-        sentencesPos: "I will have been working here for ten years when I retire. ", 
-        sentencesNeg:"We will not have been staying at home by the end of this year.",
+        sentencesPos: "I'll have been working here for ten years when I retire.", 
+        sentencesNeg:"We won't have been staying at home by the end of this year.",
         sentencesQuest:"Will they have been living in this house for 15 years?", 
-        expressions: "when, before, till, until all morning the whole evening, all-day, the whole day, all week"},
+        expressions: "when, before, till, until, all morning, the whole evening"},
 ]

@@ -1,6 +1,14 @@
 import React from 'react'
 
-const VowelRender = ({sound, index, file, example, letters}) => {
+interface VowelRenderProps {
+  letters: string;
+  sound: string;
+  index: number;
+  file: string;
+  example: string;
+}
+
+const VowelRender: React.FC<VowelRenderProps> = ({sound, index, file, example, letters}) => {
     const playVowel = () => {
         const vowelSound = new Audio(`/vowels/${file}.mp3`)
         console.log(vowelSound)
@@ -8,8 +16,6 @@ const VowelRender = ({sound, index, file, example, letters}) => {
     }
     console.log(example)
 
-
-    // renderColorVowels(example, neededVowels)
     const renderColorVowels = (text:string) => {
       return text.split('').map((char, index) => {
         if (letters.includes(char)) {

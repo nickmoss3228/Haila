@@ -1,6 +1,12 @@
 import React from 'react'
 
-const IrregularRender = ({verb, index, level}) => { 
+interface IrregularRenderProps {
+  verb: Verb;
+  index: number;
+  level: string;
+}
+
+const IrregularRender: React.FC<IrregularRenderProps> = ({verb, index})=> { 
 
 const playVerb1 = () => {
   const verbSound = new Audio(`/irregulars/${verb.file1}.mp3`)
@@ -20,9 +26,15 @@ const playVerb3 = () => {
 
   return (
     <div className="grid-container-irregular" key={index}> 
-      <div className='grid-item' onClick={playVerb1}>{verb.form1}</div> 
-      <div className='grid-item' onClick={playVerb2}>{verb.form2}</div> 
-      <div className='grid-item' onClick={playVerb3}>{verb.form3}</div>           
+      <div className='grid-item' onClick={playVerb1}>
+         <span className="verb-text">{verb.form1}</span>
+      </div> 
+      <div className='grid-item' onClick={playVerb2}>
+        <span className="verb-text">{verb.form2}</span>
+      </div> 
+      <div className='grid-item' onClick={playVerb3}>
+        <span className="verb-text">{verb.form3}</span>
+      </div>           
     </div> 
   )
 }

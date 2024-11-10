@@ -1,8 +1,13 @@
 import React from 'react'
 
-const Lettersub = ({letter, letterIndex}) => {
+interface LettersubProps {
+  letter: string;
+  letterIndex: number;
+}
 
-    const playAudio = () => {
+const Lettersub: React.FC<LettersubProps> = ({letter, letterIndex}) => {
+
+    const playAudio = (): void => {
         const Sound = new Audio(`/alphabet/${letter}.mp3`)
         console.log(Sound)
         Sound.play()    

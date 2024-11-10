@@ -85,11 +85,19 @@
     padding: 20px;
     animation: fadeIn 1s ease-in-out forwards;
     transition: all 0.1s ease;
-    
 }
-.grid-item:active {
+
+.verb-text {
+    display: inline-block;
+    transition: transform 0.1s ease;
+}
+
+.grid-item:active .verb-text {
+    transform: scale(0.9);
+}
+/* .grid-item:active {
     transform: scale(0.965);
-}
+} */
 
 @media only screen and (max-width: 667px) {
     .buttons {

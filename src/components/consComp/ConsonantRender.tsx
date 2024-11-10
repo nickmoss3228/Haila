@@ -1,6 +1,14 @@
 import React from 'react'
 
-const ConsonantRender = ({consonant, file, example, index, letters}) => {
+interface ConsonantRenderProps {
+  letters: string;
+  consonant: string;
+  file: string;
+  example: string;
+  index: number;
+}
+
+const ConsonantRender: React.FC<ConsonantRenderProps>  = ({consonant, file, example, index, letters}) => {
     const playCons = () => {
         const vowelSound = new Audio(`/consonants/${file}.mp3`)
         console.log(vowelSound)

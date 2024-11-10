@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-
 :root {
   --primarycolor: #f0f3ff;
   --secondarycolor: #f08a73;
@@ -23,7 +22,6 @@ html, body {
   animation: fadeIn 1s ease-in-out forwards;
 }
 
-
 @keyframes fadeIn {
   0% {
       opacity: 0;  /* Start state */
@@ -31,8 +29,6 @@ html, body {
   100% {
       opacity: 1;  /* End state */
   }
-
-  
 }
 
 @keyframes float {
@@ -46,12 +42,14 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 80vh;
+  min-height: 90vh;
   background-color: #f0f3ff;
   overflow: hidden;
 }
 
-.sticker-normal img {
+  /* Homepage */
+
+/* .sticker-normal img {
   width: 290px;
   height: 250px;
   position: absolute;
@@ -59,7 +57,6 @@ html, body {
   right: 100px;
   transform: rotate(15deg);
   animation: fadeIn 1s ease-in-out forwards;
-
 }
 
 .sticker-normal img:hover {
@@ -105,30 +102,7 @@ html, body {
 }
 .sticker-side3 img:hover {
   transform: scale(1.1);
-}
-
-.alphabet-sticker-1 img {
-  position: absolute;
-  width: 280px;
-  height: 300px;
-  transform: rotate(350deg);
-  left: 130px;
-  animation: fadeIn 1s ease-in-out forwards;
-}
-.alphabet-sticker-2 img {
-  position: absolute;
-  width: 300px;
-  height: 320px;
-  transform: rotate(330deg);
-  animation: fadeIn 1s ease-in-out forwards;
-}
-.alphabet-sticker-3 img {
-  position: absolute;
-  width: 300px;
-  height: 320px;
-  transform: rotate(330deg);
-  animation: fadeIn 1s ease-in-out forwards;
-}
+} */
 
 .homepage {
   background-color: white;
@@ -220,6 +194,8 @@ html, body {
   z-index: 2;
 }
 
+  /* Navbar */
+
  .navbar {
   align-items: flex-start;
   position: relative;
@@ -229,14 +205,6 @@ html, body {
   color: rgb(0, 0, 0);
   padding: 30px;  
 }
-.choose {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-family: Montserrat;
-  font-weight: 700;
-}
 
 .logo {
   position: relative;
@@ -244,6 +212,7 @@ html, body {
   background-color: var(--primarycolor);
 }
 
+  /* header */
 .menu {
   display: flex;
   background-color: transparent;
@@ -253,6 +222,7 @@ html, body {
   padding: 10px 0 0 0 ;
   animation: fadeIn 1s ease-in-out forwards;
 } 
+
  .barcont {
   display: flex;
   justify-content: center;
@@ -266,11 +236,6 @@ a {
 
 a:active {
   color: #FC6745;
-}
-
-.alphcont{
-  display: flex;
-  justify-content: center;
 }
 
 .filter {
@@ -311,43 +276,6 @@ a:active {
   cursor: pointer;
   font-family: Montserrat;
 }
-.alphabet {
-  color:white;
-  margin: auto;
-  justify-content: space-between;
-  animation: fadeIn 1s ease-in-out forwards;
-}
-
-.group {
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 36px;
-  border-radius: 5px;
-} 
-
-.letters {
-  background-color: rgb(246, 132, 101);
-  padding: 30px;
-  text-align: center;
-  cursor: pointer;
-  min-width: 50px;
-  box-shadow: 10px 6px 2px #1313131a;
-  border-radius: 60px;
-  margin-right: 3rem;
-  margin-bottom: 20px;
-  color: white;
-  transition: transform 0.1s ease-in-out;
-}
-
-.letters:active {
-  transform: scale(0.9);
-}
-
-.bottom {
-  height: 342px;
-  background-color: #FC6745;
-}
 
 .link {
   text-decoration: none;
@@ -379,9 +307,7 @@ a:active {
 .btn-unit-number:hover {
   background-color: #FC6745;
 }
-.btn-unit-number:active {
-  
-}
+
 .btn-unit-number::after {
   background-color: #FC6745
 }
@@ -392,7 +318,6 @@ a:active {
 }
 
 @media only screen and (max-width: 670px) {
-
   #root {
     background-color: var(--primarycolor);
   }
@@ -413,6 +338,7 @@ a:active {
   .homepage span {
     font-size: 28px;
   }
+
   .sticker-normal img, .sticker-side img, .sticker-side2 img, .sticker-side3 img, .alphabet-sticker-1 img, .alphabet-sticker-2 img, .alphabet-sticker-3 img {
     display: none;
   }
@@ -421,9 +347,7 @@ a:active {
     width: 80px;
     height: 80px;
   }
-  .background {
-    
-  }
+
   .menu {
     display: flex;
     flex-direction: row;
@@ -432,69 +356,43 @@ a:active {
   }
 
   .logo {
-    position: static; /* Remove relative positioning */
-    left: auto; /* Reset left property */
-    margin: 0 auto; /* Center horizontally */
-    display: block; /* Ensure it's a block-level element */
-    text-align: center; /* Center any text within the logo */
+    position: static; /* remove relative positioning */
+    left: auto; /* reset left property */
+    margin: 0 auto; /* center horizontally */
+    display: block; /* ensure it's a block-level element */
+    text-align: center; /* center any text within the logo */
   }
   .link {
     height: 30px;
     text-decoration: none;
     color: rgb(56, 56, 56);
   }
+
   .menu {
     width: 100%; /* Full width for the menu */
     justify-content: center; /* Center menu items */
     margin-top: 20px; /* Add some space between logo and menu */
   }
 
-  /* .letters {
-    padding: 20px;
-    font-size: 34px;  
-  } */
   .group {    
     display:flex;
     align-items: center;
     justify-content: center;
     font-size: 24px;
     border-radius: 15px;
-    /* margin: 10px; */
     
   }
   .menubar {
-    width: 300px;
+    width: 350px;
+    max-width: 370px;
     background-color: var(--primarycolor);
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
     font-size: 22px;
     font-family: Montserrat;
     text-align: center;
   }
-  .alphabet {
-    color:white;
-    /* margin: auto; */
-    justify-content: space-between;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    margin-top: 30px;
-  }
-  .letters {
-    background-color: rgb(246, 132, 101);
-    padding: 10px;
-    text-align: center;
-    cursor: pointer;
-    min-width: 50px;
-    min-height: 50px;
-    box-shadow: 4px 4px 1px #1313131a;
-    border-radius: 40px;
-    margin-right: 0.5rem;
-    margin-bottom: 30px; 
-    margin-top: 10px;   
-    font-size: 30px;
-  }
+
 }
 

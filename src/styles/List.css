@@ -6,8 +6,15 @@
     animation: fadeIn 1s ease-in-out forwards;
 }
 .choose {
-
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Montserrat;
+    font-weight: 700;
+    margin: 0   ;
+  }
+  
 .sticker-pos1 img{
     position: absolute;
     width: 210px;
@@ -83,7 +90,7 @@
     background-repeat: no-repeat;
 }
 
-.item-vowels {
+/* .item-vowels {
     background-image: url("../assets/newpics/vowprev.PNG");
     height: 100%;
     background-size: 530px;
@@ -95,19 +102,42 @@
     height: 100%;
     background-size: 510px; 
     background-position: center;
-}
+} */
 
-.item-audio {
+/* .item-audio {
     background-image: url("../assets/newpics/audioprev.png");
     height: 100%;
     background-position: left;
     background-size: 460px;
+} */
+
+.item-ger-inf {
+    background-image: url("../assets/newpics/gerundprev.PNG");
+    height: 100%;
+    background-size: 600px;
+}
+
+.item-phrasals {
+    background-image: url("../assets/newpics/phrasalsprev.PNG");
+    height: 100%;
+    background-position:center;
+    background-size: 500px;
+    background-repeat: no-repeat;
+}
+.item-player {
+    background-image: url("../assets/newpics/playerprev.PNG");
+    height: 100%;
+    background-position:left;
+    background-size: 550px;
+    background-repeat: no-repeat;
 }
 
 .item-irregulars {
     background-image: url("../assets/newpics/irregprev.PNG");
     height: 100%;
-    background-size: 900px;
+    background-position:top;
+    background-size: 950px;
+    background-repeat: no-repeat;
 }
 
 .main-component {
@@ -169,16 +199,11 @@
         display: none;
     }
 
-    .hidden-content {
-
-    }
-
     .listgriditem {
         width: 80%;
         height: 160px;
         background-color: rgb(247, 173, 167);
         margin: 10px;
-        /* margin-left: 0px; */
         position: relative;
         overflow: hidden;
         box-shadow: 10px 10px 30px 0px rgba(89, 89, 89, 0.7);

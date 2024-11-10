@@ -1,5 +1,14 @@
+interface Verb {
+    level: string;
+    form1: string;
+    form2: string;
+    form3: string;
+    file1: string;
+    file2: string;
+    file3: string;
+}
 
-export const verbList = [
+export const verbList:Verb[] = [
     {
         level:"Beginner, Elementary, Pre-Intermediate, Intermediate",
         form1:"be",
@@ -50,7 +59,7 @@ export const verbList = [
         form1:"bet",
         form2:"bet",
         form3:"bet",
-        file1:"bet1",
+        file1:"bet",
         file2:"bet2",
         file3:"bet3",
     },
@@ -419,7 +428,7 @@ export const verbList = [
         form1:"hurt",
         form2:"hurt",
         form3:"hurt",
-        file1:"hurt1",
+        file1:"hurt",
         file2:"hurt2",
         file3:"hurt3",
     },

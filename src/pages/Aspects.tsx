@@ -6,7 +6,7 @@ const Aspects = () => {
     const { level } = useParams();
     const navigate = useNavigate();
 
-    const handleAspectSelect = (aspect) => {
+    const handleAspectSelect = (aspect: string) => {
         navigate(`/units/${level}/${aspect}`);
     };
 

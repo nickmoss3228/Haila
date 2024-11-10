@@ -4,8 +4,6 @@ export const AppContext = createContext(null);
 
 export const AppContextProvider = (props: any) => {
 
-
-
     const contextValue = {
         // toggleModal,
         // activeModal,

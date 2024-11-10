@@ -2,10 +2,20 @@ import React, {useState} from 'react'
 import "../styles/Tenses.css"
 import { tensesInfo } from '../components/tensesinfo'
 import Modal from '../components/Modal'
-import Verbforms from "../assets/stickers/verbforms.png"
+
+interface TenseData {
+  name: string;
+  useCase: string;
+  img: string;
+  grammar: string;
+  sentencesPos: string;
+  sentencesNeg: string;
+  sentencesQuest: string;
+  expressions: string;
+}
 
 const Tenses = () => {
-  const [currentTense, setCurrentTense] = useState(null);
+  const [currentTense, setCurrentTense] = useState<TenseData | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
 
   console.log(modalOpen)
@@ -28,10 +38,6 @@ const Tenses = () => {
             English Tenses        
         </div>
     </div>
-    <div className="sticker-tenses">
-        <img src={Verbforms} alt="sticker" />
-    </div>
-
 
     <div className='tenses-main'>
         <div className="grid-container">
@@ -45,11 +51,11 @@ const Tenses = () => {
                     <img src={tense.img} alt="" className="image"/>
                     </div>
                 })}
-            {modalOpen && (
+            {modalOpen && currentTense && (
                 <Modal tense={currentTense} onClose={closeModal} />
             )}
+            </div>
         </div>
-    </div>
     </div>
   )
 }

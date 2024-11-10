@@ -12,7 +12,7 @@
   place-items: center;
   width: 60%;
   animation: fadeIn 1s ease-in-out forwards;
-  margin-top: 60px
+  margin-top: 6 0px
 }
 
 .accent {
@@ -20,9 +20,10 @@
 }
 
 .card {
-  height: 190px;
-  width: 450px;
+  height: 140px;
+  width: 350px;
   background-color: #ffefbe;
+  /* background-color: #c4f6f2; */
   justify-content: center;
   align-items: center;
   padding: 10px;
@@ -57,8 +58,8 @@
 }
 
 .example {
-  background-color: rgb(254, 197, 178);
-  min-width: 400px;
+  background-color: rgb(249, 215, 203);
+  min-width: 300px;
   text-align: center;
   font-size: 20px;
   border-radius: 6px;
@@ -73,7 +74,7 @@
   }
   .card {
     height: 140px;
-    width: 320px;
+    width: 300px;
     background-color: #ffefbe;
     justify-content: center;
     align-items: center;
@@ -83,21 +84,23 @@
     flex-direction: column;
     border-radius: 10px;
     font-family: inherit;
+    vertical-align: top;
 
   }
   
   .sound {
     background-color: rgb(134, 199, 65);
     border-radius: 7px;
-    min-width: 60px;
-    height: 60px;
+    min-width: 70px;
+    min-height: 60px;
     text-align: center;
-    font-size: 20px;
+    font-size: 24px;
     justify-content: center;
     align-items: center;
     display: flex;
     color: white;
     font-size: 26px;
+    margin-top: 10px;
   }
   
   .example {
@@ -109,83 +112,3 @@
     margin-top: 30px;
   } 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* table, th, tr  {
-  display: relative;
-  border: none;
-  width: 80%;
-  height: auto;
-  position: relative
-} */
-
-/* td {
-  justify-content: center;
-  border: 1px solid black;
-  align-items: center;
-  text-align: center;
-  padding: 1rem;
-  border-collapse: collapse;
-  border-top: 1px solid black;
-}
-
-.noBorder {
-  border:none;
-} */
-
-/* .leftCorner{
-  border-left: none;
-  border-top: none;
-}
-
-.rightCorner {
-  border-right: none;
-  border-top: none;
-} */
-
-/* .leftBottomCorner {
-  border-left: none;
-  border-bottom: none;
-}
-
-.rightBottomCorner{
-  border-right: none;
-  border-bottom: none;
-} */
-/* 
-.tables {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 102vh;
-  width: 100%;
-} */
-
-/* .vowelSounds {
-  background-color: white;
-  margin-right: 80px;
-  border-radius: 50px;
-} */
-/* 
-.diphthongs {
-  background-color: white;
-  border-radius: 50px;
-}  */

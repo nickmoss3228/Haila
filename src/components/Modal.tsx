@@ -1,8 +1,23 @@
 import React from 'react'
 import "../styles/Modal.css"
 
-const Modal = ({tense, onClose}) => {
+interface TenseData {
+    name: string,
+    useCase: string,
+    img: string,
+    grammar: string,
+    sentencesPos: string,
+    sentencesNeg: string,
+    sentencesQuest: string,
+    expressions: string,
+}
 
+interface ModalProps {
+    tense: TenseData,
+    onClose: () => void,
+}
+
+const Modal:React.FC<ModalProps> = ({tense, onClose}) => {
 
   return (
     <div className='modal-backdrop'>

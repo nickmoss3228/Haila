@@ -3,10 +3,27 @@ import { verbList } from '../components/verbsList'
 import "../styles/Irregulars.css"
 import IrregularRender from '../components/irregularComp/IrregularRender'
 
-const Irregulars = () => {
+interface Verb {
+    level: string;
+    form1: string;
+    form2: string;
+    form3: string;
+    file1: string;
+    file2: string;
+    file3: string;
+}
+
+type LevelStyles = {
+    [key:string]: {
+        backgroundColor: string;
+        color: string;
+    }
+}
+
+const Irregulars: React.FC = () => {
     const [selectedLevels, setSelectedLevels] = useState<string[]>([])
     console.log(selectedLevels) 
-    const [filteredVerbs, setFilteredVerbs] = useState(verbList);
+    const [filteredVerbs, setFilteredVerbs] = useState<Verb[]>(verbList);
     console.log(filteredVerbs)
 
     useEffect(() => {
@@ -28,15 +45,15 @@ const Irregulars = () => {
         console.log(level)
     };
 
-    const getButtonStyle = (level:any) => {
+    const getButtonStyle = (level:string): React.CSSProperties => {
         if (!selectedLevels.includes(level)) return {};
-        const styles = {
+        const styles: LevelStyles = {
           Beginner: { backgroundColor: '#9f43ce', color: "white" },
           Elementary: { backgroundColor: '#eb1a1a', color: "white" },
           'Pre-Intermediate': { backgroundColor: '#5457f1', color: "white" },
           Intermediate: { backgroundColor: '#47d826', color: "white" }
         }
-        return styles[level];
+        return styles[level] || {};
       };
 
   return (
@@ -69,6 +86,7 @@ const Irregulars = () => {
         <div className='verblist'>
             {filteredVerbs.map((verb, index) => (
                 <IrregularRender 
+                    key={index}
                     verb={verb}
                     index={index}
                     level={verb.level}

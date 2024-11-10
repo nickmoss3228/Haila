@@ -4,8 +4,7 @@ import styles from "../styles/Repetition.module.css"
 import { IoPlay } from "react-icons/io5";
 import { IoPause } from "react-icons/io5";
 
-
-const Repetition = ({audio}) => {
+const Repetition = () => {
     // state
     const [isPlaying, setIsPlaying] = useState(false)
     const [duration, setDuration] = useState<number>(0);
@@ -87,7 +86,7 @@ const Repetition = ({audio}) => {
   return (
     <div className={styles.main}>
         <div className={styles.audioPlayer}>
-            <audio ref={audioPlayer} src={audio}/>
+            <audio ref={audioPlayer} src={BoysGirls}/>
 
             <button onClick={handlePlayPause} className={styles.playPause}>
                 {isPlaying ? <IoPause className={styles.pause} /> : <IoPlay className={styles.play} />}
@@ -100,14 +99,12 @@ const Repetition = ({audio}) => {
             <div>   
                 <input type="range" className={styles.progressBar} defaultValue="0" ref={progressBar} onChange={changeRange}/>
             </div>
-     
 
             {/* duration */}
             <div className={styles.duration}>{(duration && !isNaN(duration)) && calculateTime(duration)}</div>
 
         </div>
     </div>
-    
   )
 }
 

@@ -1,0 +1,256 @@
+/* Base styles (same as before) */
+table {
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.gerundInfinitive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 100%; */
+  padding: 10px;
+}
+
+.verbItem {
+  font-size: 16px;
+  animation: fadeIn 0.3s ease-in-out forwards;
+  transition: all 0.1s ease;
+  font-family: Montserrat;
+  color: black;
+  font-size: 24px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.gridContainerGerund {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 70%;
+  height: 100%;
+  padding: 0px;
+  animation: fadeIn 0.3s ease-in-out forwards;
+  gap: 15px;
+}
+
+.gridItemGerund {
+  padding: 20px;
+  animation: fadeIn 0.3s ease-in-out forwards;
+  transition: all 0.1s ease;
+  text-align: center;
+  font-size: 32px;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out forwards;
+  transition: all 0.3s ease;
+}
+
+.modalContent {
+  background-color: white;
+  padding: 20px;
+  position: relative;
+  border-radius: 5px;
+  max-width: 500px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in-out forwards;
+  font-size: 21px;
+  position: relative;
+}
+
+.modalContent h2 {
+  margin-top: 0;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.closeButton::before,
+.closeButton::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #0c0c0c;
+  transition: all 0.3s ease;
+}
+
+.closeButton::before {
+  transform: rotate(45deg);
+}
+
+.closeButton::after {
+  transform: rotate(-45deg);
+}
+
+.closeButton:hover::before,
+.closeButton:hover::after {
+  background-color: #ccc;
+}
+
+.categoryHeader {
+  cursor: pointer;
+  transition: color 0.3s ease;
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+.categoryHeader:hover {
+  color: #6032de;
+}
+
+.categoryDescription {
+  font-style: italic;
+  margin-bottom: 15px;
+  color: #666;
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+.verbName {
+  font-size: 48px;
+  text-align: center;
+  margin: 15px 0;
+}
+
+.translation {
+  margin: 10px 0;
+}
+
+.details {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.meaning-gerinf {
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+}
+.example-gerinf {
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
+}
+
+  /* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .gridContainerGerund {
+      grid-template-columns: repeat(3, 1fr);
+      width: 100%;
+      padding: 10px;
+      gap: 0px;
+  }
+
+  .gridItemGerund {
+      padding: 10px;
+      font-size: 24px;
+  }
+
+  .verbItem {
+      font-size: 18px;
+      padding: 8px;
+      margin: 5px 0;
+      width: 90px;
+  }
+
+  .modalContent {
+      width: 95%;
+      padding: 15px;
+      margin: 10px;
+      font-size: 16px;
+      max-height: 90vh;
+      overflow-y: auto;
+  }
+
+  .verbName {
+      font-size: 32px;
+  }
+
+  .buttonClose {
+      padding: 6px 12px;
+      font-size: 14px;
+  }
+
+  .categoryHeader {
+      font-size: 24px;
+      margin: 10px 0;
+  }
+
+  .details {
+      font-size: 16px;
+  }
+}
+
+/* Small Mobile Styles */
+@media screen and (max-width: 480px) {
+  .gridItemGerund {
+      padding: 5px;
+      font-size: 20px;
+  }
+
+  .verbItem {
+      font-size: 16px;
+      padding: 6px;
+  }
+
+  .modalContent {
+      padding: 10px;
+      font-size: 14px;
+  }
+
+  .verbName {
+      font-size: 28px;
+  }
+
+  .categoryHeader {
+      font-size: 22px;
+  }
+
+  .buttonClose {
+      padding: 5px 10px;
+      font-size: 12px;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}

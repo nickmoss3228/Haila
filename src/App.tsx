@@ -1,21 +1,16 @@
 import './App.css'
-import Cons from './pages/Cons.tsx'
-import Vowels from './pages/Vowels.tsx'
 import Home from './pages/Home'
 import Navbar from './components/Navbar.tsx'
 import Tenses from './pages/Tenses.tsx'
 import Irregulars from './pages/Irregulars.tsx'
-import Phrasals from './pages/Phrasals.tsx'
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import {AppContextProvider} from "./context/context.tsx"
-import Repetition from './components/Repetition.tsx'
-import Alphabet from './pages/Alphabet.tsx'
 import List from './pages/List.tsx'
-import Levels from './pages/Levels.tsx'
-import Aspects from './pages/Aspects.tsx'
-import GerundInfinitive from './pages/GerundInfinitive.tsx'
+import Sounds from "./pages/Sounds.tsx"
 import ScrollToTheTop from './components/ScrollToTheTop.tsx'
-// import AudioPlayer from './components/AudioPlayer.tsx'
+import Phrasals from './pages/Phrasals.tsx'
+import GerundInfinitive from './pages/GerundInfinitive.tsx'
+import Player from './pages/Player.tsx'
 
 function App() {
   return (
@@ -26,17 +21,13 @@ function App() {
         <ScrollToTheTop />
         <Routes>
           <Route path="/" element={<Home/>} />
-          <Route path="/List" element={<List/>} />
-          <Route path="/List/gerundinfinitive" element={<GerundInfinitive/>} />
-          <Route path="/List/alphabet" element={<Alphabet/>} /> 
-          <Route path="/List/levels" element={<Levels/>} />
-          <Route path="/List/vowels" element={<Vowels/>} />
-          <Route path="/List/cons" element={<Cons/>} />
-          <Route path="/List/tenses" element={<Tenses/>}/>
-          <Route path="/List/irregulars" element={<Irregulars/>}/>
-          <Route path="/List/phrasals" element={<Phrasals/>}/>
-          <Route path="/List/repetition" element={<Repetition/>}/>
-          <Route path="/List/levels/aspects" element={<Aspects/>}/>
+          <Route path="/list" element={<List/>} />
+          <Route path="/list/sounds" element={<Sounds/>} /> 
+          <Route path="/list/tenses" element={<Tenses/>}/>
+          <Route path="/list/irregulars" element={<Irregulars/>}/>
+          <Route path="/list/phrasals" element={<Phrasals/>}/>
+          <Route path="/list/gerundinfinitive" element={<GerundInfinitive/>} />
+          <Route path="/list/player" element={<Player/>}/>
         </Routes>
       </Router>
     </AppContextProvider>
@@ -44,3 +35,6 @@ function App() {
   )
 }
 export default App
+
+          {/* <Route path="/List/levels" element={<Levels/>} /> */}
+          {/* <Route path="/List/repetition" element={<Repetition/>}/> */}

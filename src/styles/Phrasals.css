@@ -1,0 +1,381 @@
+.phrasalverbs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:flex-start;
+
+}
+.prepositions {
+    padding: 10px;
+    margin-right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.phrasals-modal-overlay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.phrasals-modal-content {
+    background: inherit;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+    display: flex;
+    width: 900px;
+    min-height: 710px;
+    /* max-width: 830px;
+    max-height: 600px; */
+    font-size: 24px;
+    animation: fadeIn 0.4s ease-in-out forwards;
+}
+.phrasals-close-button {
+  padding: 10px;
+  font-size: 30px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+.preposition {
+    font-size:60px;
+}
+.meaning {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: auto;
+    height: 200px;
+}
+
+.meaning-title {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease;
+  }
+  
+  .meaning-title:hover {
+    background-color: #e9e9e9;
+  }
+  
+  .meaning-title.expanded {
+    background-color: #e0e0e0;
+    margin-bottom: 0;
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .meaning-text {
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .expand-icon {
+    font-size: 20px;
+    color: #666;
+    width: 20px;
+    text-align: center;
+  }
+  
+  .examples-container {
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    margin-bottom: 5px;
+  }
+  
+  .example {
+    margin-bottom: 15px;
+  }
+  
+  .example strong {
+    color: #2c5282;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .example p {
+    color: #4a5568;
+    margin: 0;
+  }
+
+  .precise-meanings{
+    display: flex;
+  }
+
+  .phrasals-modal-content {
+    padding: 20px;
+  }
+  
+  .example-display {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .selected-verb {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    text-align: center;
+  }
+  
+  .selected-sentence {
+    color: #555;
+    text-align: center;
+  }
+  
+  .precise-meanings {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+    /* overflow-x: scroll; */
+    width: 1400px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .meaning-button {
+    padding: 5px 15px;
+    background-color: #fffbf0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    height: 100px;
+    text-align: center;
+    text-overflow:clip;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+  }
+  
+  .meaning-button:hover {
+    background-color: #f3e9ce;
+  }
+
+  .meaning-button.active {
+    background-color: #d5c598;
+  }
+  
+  .meaning-text {
+    display: block;
+  }
+
+  .verb-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .verb-button {
+    padding: 8px 16px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .verb-button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .verb-button.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .selected-meaning {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    text-align: center;
+  }
+  
+  .selected-sentence {
+    color: #666;
+    font-style: italic;
+    text-align: center;
+  }
+  .selected-translation {
+    font-size: 18px;
+    font-style: italic;
+    text-align: center;
+  }
+
+/* Tablet/Medium Mobile Styles */
+@media screen and (max-width: 768px) {
+  .phrasalverbs {
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .prepositions {
+    font-size: 24px;
+    margin-right: 10px;
+    padding: 8px;
+  }
+
+  .phrasals-modal-content {
+    width: 90%;
+    min-height: auto;
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .phrasals-close-button {
+    right: 20px;
+    top: 20px;
+  }
+
+  .preposition {
+    font-size: 40px;
+  }
+
+  .meaning {
+    height: auto;
+    padding: 10px;
+  }
+
+  .precise-meanings {
+    width: 100%;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .meaning-button {
+    width: 100%;
+    height: auto;
+    min-height: 60px;
+    padding: 10px;
+  }
+
+  .verb-list {
+    justify-content: center;
+  }
+
+  .verb-button {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .selected-meaning {
+    font-size: 24px;
+  }
+
+  .selected-translation {
+    font-size: 14px;
+  }
+}
+
+/* Small Mobile Styles */
+@media screen and (max-width: 480px) {
+  .phrasalverbs {
+    padding: 5px;
+    gap: 5px;
+  }
+
+  .prepositions {
+    font-size: 16px;
+    margin-right: 5px;
+    padding: 6px;
+  }
+
+  .phrasals-modal-content {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .preposition {
+    font-size: 40px;
+    margin: 0;
+  }
+
+  .meaning-title {
+    padding: 8px;
+  }
+
+  .examples-container {
+    padding: 10px;
+  }
+
+  .example {
+    margin-bottom: 10px;
+  }
+
+  .example strong {
+    font-size: 14px;
+  }
+
+  .example p {
+    font-size: 14px;
+  }
+
+  .meaning-button {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .verb-button {
+    padding: 5px 10px;
+    font-size: 18px;
+  }
+
+  .selected-meaning {
+    font-size: 20px;
+  }
+  .selected-sentence{
+    font-size: 16px;
+  }
+
+  .selected-translation {
+    font-size: 12px;
+  }
+
+  .meaning-text {
+    font-size: 14px;
+  }
+}
+
+/* Additional optimization for very small screens */
+@media screen and (max-width: 320px) {
+  .prepositions {
+    font-size: 14px;
+    padding: 4px;
+  }
+
+  .preposition {
+    font-size: 28px;
+  }
+
+  .meaning-button {
+    font-size: 12px;
+  }
+
+  .selected-translation {
+    font-size: 11px;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}

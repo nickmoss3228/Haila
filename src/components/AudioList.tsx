@@ -5,16 +5,9 @@ import 'react-h5-audio-player/lib/styles.css';
 const AudioList = ({ aspect, unit, data, level}) => {
 
   const audioNumbers = data[unit];
-  // console.log(audioNumbers)
-  // const aspectshow = aspect;
-  // console.log(aspectshow)
 
   const [currentMedia, setCurrentMedia] = useState({ audio: null, video: null, workbook: null});
   const [activePlayer, setActivePlayer] = useState(null); // 'audio' or 'video'
-
-  // const [currentStudentsBookAudio, setCurrentAudio] = useState({audio: null})
-  // const [currentWorkBookAudio, setCurrentWorkBookAudio] = useState({WBaudio: null})
-  // const [currentVideo, setCurrentVideo] = useState({video: null})
 
   useEffect(() => {
     console.log("Current media state:", currentMedia);
@@ -52,8 +45,8 @@ const AudioList = ({ aspect, unit, data, level}) => {
   
   return (
     <div className='audiolist-render'>
-    <div className='audiolist-name'>{aspect} - {unit}</div>
-    <ul className='audios'>
+      <div className='audiolist-name'>{unit}</div>
+      <ul className='audios'>
       {audioNumbers.split(', ').map(mediaNumber => (
         <button
           key={mediaNumber}
@@ -63,8 +56,8 @@ const AudioList = ({ aspect, unit, data, level}) => {
           {mediaNumber}
         </button>
       ))}
-    </ul>
-    <div className="media-player-container">
+      </ul>
+      <div className="media-player-container">
       {activePlayer === 'audio' && currentMedia.audio && (
         <AudioPlayer
           src={currentMedia.audio}
@@ -78,7 +71,7 @@ const AudioList = ({ aspect, unit, data, level}) => {
           src={currentMedia.workbook}
           onPlay={e => console.log("onPlay workbook")}
           style={{ height: "120px" }}
-          className='player'
+          className='audio-player'
         />
       )}
       {activePlayer === 'video' && currentMedia.video && (
