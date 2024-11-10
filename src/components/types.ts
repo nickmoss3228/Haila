@@ -24,6 +24,41 @@ export interface WaveformPlayerProps {
       color: string;
     }[];
   }
+
+ export interface Meaning {
+    meaning: string;
+    example: string;
+    translation: string;
+  }
+  
+  export interface VerbData {
+    verb: string;
+    meanings: Meaning[];
+  }
+  
+  export interface PhrasalData {
+    mainMeaning?: string;
+    verbs: VerbData[];
+  }
+  
+  export interface PhrasalVerbData extends Array<PhrasalData> {}
+  
+  export interface PhrasalsModelProps {
+    isOpen: boolean;
+    onClose: () => void;
+    preposition: string;
+    data: PhrasalVerbData | null;
+  }
+
+  export interface PhrasalVerbsType {
+  [key: string]: PhrasalVerbData[];
+}
+  
+export interface SelectedExamples {
+    meanings: string[];
+    examples: string[];
+    translations: string[];
+  }
   
   export interface PlayerProps {
     // Add any props if needed

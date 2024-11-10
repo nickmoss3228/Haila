@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react'
+import { PhrasalsModelProps, SelectedExamples} from '../components/types'
 
-const PhrasalsModel = ({ isOpen, onClose, preposition, data }) => {
+
+const PhrasalsModel: React.FC<PhrasalsModelProps> = ({ isOpen, onClose, preposition, data }) => {
   if (!isOpen || !data) return null;
 
-  const [selectedExamples, setSelectedExamples] = useState({
+  const [selectedExamples, setSelectedExamples] = useState<SelectedExamples>({
     meanings: ['Click on a verb below to see its meaning.'],
     examples: ['Example sentence will appear here.'],
     translations: ['Translation will appear here.']
   });
 
-  const [activeVerb, setActiveVerb] = useState(null);
+  const [activeVerb, setActiveVerb] = useState<string | null>(null);
 
   useEffect(() => {
     if (!isOpen) {
@@ -22,9 +24,7 @@ const PhrasalsModel = ({ isOpen, onClose, preposition, data }) => {
     }
   }, [isOpen, preposition]);
 
-  const mainMeaning = data[0].mainMeaning;
-
-  const handleVerbClick = (verb) => {
+  const handleVerbClick = (verb: string): void => {
     const verbData = data[0].verbs.find(v => v.verb === verb);
     if (verbData) {
       setSelectedExamples({
@@ -36,7 +36,7 @@ const PhrasalsModel = ({ isOpen, onClose, preposition, data }) => {
     }
   };
 
-  const handleClose = () => {
+  const handleClose = (): void => {
     setSelectedExamples({
       meanings: ['Click on a verb below to see its meaning.'],
       examples: ['Example sentence will appear here.'],
@@ -49,9 +49,8 @@ const PhrasalsModel = ({ isOpen, onClose, preposition, data }) => {
   return (
     <div className="phrasals-modal-overlay">
       <div className="phrasals-modal-content">
-      <span className="phrasals-close-button" onClick={handleClose}>&times;</span>
+        <span className="phrasals-close-button" onClick={handleClose}>&times;</span>
         <h3 className='preposition'>{preposition}</h3>
-        {/* <h4 className='main-meaning'>{mainMeaning}</h4> */}
 
         <div className='example-display'>
           {selectedExamples.meanings.map((meaning, index) => (

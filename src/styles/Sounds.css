@@ -4,6 +4,7 @@
     align-items: center;
     padding: 20px;
     animation: fadeIn 1s ease-in-out forwards;
+    animation: fadeIn 1s ease-in-out forwards;
 }
 
 .button-container button {
@@ -22,6 +23,7 @@
 .alphcont{
     display: flex;
     justify-content: center;
+    animation: fadeIn 1s ease-in-out forwards;
   }
   .alphabet {
     color:white;
@@ -100,4 +102,13 @@
   .alphcont{
     margin: 0px;
   }
+  }
+
+  @keyframes fadeIn {
+    0% {
+        opacity: 0;  /* Start state */
+    }
+    100% {
+        opacity: 1;  /* End state */
+    }
   }
