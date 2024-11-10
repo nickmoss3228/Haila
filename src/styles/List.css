@@ -218,17 +218,17 @@
         font-size: 20px;
         background-size: 350px;
     }
-    .item-vowels {
+    .item-player {
+        font-size: 20px;
+        background-size: 390px;
+    }
+    .item-ger-inf {
         font-size: 20px;
         background-size: 350px;
     }
-    .item-cons {
+    .item-phrasals {
         font-size: 20px;
         background-size: 350px;
-    }
-    .item-audio {
-        font-size: 20px;
-        background-size: 290px;
     }
     .item-irregulars {
         font-size: 20px;
