@@ -1,3 +1,5 @@
+import WaveSurfer from 'wavesurfer.js';
+
 // types.ts
 export interface Subtitle {
     startTime: number;
@@ -23,7 +25,15 @@ export interface WaveformPlayerProps {
       label: string;
       color: string;
     }[];
+    onWavesurferMount: (wavesurfer: WaveSurfer) => void;
   }
+
+  export interface QuizQuestion {
+  question: string;
+  options: string[];
+  correctAnswer: number;
+  referenceTime: number;
+}
 
  export interface Meaning {
     meaning: string;

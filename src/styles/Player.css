@@ -2,15 +2,55 @@
   position: relative;
   width: 100%;
   max-width: 1200px;
-  height: 300px;
+  height: 380px;
   margin: 20px auto;
   padding: 20px;
   border: 2px solid #ddd;
   border-radius: 15px;
-  background-color:#f5f5f5;
+  background-color: #f5f5f5;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   animation: fadeIn 1s ease-in-out forwards;
+}
+
+.quiz-toggle-button {
+  padding: 20px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s;
+  position: absolute;
+  top: 500px;
+  left: 100px;
+  font-family: inherit;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.quiz-toggle-button:hover {
+  background-color: #45a049;
+}
+.track-selector {
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.track-selector select {
+  margin-left: 10px;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+.track-selector label {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: inherit;
 }
 
 @media only screen and (max-width: 670px) {

@@ -6,31 +6,46 @@ import { FaVolumeMute } from "react-icons/fa";
 import { IoPause, IoPlay, IoRepeat, IoArrowForward } from 'react-icons/io5';
 import { WaveformPlayerProps } from './types';
 
+import { useAppSelector, useAppDispatch } from '../hooks/hooks';
+import { 
+  setCurrentMarkerIndex,
+  setIsPlaying,
+  setVolume,
+  setIsMuted,
+  setPlaybackRate,
+  setSubtitlesVisible,
+  setIsPlayMode,
+  setCurrentTime,
+  setDurationSeconds,
+  setDuration,
+  setActiveSubtitle
+} from '../features/playerslice';
+
 // Types and Interfaces
 interface WaveSurferRef {
   current: WaveSurfer | null;
 }
 
-interface StyledComponentProps {
-  visible?: boolean;
-  active?: boolean;
-  position?: number;
-  color?: string;
+// Type definitions for styled components props
+interface SpeedButtonProps {
+  $active: boolean; // $-prefix to avoid DOM attribute warnings
 }
 
-// interface MarkerTimes {
-//   start: number;
-//   end: number;
-// }
+interface SubtitlesContainterProps {
+  $visible:boolean;
+}
 
-// interface StyledProps {
-//   position?: number;
-//   color?: string;
-//   visible?: boolean;
-//   active?: boolean;
-// }
+interface SubtitlesButtonProps {
+  $active: boolean;
+}
 
+interface PlayModeToggleProps {
+  $active: boolean;
+}
 
+interface WaveSurferRef {
+  current: WaveSurfer | null;
+}
 
 const formatTime = (time:number) => {
   if (!isFinite(time)) return "0:00";
@@ -236,19 +251,19 @@ const SpeedControls = styled.div`
   }
 `;
 
-const SpeedButton = styled.button<StyledComponentProps>`
+const SpeedButton = styled.button<SpeedButtonProps>`
   padding: 6px 12px;
   border-radius: 4px;
   border: 1px solid #4CAF50;
-  background-color: ${props => props.active ? '#4CAF50' : 'white'};
-  color: ${props => props.active ? 'white' : '#4CAF50'};
+  background-color: ${props => props.$active ? '#4CAF50' : 'white'};
+  color: ${props => props.$active ? 'white' : '#4CAF50'};
   cursor: pointer;
   font-size: 12px;
   transition: all 0.2s;
   font-family: inherit;
 
   &:hover {
-    background-color: ${props => props.active ? '#4CAF50' : '#4CAF50'};
+    background-color: ${props => props.$active ? '#4CAF50' : '#4CAF50'};
   }
 
    @media (max-width: 768px) {
@@ -257,16 +272,21 @@ const SpeedButton = styled.button<StyledComponentProps>`
   }
 `;
 
-const SubtitlesContainer = styled.div<StyledComponentProps>`
+const SubtitlesContainer = styled.div<SubtitlesContainterProps>`
+  position: absolute; // Add this
+  left: 50%; // Add this
+  transform: translateX(-50%); // Add this
+  width: 90%; // Add this to control the width
   margin-top: 20px;
   padding: 10px;
-  height: 50px
+  height: 50px;
   background: #f5f5f5;
   border-radius: 4px;
   text-align: center;
-  display: ${props => props.visible ? 'block' : 'none'};
-
-    @media (max-width: 768px) {
+  display: ${props => props.$visible ? 'block' : 'none'};
+  z-index: 10; // Add this to ensure it appears above other elements
+  
+  @media (max-width: 768px) {
     margin-top: 10px;
     height: 40px;
   }
@@ -287,9 +307,9 @@ const SubtitleText = styled.p`
   }
 `;
 
-const SubtitlesButton = styled.button<StyledComponentProps>`
-  background: ${props => props.active ? '#4CAF50' : '#f5f5f5'};
-  color: ${props => props.active ? 'white' : '#333'};
+const SubtitlesButton = styled.button<SubtitlesButtonProps>`
+  background: ${props => props.$active ? '#4CAF50' : '#f5f5f5'};
+  color: ${props => props.$active ? 'white' : '#333'};
   border: 1px solid #ddd;
   padding: 8px 12px;
   border-radius: 4px;
@@ -297,12 +317,13 @@ const SubtitlesButton = styled.button<StyledComponentProps>`
   font-size: 14px;
   transition: all 0.2s ease;
   display: flex;
-  align-items: center;
+  align-items: center;  
   gap: 5px;
   margin-left: 10px;
+  font-family:inherit;
 
   &:hover {
-    background: ${props => props.active ? '#45a049' : '#e0e0e0'};
+    background: ${props => props.$active ? '#45a049' : '#e0e0e0'};
   }
 `;
 
@@ -315,9 +336,9 @@ const TimeMarkersContainer = styled.div`
   bottom: 0;
 `;
 
-const TimeMarkerLine = styled.div<{ position: number; color?: string }>`
+const TimeMarkerLine = styled.div<{ $position: number; color?: string }>`
   position: absolute;
-  left: ${props => props.position}%;
+  left: ${props => props.$position}%;
   top: 0;
   bottom: 0;
   width: 2px;
@@ -358,8 +379,8 @@ const PlayModeContainer = styled.div`
   }
 `;
 
-const PlayModeToggle = styled.button<StyledComponentProps>`
-  background: ${props => props.isActive ? '#4CAF50' : '#ccc'};
+const PlayModeToggle = styled.button<PlayModeToggleProps>`
+  background: ${props => props.$active ? '#4CAF50' : '#ccc'};
   color: white;
   border: none;
   border-radius: 20px;
@@ -415,29 +436,33 @@ const NavButton = styled.button`
   }
 `;  
 
-const WaveformPlayer: React.FC<WaveformPlayerProps> = ({ audioUrl, subtitles, timeMarkers }) => {
+const WaveformPlayer: React.FC<WaveformPlayerProps> = ({ audioUrl, subtitles, timeMarkers, onWavesurferMount }) => {
+
   const waveformRef = useRef<HTMLDivElement>(null);
   const wavesurfer: WaveSurferRef = useRef(null);
 
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
-  const [volume, setVolume] = useState<number>(1);
-  const [isMuted, setIsMuted] = useState<boolean>(false);
-  const [currentTime, setCurrentTime] = useState<string>('0:00');
-  const [durationSeconds, setDurationSeconds] = useState<number>(0);
-  const [duration, setDuration] = useState<number>(0); // maybe the type is string?
-  const [playbackRate, setPlaybackRate] = useState<number>(1.0);
-  const [activeSubtitle, setActiveSubtitle] = useState<string>('');
-  const [subtitlesVisible, setSubtitlesVisible] = useState<boolean>(true);
-
-  const [currentMarkerIndex, setCurrentMarkerIndex] = useState<number>(0);
-  const [isPlayMode, setIsPlayMode] = useState<boolean>(true);
-
   const playbackRates:number[] = [0.85, 0.9, 1.0, 1.1, 1.2];
 
+  const dispatch = useAppDispatch();
+
+  const currentMarkerIndex = useAppSelector(state => state.player.currentMarkerIndex); 
+  const isPlaying = useAppSelector(state => state.player.isPlaying); 
+  const volume = useAppSelector(state => state.player.volume);
+  const isMuted = useAppSelector(state => state.player.isMuted);
+  const playbackRate = useAppSelector(state => state.player.playbackRate);
+  const subtitlesVisible = useAppSelector(state => state.player.subtitlesVisible);
+  const isPlayMode = useAppSelector(state => state.player.isPlayMode);
+  const currentTime = useAppSelector(state => state.player.currentTime)
+  const durationSeconds = useAppSelector(state => state.player.durationSeconds)
+  const duration = useAppSelector(state => state.player.duration)
+  const activeSubtitle = useAppSelector(state => state.player.activeSubtitle)
+
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
   useEffect(() => {
-    if (!audioUrl) return;
-    wavesurfer.current = WaveSurfer.create({
-      container: waveformRef.current,
+    if (waveformRef.current) {
+      wavesurfer.current = WaveSurfer.create({
+      container: waveformRef.current as HTMLDivElement,
       waveColor: '#a8e4a0',
       progressColor: '#3caa3c',
       cursorColor: '#45a049',
@@ -447,199 +472,241 @@ const WaveformPlayer: React.FC<WaveformPlayerProps> = ({ audioUrl, subtitles, ti
       height: 70,
       barGap: 2,
       normalize: true,
-      responsive: true,
       fillParent: true,
+      backend: 'MediaElement', // More stable on mobile
+      mediaControls: false,
+      hideScrollbar: true,
+      interact: true,
+
     })
 
-    wavesurfer.current.on('audioprocess', () => {
-      const currentTimeValue = wavesurfer.current.getCurrentTime();
-      setCurrentTime(formatTime(currentTimeValue));
-    
-      if (isPlayMode && timeMarkers && timeMarkers.length > currentMarkerIndex + 1) {
-        // const currentMarker = timeMarkers[currentMarkerIndex];
-        const nextMarker = timeMarkers[currentMarkerIndex + 1];
-    
-        const currentEndTime = nextMarker 
-        ? (typeof nextMarker === 'object' ? nextMarker.time : nextMarker)
-        : durationSeconds;
+    let wavesurferInstance = wavesurfer.current;
 
-        if (currentTimeValue >= currentEndTime) {
-          wavesurfer.current.pause();
-          setIsPlaying(false);
-        }
-  }
-});
+    if (!audioUrl || !wavesurferInstance) return;
 
     const handlePointerMove = (e: PointerEvent) => {
-        const hover = waveformRef.current?.querySelector('#hover') as HTMLElement;
-        if (hover && e instanceof PointerEvent) {
-          hover.style.width = `${e.offsetX}px`;
+      const hover = waveformRef.current?.querySelector('#hover') as HTMLElement;
+      if (hover && e instanceof PointerEvent) {
+        hover.style.width = `${e.offsetX}px`;
+      }
+    };
+
+    const handleSeek = () => {
+      const currentTime = wavesurferInstance?.getCurrentTime();
+    
+      const newIndex = timeMarkers.findIndex((marker, index) => {
+        const currentMarkerTime = typeof marker === 'object' ? marker.time : marker;
+        let nextMarkerTime: number;
+    
+        if (index < timeMarkers.length - 1) {
+          const nextMarker = timeMarkers[index + 1];
+          nextMarkerTime = typeof nextMarker === 'object' ? nextMarker.time : nextMarker;
+        } else {
+          nextMarkerTime = durationSeconds;
         }
-      };
-  
-    const waveformElement = waveformRef.current;
-      waveformElement.addEventListener('pointermove', handlePointerMove);
-
-    wavesurfer.current.load(audioUrl);
-
-    wavesurfer.current.on('finish', () => {
-      setIsPlaying(false);
-    });
-
-    wavesurfer.current.on('ready', () => {
-      const totalDuration = wavesurfer.current.getDuration();
-      setDurationSeconds(totalDuration); // raw duration in seconds
-      setDuration(formatTime(totalDuration)); // formatted duration for display
-  });
-
-      // Update current time during playback
-      wavesurfer.current.on('audioprocess', () => {
-        const currentTimeValue = wavesurfer.current.getCurrentTime();
-        setCurrentTime(formatTime(currentTimeValue));
+    
+        return currentTime >= currentMarkerTime && currentTime < nextMarkerTime;
       });
-
-      // Separate audioprocess event for subtitles
-    wavesurfer.current.on('audioprocess', () => {
-      updateActiveSubtitle();
-    });
-
-      // Update time on seek
-      wavesurfer.current.on('seek', () => {
-        const currentTimeValue = wavesurfer.current.getCurrentTime();
-        setCurrentTime(formatTime(currentTimeValue));
-      });
-
-      return () => {
-        if (wavesurfer.current) {
-          wavesurfer.current.destroy();
-        }
-        waveformElement.removeEventListener('pointermove', handlePointerMove);
-      };
-    }, [audioUrl, subtitles, currentMarkerIndex, isPlayMode, timeMarkers]);
-  
-
-  useEffect(() => {
-    if (wavesurfer.current && timeMarkers?.length) {
-      const handleSeek = () => {
-        const currentTime = wavesurfer.current.getCurrentTime();
-        
-        const newIndex = timeMarkers.findIndex((marker, index) => {
-          const currentMarkerTime = typeof marker === 'object' ? marker.time : marker;
-          const nextMarkerTime = index < timeMarkers.length - 1 
-            ? (typeof timeMarkers[index + 1] === 'object' 
-                ? timeMarkers[index + 1].time 
-                : timeMarkers[index + 1])
-            : durationSeconds;
-            
-          return currentTime >= currentMarkerTime && currentTime < nextMarkerTime;
-        });
-        
-        if (newIndex >= 0) {
-          setCurrentMarkerIndex(newIndex);
-        }
-      };
-  
-      wavesurfer.current.on('seek', handleSeek);
-      return () => wavesurfer.current.un('seek', handleSeek);
-    }
-  }, [timeMarkers, durationSeconds]);
-
-  useEffect(() => {
-    if (wavesurfer.current) {
-      const handlePlay = () => setIsPlaying(true);
-      const handlePause = () => setIsPlaying(false);
-      
-      wavesurfer.current.on('play', handlePlay);
-      wavesurfer.current.on('pause', handlePause);
-      wavesurfer.current.on('timeupdate', handleTimeUpdate);
-      
-      // Set initial position to start of current marker
-      const { start } = getMarkerTimes(currentMarkerIndex);
-      wavesurfer.current.setTime(start);
-      
-      return () => {
-        wavesurfer.current.un('play', handlePlay);
-        wavesurfer.current.un('pause', handlePause);
-        wavesurfer.current.un('timeupdate', handleTimeUpdate);
-      };
-    }
-  }, [currentMarkerIndex, timeMarkers]);
-
-  // const handleMarkerEnd = () => {
-  //   if (!wavesurfer.current || !timeMarkers?.length) return;
     
-  //   const currentMarker = timeMarkers[currentMarkerIndex];
-  //   const nextMarker = timeMarkers[currentMarkerIndex + 1];
-    
-  //   const currentTime = wavesurfer.current.getCurrentTime();
-  //   const nextMarkerTime = nextMarker ? (typeof nextMarker === 'object' ? nextMarker.time : nextMarker) : Infinity;
-    
-  //   if (currentTime >= nextMarkerTime) {
-  //     // If we've reached the next marker, pause and reset to current marker start
-  //     wavesurfer.current.pause();
-  //     const currentStartTime = typeof currentMarker === 'object' ? currentMarker.time : currentMarker;
-  //     wavesurfer.current.setTime(currentStartTime);
-  //   }
-  // };
+      if (newIndex >= 0) {
+        dispatch(setCurrentMarkerIndex(newIndex));
+      }
+    };
 
-  const handlePlayPause = (): void => {
-    if (!wavesurfer.current) return;
-  
-    if (isPlaying) {
-      // If playing, simply pause
-      wavesurfer.current.pause();
-      setIsPlaying(false);
-    } else {
-      // If paused
-      const currentTime = wavesurfer.current.getCurrentTime();
-      const { start, end } = getMarkerTimes(currentMarkerIndex);
-  
-      if (isPlayMode) {
-        // In sentence mode
-        if (currentTime >= end || currentTime < start) {
-          // If outside marker boundaries, reset to start
-          wavesurfer.current.setTime(start);
+    const handlePlay = () => dispatch(setIsPlaying(true));
+    const handlePause = () => dispatch(setIsPlaying(false));
+
+    wavesurferInstance.on('audioprocess', () => {
+      const currentTimeValue = wavesurferInstance?.getCurrentTime() || 0;
+      dispatch(setCurrentTime(formatTime(currentTimeValue)));
+      
+      if (isPlayMode && timeMarkers && timeMarkers.length > currentMarkerIndex + 1) {
+        const nextMarker = timeMarkers[currentMarkerIndex + 1];
+        const currentEndTime = nextMarker ? (typeof nextMarker === 'object' ? nextMarker.time : nextMarker) : durationSeconds;
+        if (currentTimeValue >= currentEndTime) {
+          wavesurferInstance?.pause();
+          dispatch(setIsPlaying(false));
         }
       }
-      // Resume playback
-      wavesurfer.current.play();
-      setIsPlaying(true);
+      
+      updateActiveSubtitle();
+    });
+    wavesurferInstance.on('ready', () => {
+      const totalDuration = wavesurferInstance?.getDuration() || 0;
+      dispatch(setDurationSeconds(totalDuration));
+      dispatch(setDuration(formatTime(totalDuration)));
+
+      if (timeMarkers?.length > 0) {
+        const initialMarker = timeMarkers[0];
+        const startTime = typeof initialMarker === 'object' ? initialMarker.time : initialMarker;
+        wavesurferInstance?.setTime(startTime);
+      }
+    });
+
+    wavesurferInstance.on('finish', () => {
+      dispatch(setIsPlaying(false));
+    });
+
+    onWavesurferMount(wavesurferInstance);
+
+    wavesurferInstance.on('seek', handleSeek);
+    wavesurferInstance.on('play', handlePlay);
+    wavesurferInstance.on('pause', handlePause);
+
+    const waveformElement = waveformRef.current;
+    if (waveformElement) {
+      waveformElement.addEventListener('pointermove', handlePointerMove);
+    }
+
+    // if (wavesurfer.current && wavesurfer.current.isReady && isPlayMode) {
+    //   const nextMarker = timeMarkers[currentMarkerIndex];
+    //   const nextTime = typeof nextMarker === 'object' ? nextMarker.time : nextMarker;
+    //   wavesurfer.current.setTime(nextTime);
+    // } 
+
+    // Load audio
+    wavesurferInstance.load(audioUrl);
+
+    // Set playback position to the start of the current marker
+    // const { start } = getMarkerTimes(currentMarkerIndex);
+    // wavesurferInstance.setTime(start);
+
+    return () => {
+      if (wavesurferInstance) {
+        try {
+          wavesurferInstance.pause();
+          dispatch(setIsPlaying(false));
+          wavesurferInstance.unAll();
+          wavesurferInstance.destroy();
+        } catch (error) {
+          console.warn('Error destroying WaveSurfer:', error);
+        }
+      }
+      waveformElement?.removeEventListener('pointermove', handlePointerMove);
+     }};
+  }, [ 
+    dispatch, 
+    audioUrl, 
+    timeMarkers, 
+    currentMarkerIndex, 
+    isPlayMode, 
+    durationSeconds,
+    onWavesurferMount
+  ]);
+
+  // determine when the instance is fully ready to perform actions like seeking
+  useEffect(() => {
+    if (!wavesurfer.current) return;
+
+    const handleReady = () => {
+        if (timeMarkers?.length > 0) {
+            const { start } = getMarkerTimes(currentMarkerIndex);
+            wavesurfer.current?.setTime(start);
+        }
+    };
+
+    wavesurfer.current.on('ready', handleReady);
+
+    return () => {
+        wavesurfer.current?.un('ready', handleReady);
+    };
+}, [currentMarkerIndex, timeMarkers]);
+
+  const handlePlayPause = async (): Promise<void> => {
+    if (!wavesurfer.current || isTransitioning) return;
+
+    try {
+        setIsTransitioning(true);
+        
+        if (isPlaying) {
+            wavesurfer.current.pause();
+            dispatch(setIsPlaying(false));
+        } else {
+            const currentTime = wavesurfer.current.getCurrentTime();
+            const { start, end } = getMarkerTimes(currentMarkerIndex);
+
+            if (isPlayMode && (currentTime >= end || currentTime < start)) {
+                await wavesurfer.current.setTime(start);
+            }
+
+            await wavesurfer.current.play();
+            dispatch(setIsPlaying(true));
+        }
+    } catch (error) {
+        console.error('Playback control failed:', error);
+        dispatch(setIsPlaying(false));
+    } finally {
+        setIsTransitioning(false);
+    }
+};
+
+  // Function to go to next sentence
+  const goToNextSentence = async () => {
+    if (!timeMarkers?.length || currentMarkerIndex >= timeMarkers.length - 1 || !wavesurfer.current) {
+      return;
+    }
+  
+    const nextIndex = currentMarkerIndex + 1;
+    const nextMarker = timeMarkers[nextIndex];
+    const nextTime = typeof nextMarker === 'object' ? nextMarker.time : nextMarker;
+  
+    if (isFinite(nextTime) && nextTime >= 0) {
+      try {
+        // First update the marker index
+        dispatch(setCurrentMarkerIndex(nextIndex));
+        
+        // Then set the time
+        wavesurfer.current.setTime(nextTime);
+  
+        // If it was playing, ensure we properly handle the play promise
+        if (isPlaying) {
+          await wavesurfer.current.play();
+        }
+      } catch (err) {
+        // Handle any play() promise rejection
+        console.warn('Error during playback:', err);
+      }
     }
   };
+
 
   const updateActiveSubtitle = () => {
     if (!wavesurfer.current || !subtitles || !subtitles.length) return;
 
     const currentTimeValue = wavesurfer.current.getCurrentTime();
     
-    const currentSubtitle = subtitles.find(
-      sub => 
-        currentTimeValue >= sub.startTime && 
-        currentTimeValue <= sub.endTime
+    const currentSubtitle = subtitles.find(sub => 
+      currentTimeValue >= sub.startTime && currentTimeValue <= sub.endTime
     );
-
-    setActiveSubtitle(currentSubtitle ? currentSubtitle.text : '');
+    dispatch(setActiveSubtitle(currentSubtitle ? currentSubtitle.text : ''));
   };
 
-  const renderSubtitles = () => {
-    if (!subtitlesVisible) return null;
+  // const renderSubtitles = () => {
+  //   if (!subtitlesVisible) return null;
 
-    return (
-      <SubtitlesContainer>
-        {activeSubtitle}
-      </SubtitlesContainer>
-    );
-  };
+  //   return (
+  //     <SubtitlesContainer>
+  //       {activeSubtitle}
+  //     </SubtitlesContainer>
+  //   );
+  // };
 
-  const handleMarkerClick = (time: number) => {
+  const handleMarkerClick = async (time: number) => {
     if (wavesurfer.current) {
-      wavesurfer.current.seekTo(time / durationSeconds); // seekTo expects a value between 0 and 1
-      // Optional: start playing after seeking
-      wavesurfer.current.play();
+      try {
+        wavesurfer.current.seekTo(time / durationSeconds);
+        // Add a small delay before playing
+        await new Promise(resolve => setTimeout(resolve, 50));
+        await wavesurfer.current.play();
+        dispatch(setIsPlaying(true));
+      } catch (error) { 
+        console.error('Error in handleMarkerClick:', error);
+        dispatch(setIsPlaying(false));
+      }
     }
-  };
+};
 
-  const getMarkerTimes = (index) => {
+  const getMarkerTimes = (index: number) => {
     if (!timeMarkers?.length || index < 0 || index >= timeMarkers.length) return { start: 0, end: 0 };
     
     const currentMarker = timeMarkers[index];
@@ -653,90 +720,126 @@ const WaveformPlayer: React.FC<WaveformPlayerProps> = ({ audioUrl, subtitles, ti
     return { start: startTime, end: endTime };
   };
 
-  const handleTimeUpdate = () => {
-    if (!wavesurfer.current) return;
+  // const handleTimeUpdate = () => {
+  //   if (!wavesurfer.current) return;
     
-    const currentTime = wavesurfer.current.getCurrentTime();
-    const { start, end } = getMarkerTimes(currentMarkerIndex);
+  //   const currentTime = wavesurfer.current.getCurrentTime();
+  //   const { start, end } = getMarkerTimes(currentMarkerIndex);
     
-    // If we've passed the end of current marker
-    if (currentTime >= end) {
-      wavesurfer.current.pause();
-      wavesurfer.current.setTime(start);
-      setIsPlaying(false);
-    }
-  };
+  //   // If we've passed the end of current marker
+  //   if (currentTime >= end) {
+  //     wavesurfer.current.pause();
+  //     wavesurfer.current.setTime(start);
+  //     setIsPlaying(false);
+  //   }
+  // };
 
   const toggleSubtitles = () => {
-    setSubtitlesVisible(!subtitlesVisible)
+    dispatch(setSubtitlesVisible(!subtitlesVisible));
   }
 
-  const changePlaybackRate = (rate) => {
+  const changePlaybackRate = (rate: number) => {
     if (wavesurfer.current) {
       wavesurfer.current.setPlaybackRate(rate);
-      setPlaybackRate(rate);
+      dispatch(setPlaybackRate(rate));
     }
   };
 
-  const replayCurrentSentence = () => {
+  const replayCurrentSentence = async () => {
     if (!timeMarkers?.length || currentMarkerIndex < 0 || !wavesurfer.current) return;
   
     const currentMarker = timeMarkers[currentMarkerIndex];
     const startTime = typeof currentMarker === 'object' ? currentMarker.time : currentMarker;
   
     if (isFinite(startTime) && startTime >= 0) {
-      wavesurfer.current.setTime(startTime);
-          // Always play when repeating
-          wavesurfer.current.play();
-          setIsPlaying(true);
-    }
-  };
-  // Function to go to next sentence
-  const goToNextSentence = () => {
-    if (!timeMarkers?.length || currentMarkerIndex >= timeMarkers.length - 1 || !wavesurfer.current) {
-      return;
-    }
-  
-    const nextIndex = currentMarkerIndex + 1;
-    const nextMarker = timeMarkers[nextIndex];
-    const nextTime = typeof nextMarker === 'object' ? nextMarker.time : nextMarker;
-  
-    if (isFinite(nextTime) && nextTime >= 0) {
-      // Don't pause before seeking
-      setCurrentMarkerIndex(nextIndex);
-      wavesurfer.current.setTime(nextTime);
-      
-      // If it was already playing, continue playing
-      if (isPlaying) {
-        wavesurfer.current.play();
+      try {
+        await wavesurfer.current.setTime(startTime);
+        // Add a small delay before playing
+        await new Promise(resolve => setTimeout(resolve, 50));
+        await wavesurfer.current.play();
+        dispatch(setIsPlaying(true));
+      } catch (error) {
+        console.error('Error in replayCurrentSentence:', error);
+        dispatch(setIsPlaying(false));
       }
     }
-  };
-  // Add a toggle for play mode
-  const togglePlayMode = () => {
-    setIsPlayMode(!isPlayMode);
-    if (!isPlayMode && timeMarkers && timeMarkers[currentMarkerIndex] && durationSeconds > 0) {
-      const normalizedTime = timeMarkers[currentMarkerIndex] / durationSeconds;
-      if (isFinite(normalizedTime) && normalizedTime >= 0 && normalizedTime <= 1) {
-        wavesurfer.current.seekTo(normalizedTime);
-      }
-    }
-  };
+};
 
-  const handleVolumeChange = (e) => {
-    const newVolume = parseFloat(e.target.value);
-    setVolume(newVolume);
-    wavesurfer.current.setVolume(newVolume);
-    setIsMuted(newVolume === 0);
+  // Function to go to next sentence
+  // const goToNextSentence = async () => {
+  //   if (!timeMarkers?.length || currentMarkerIndex >= timeMarkers.length - 1 || !wavesurfer.current) {
+  //     return;
+  //   }
+  
+  //   const nextIndex = currentMarkerIndex + 1;
+  //   const nextMarker = timeMarkers[nextIndex];
+  //   const nextTime = typeof nextMarker === 'object' ? nextMarker.time : nextMarker;
+  
+  //   if (isFinite(nextTime) && nextTime >= 0) {
+  //     setCurrentMarkerIndex(nextIndex);
+      
+  //     try {
+  //       await wavesurfer.current.setTime(nextTime);
+  //       if (isPlaying) {
+  //         // Add a small delay before playing
+  //         await new Promise(resolve => setTimeout(resolve, 50));
+  //         await wavesurfer.current.play();
+  //       }
+  //     } catch (error) {
+  //       console.error('Error in goToNextSentence:', error);
+  //     }
+  //   }
+  // };
+
+  // Add a toggle for play mode
+  const togglePlayMode = async () => {
+    if (!wavesurfer.current) return;
+    
+    const wasPlaying = isPlaying;
+    
+    // Pause before switching modes
+    if (wasPlaying) {
+        wavesurfer.current.pause();
+        dispatch(setIsPlaying(false));
+    }
+    
+    // Toggle play mode
+    dispatch(setIsPlayMode(!isPlayMode));
+    
+    // Set correct position
+    if (timeMarkers && timeMarkers[currentMarkerIndex] && durationSeconds > 0) {
+        const marker = timeMarkers[currentMarkerIndex];
+        const markerTime = typeof marker === 'object' ? marker.time : marker;
+        await wavesurfer.current.setTime(markerTime);
+    }
+    
+    // Resume playing if it was playing before
+    if (wasPlaying) {
+        try {
+            await new Promise(resolve => setTimeout(resolve, 50));
+            await wavesurfer.current.play();
+            dispatch(setIsPlaying(true));
+        } catch (error) {
+            console.error('Error resuming playback:', error);
+            dispatch(setIsPlaying(false));
+        }
+    }
+};
+
+  const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newVolume = parseFloat(e.target?.value);
+    dispatch(setVolume(newVolume));
+    wavesurfer.current?.setVolume(newVolume);
+    dispatch(setIsMuted(newVolume === 0));
   };
 
   const handleMuteToggle = () => {
     if (isMuted) {
-      wavesurfer.current.setVolume(volume);
-      setIsMuted(false);
+      wavesurfer.current?.setVolume(volume);
+      dispatch(setIsMuted(false));
     } else {
-      wavesurfer.current.setVolume(0);
-      setIsMuted(true);
+      wavesurfer.current?.setVolume(0);
+      dispatch(setIsMuted(true));
     }
   };
 
@@ -752,7 +855,7 @@ const WaveformPlayer: React.FC<WaveformPlayerProps> = ({ audioUrl, subtitles, ti
           return (
             <TimeMarkerLine
               key={index}
-              position={position}
+              $position={position}
               color={marker.color}
               onClick={() => handleMarkerClick(marker.time)}
               title={`Jump to ${marker.label}`} // Add tooltip
@@ -764,7 +867,6 @@ const WaveformPlayer: React.FC<WaveformPlayerProps> = ({ audioUrl, subtitles, ti
       </TimeMarkersContainer>
     );
   };
-  
 
   return (
     <div className='waveform-overlay'>
@@ -794,7 +896,7 @@ const WaveformPlayer: React.FC<WaveformPlayerProps> = ({ audioUrl, subtitles, ti
           {/* Play mode toggle and navigation controls */}
           <PlayModeContainer>
             <PlayModeToggle 
-              isActive={isPlayMode} 
+              $active={isPlayMode} 
               onClick={togglePlayMode}
             >
               Sentence Mode: {isPlayMode ? 'ON' : 'OFF'}
@@ -830,7 +932,7 @@ const WaveformPlayer: React.FC<WaveformPlayerProps> = ({ audioUrl, subtitles, ti
             <SpeedButton
               key={rate}
               onClick={() => changePlaybackRate(rate)}
-              active={playbackRate === rate}
+              $active={playbackRate === rate}
             >
               {rate}x
             </SpeedButton>
@@ -839,15 +941,14 @@ const WaveformPlayer: React.FC<WaveformPlayerProps> = ({ audioUrl, subtitles, ti
 
         <SubtitlesButton 
           onClick={toggleSubtitles}
-          active={subtitlesVisible}
+          $active={subtitlesVisible}
         >
-         {renderSubtitles()}
          CC
         </SubtitlesButton>
 
       </ControlsContainer>
 
-      <SubtitlesContainer visible={subtitlesVisible}>
+      <SubtitlesContainer $visible={subtitlesVisible}>
         <SubtitleText>{activeSubtitle}</SubtitleText>
       </SubtitlesContainer>
     </div>
@@ -855,3 +956,43 @@ const WaveformPlayer: React.FC<WaveformPlayerProps> = ({ audioUrl, subtitles, ti
 };
 
 export default WaveformPlayer;
+
+
+  // const [isPlaying, setIsPlaying] = useState<boolean>(false); // done
+  // const [volume, setVolume] = useState<number>(1); // done
+  // const [isMuted, setIsMuted] = useState<boolean>(false); // done 
+  // const [currentTime, setCurrentTime] = useState<string>('0:00'); // done
+  // const [durationSeconds, setDurationSeconds] = useState<number>(0); // done
+  // const [duration, setDuration] = useState<number>(0); // done 
+  // const [playbackRate, setPlaybackRate] = useState<number>(1.0); // done
+  // const [activeSubtitle, setActiveSubtitle] = useState<string>(''); //
+  // const [subtitlesVisible, setSubtitlesVisible] = useState<boolean>(true); // done
+  // const [currentMarkerIndex, setCurrentMarkerIndex] = useState<number>(0); // done
+  // const [isPlayMode, setIsPlayMode] = useState<boolean>(true); // done
+
+
+  // wavesurfer.current = WaveSurfer.create({
+  //   container: waveformRef.current,
+  //   waveColor: '#a8e4a0',
+  //   progressColor: '#3caa3c',
+  //   cursorColor: '#45a049',
+  //   barWidth: 3,
+  //   barRadius: 3,
+  //   cursorWidth: 3,
+  //   height: 70,
+  //   barGap: 2,
+  //   normalize: true,
+  //   responsive: true,
+  //   fillParent: true,
+  //   backend: 'MediaElement', // More stable on mobile
+  //   mediaControls: false,
+  //   hideScrollbar: true,
+  //   interact: true
+  // })
+
+//   useEffect(() => {
+//     if (wavesurfer.current && wavesurfer.current.isReady && timeMarkers?.length > 0) {
+//         const { start } = getMarkerTimes(currentMarkerIndex);
+//         wavesurfer.current.setTime(start);
+//     }
+// }, [currentMarkerIndex]);

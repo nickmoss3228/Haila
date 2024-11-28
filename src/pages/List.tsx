@@ -1,9 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/List.css'
-// import Himan from "../assets/stickers/hi-pepe.png"
-// import Fish from "../assets/stickers/importantfish.png"
-// import Peace from "../assets/stickers/peace.png"
 
 const List = () => {
   return (
@@ -55,6 +52,13 @@ const List = () => {
                     <div className="hidden-content">Practise your listening skills. </div>
                 </Link>
             </div>
+{/* 
+            <div className="listgriditem">
+                <Link to="audiolevels">
+                    <div className="item-1">The Audio List</div> 
+                    <div className="hidden-content">dev</div>   
+                </Link>
+            </div> */}
 
         </div>
     </div>
@@ -62,7 +66,6 @@ const List = () => {
 }
 
 export default List
-
 
 {/*             
             <div className="listgriditem">
