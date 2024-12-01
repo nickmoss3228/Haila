@@ -350,6 +350,10 @@ const TimeMarkerLine = styled.div<{ $position: number; color?: string }>`
   &:hover {
     opacity: 0.8;
   }
+
+   @media (max-width: 768px) {
+      width: 1px; 
+  }
 `;
 
 const TimeMarkerLabel = styled.span`
@@ -363,6 +367,11 @@ const TimeMarkerLabel = styled.span`
   border-radius: 3px;
   font-size: 11px;
   white-space: nowrap;
+
+   @media (max-width: 768px) {
+    padding: 2px 4px;
+    font-size: 10px;
+  }
 `;
 
 const PlayModeContainer = styled.div`

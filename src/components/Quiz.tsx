@@ -48,7 +48,7 @@ const Quiz: React.FC<QuizProps> = ({ onTimeJump, questions }) => {
     <div className="quiz-container">
       {!showResults ? (
         <div className="question-container">
-          <h2>Question {currentQuestion + 1}</h2>
+          <h2 className='h-tag'>Question {currentQuestion + 1}</h2>
           <p>{questions[currentQuestion].question}</p>
           
           <div className="options-container">
