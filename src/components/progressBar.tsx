@@ -1,10 +1,32 @@
 import React, {useEffect, useRef, useState } from 'react';
 import WaveSurfer from 'wavesurfer.js';
-import styled from 'styled-components';
 import { FaVolumeHigh } from "react-icons/fa6";
 import { FaVolumeMute } from "react-icons/fa";
 import { IoPause, IoPlay, IoRepeat, IoArrowForward } from 'react-icons/io5';
 import { WaveformPlayerProps } from './types';
+import {
+  WaveformContainer, 
+  HoverEffect, 
+  Controls, 
+  Button, 
+  TimeLabel, 
+  VolumeControl, 
+  VolumeIcon, 
+  VolumeSlider,
+  ControlsContainer,
+  SpeedControls,
+  SpeedButton, 
+  SubtitlesContainer,
+  SubtitleText, 
+  SubtitlesButton, 
+  TimeMarkersContainer, 
+  TimeMarkerLine, 
+  TimeMarkerLabel, 
+  PlayModeContainer, 
+  PlayModeToggle, 
+  NavigationControls, 
+  NavButton
+} from './styledComponents'
 
 import { useAppSelector, useAppDispatch } from '../hooks/hooks';
 import { 
@@ -21,32 +43,6 @@ import {
   setActiveSubtitle
 } from '../features/playerslice';
 
-// Types and Interfaces
-interface WaveSurferRef {
-  current: WaveSurfer | null;
-}
-
-// Type definitions for styled components props
-interface SpeedButtonProps {
-  $active: boolean; // $-prefix to avoid DOM attribute warnings
-}
-
-interface SubtitlesContainterProps {
-  $visible:boolean;
-}
-
-interface SubtitlesButtonProps {
-  $active: boolean;
-}
-
-interface PlayModeToggleProps {
-  $active: boolean;
-}
-
-interface WaveSurferRef {
-  current: WaveSurfer | null;
-}
-
 const formatTime = (time:number) => {
   if (!isFinite(time)) return "0:00";
   
@@ -55,401 +51,14 @@ const formatTime = (time:number) => {
   return `${minutes}:${seconds.toString().padStart(2, '0')}`;
 };
 
-const WaveformContainer = styled.div`
-  width: 100%;
-  height: 80px;
-  background: #f5f5f5;
-  margin: 0 auto;
-  border-radius: 8px;
-  overflow: visible; 
-  position: relative;
-  padding: 0 2px; 
-
-   @media (max-width: 768px) {
-    height: 80px;
-  }
-
-  @media (max-width: 480px) {
-    height: 60px;
-  }
-`;
-
-const HoverEffect = styled.div`
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 10;
-  pointer-events: none;
-  height: 80px;
-  width: 0;
-  mix-blend-mode: overlay;
-  background: rgba(255, 255, 255, 0.4);
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  
-  ${WaveformContainer}:hover & {
-    opacity: 1;
-  }
-`;
-
-const Controls = styled.div`
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-   @media (max-width: 768px) {
-    gap: 10px;
-  }
-`;
-
-const Button = styled.button`
-  padding: 8px 16px;
-  border-radius: 40px;
-  border: none;
-  background: #4CAF50;
-  color: white;
-  cursor: pointer;
-  
-  
-  &:hover {
-    background: #45a049;
-  }
-
-  @media (max-width: 768px) {
-
-  }
-
-  @media (max-width: 480px) {
-
-  }
-`;
-
-const TimeLabel = styled.div`
-  position: absolute;
-  z-index: 11;
-  bottom: 5px; // Changed from top: 50%
-  transform: translateY(0); // Removed vertical centering
-  font-size: 11px;
-  background: rgba(0, 0, 0, 0.75);
-  padding: 2px 6px; // Added horizontal padding
-  color: #ddd;
-  border-radius: 3px;
-  pointer-events: none; // Prevents labels from interfering with waveform interaction
-
-  &#time {
-    left: 5px;
-  }
-
-  &#duration {
-    right: 5px;
-  }
-
-    @media (max-width: 768px) {
-    font-size: 10px;
-    padding: 1px 4px;
-  }
-`;
-
-const VolumeControl = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-left: 20px;
-
-  @media (max-width: 768px) {
-    margin-left: 0;
-  }
-
-  @media (max-width: 480px) {
-    width: 100%;
-    justify-content: center;
-  }
-`;
-
-const VolumeIcon = styled.div`
-  cursor: pointer;
-  color: #4CAF50;
-  display: flex;
-  align-items: center;
-  
-  &:hover {
-    opacity: 0.8;
-  }
-`;
-
-const VolumeSlider = styled.input`
-  -webkit-appearance: none;
-  width: 100px;
-  height: 4px;
-  background: #ddd;
-  border-radius: 2px;
-  outline: none;
-  opacity: 0.7;
-  transition: opacity 0.2s;
-
-  &:hover {
-    opacity: 1;
-  }
-
-  &::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 12px;
-    height: 12px;
-    background: #4CAF50;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.2s;
-
-    &:hover {
-      background: #45a049;
-      transform: scale(1.2);
-    }
-  }
-
-  &::-moz-range-thumb {
-    width: 12px;
-    height: 12px;
-    background: #4CAF50;
-    border-radius: 50%;
-    cursor: pointer;
-    border: none;
-    transition: all 0.2s;
-
-    &:hover {
-      background: #45a049;
-      transform: scale(1.2);
-    }
-
-    @media (max-width: 480px) {
-    width: 80px;
-  }
-  }
-`;
-
-const ControlsContainer = styled.div`
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 10px;
-  }
-`;
-
-const SpeedControls = styled.div`
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  justify-content: center;
-
-   @media (max-width: 768px) {
-    gap: 5px;
-  }
-`;
-
-const SpeedButton = styled.button<SpeedButtonProps>`
-  padding: 6px 12px;
-  border-radius: 4px;
-  border: 1px solid #4CAF50;
-  background-color: ${props => props.$active ? '#4CAF50' : 'white'};
-  color: ${props => props.$active ? 'white' : '#4CAF50'};
-  cursor: pointer;
-  font-size: 12px;
-  transition: all 0.2s;
-  font-family: inherit;
-
-  &:hover {
-    background-color: ${props => props.$active ? '#4CAF50' : '#4CAF50'};
-  }
-
-   @media (max-width: 768px) {
-    padding: 4px 8px;
-    font-size: 11px;
-  }
-`;
-
-const SubtitlesContainer = styled.div<SubtitlesContainterProps>`
-  position: absolute; // Add this
-  left: 50%; // Add this
-  transform: translateX(-50%); // Add this
-  width: 90%; // Add this to control the width
-  margin-top: 20px;
-  padding: 10px;
-  height: 50px;
-  background: #f5f5f5;
-  border-radius: 4px;
-  text-align: center;
-  display: ${props => props.$visible ? 'block' : 'none'};
-  z-index: 10; // Add this to ensure it appears above other elements
-  
-  @media (max-width: 768px) {
-    margin-top: 10px;
-    height: 40px;
-  }
-`;
-
-const SubtitleText = styled.p`
-  text-align: center;
-  font-size: 24px;
-  margin: 0;
-  color: #333;
-
-   @media (max-width: 768px) {
-    font-size: 18px;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 16px;
-  }
-`;
-
-const SubtitlesButton = styled.button<SubtitlesButtonProps>`
-  background: ${props => props.$active ? '#4CAF50' : '#f5f5f5'};
-  color: ${props => props.$active ? 'white' : '#333'};
-  border: 1px solid #ddd;
-  padding: 8px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: all 0.2s ease;
-  display: flex;
-  align-items: center;  
-  gap: 5px;
-  margin-left: 10px;
-  font-family:inherit;
-
-  &:hover {
-    background: ${props => props.$active ? '#45a049' : '#e0e0e0'};
-  }
-`;
-
-const TimeMarkersContainer = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  bottom: 0;
-`;
-
-const TimeMarkerLine = styled.div<{ $position: number; color?: string }>`
-  position: absolute;
-  left: ${props => props.$position}%;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background-color: ${props => props.color || 'red'};
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-  z-index: 10;
-
-  &:hover {
-    opacity: 0.8;
-  }
-
-   @media (max-width: 768px) {
-      width: 1px; 
-  }
-`;
-
-const TimeMarkerLabel = styled.span`
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.75);
-  color: white;
-  padding: 2px 6px;
-  border-radius: 3px;
-  font-size: 11px;
-  white-space: nowrap;
-
-   @media (max-width: 768px) {
-    padding: 2px 4px;
-    font-size: 10px;
-  }
-`;
-
-const PlayModeContainer = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-left: 20px;
-
-   @media (max-width: 768px) {
-    margin-left: 0;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-`;
-
-const PlayModeToggle = styled.button<PlayModeToggleProps>`
-  background: ${props => props.$active ? '#4CAF50' : '#ccc'};
-  color: white;
-  border: none;
-  border-radius: 20px;
-  padding: 8px 16px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-family:inherit;
-
-  &:hover {
-    opacity: 0.9;
-  }
-`;
-
-const NavigationControls = styled.div`
-  display: flex;
-  gap: 10px;
-
-   @media (max-width: 480px) {
-    gap: 5px;
-  }
-`;
-
-const NavButton = styled.button`
-  background: none;
-  border: 2px solid #4CAF50;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: #4CAF50;
-  transition: all 0.2s ease;
-
-  &:hover {
-    background: #4CAF50;
-    color: white;
-  }
-
-  &:active {
-    transform: scale(0.95);
-  }
-
-  @media (max-width: 768px) {
-    width: 50px;
-    height: 50px;
-  }
-
-  @media (max-width: 480px) {
-    width: 50px;
-    height: 50px;
-  }
-`;  
+interface WaveSurferRef {
+  current: WaveSurfer | null;
+}
 
 const WaveformPlayer: React.FC<WaveformPlayerProps> = ({ audioUrl, subtitles, timeMarkers, onWavesurferMount }) => {
 
   const waveformRef = useRef<HTMLDivElement>(null);
   const wavesurfer: WaveSurferRef = useRef(null);
-
   const playbackRates:number[] = [0.85, 0.9, 1.0, 1.1, 1.2];
 
   const dispatch = useAppDispatch();
@@ -482,16 +91,20 @@ const WaveformPlayer: React.FC<WaveformPlayerProps> = ({ audioUrl, subtitles, ti
       barGap: 2,
       normalize: true,
       fillParent: true,
-      backend: 'MediaElement', // More stable on mobile
       mediaControls: false,
       hideScrollbar: true,
       interact: true,
-
     })
 
     let wavesurferInstance = wavesurfer.current;
 
     if (!audioUrl || !wavesurferInstance) return;
+
+    wavesurferInstance.on('ready', () => {
+      // Set the volume from Redux state
+      wavesurferInstance?.setVolume(volume);
+      }
+    );
 
     const handlePointerMove = (e: PointerEvent) => {
       const hover = waveformRef.current?.querySelector('#hover') as HTMLElement;
@@ -531,7 +144,10 @@ const WaveformPlayer: React.FC<WaveformPlayerProps> = ({ audioUrl, subtitles, ti
       
       if (isPlayMode && timeMarkers && timeMarkers.length > currentMarkerIndex + 1) {
         const nextMarker = timeMarkers[currentMarkerIndex + 1];
-        const currentEndTime = nextMarker ? (typeof nextMarker === 'object' ? nextMarker.time : nextMarker) : durationSeconds;
+        const currentEndTime = nextMarker ? 
+        ( typeof nextMarker === 'object' ? nextMarker.time : nextMarker )
+           : durationSeconds;
+           
         if (currentTimeValue >= currentEndTime) {
           wavesurferInstance?.pause();
           dispatch(setIsPlaying(false));
@@ -567,18 +183,8 @@ const WaveformPlayer: React.FC<WaveformPlayerProps> = ({ audioUrl, subtitles, ti
       waveformElement.addEventListener('pointermove', handlePointerMove);
     }
 
-    // if (wavesurfer.current && wavesurfer.current.isReady && isPlayMode) {
-    //   const nextMarker = timeMarkers[currentMarkerIndex];
-    //   const nextTime = typeof nextMarker === 'object' ? nextMarker.time : nextMarker;
-    //   wavesurfer.current.setTime(nextTime);
-    // } 
-
     // Load audio
     wavesurferInstance.load(audioUrl);
-
-    // Set playback position to the start of the current marker
-    // const { start } = getMarkerTimes(currentMarkerIndex);
-    // wavesurferInstance.setTime(start);
 
     return () => {
       if (wavesurferInstance) {
@@ -600,7 +206,7 @@ const WaveformPlayer: React.FC<WaveformPlayerProps> = ({ audioUrl, subtitles, ti
     currentMarkerIndex, 
     isPlayMode, 
     durationSeconds,
-    onWavesurferMount
+    onWavesurferMount,
   ]);
 
   // determine when the instance is fully ready to perform actions like seeking
@@ -661,10 +267,10 @@ const WaveformPlayer: React.FC<WaveformPlayerProps> = ({ audioUrl, subtitles, ti
   
     if (isFinite(nextTime) && nextTime >= 0) {
       try {
-        // First update the marker index
+        // update the marker index
         dispatch(setCurrentMarkerIndex(nextIndex));
         
-        // Then set the time
+        // set the time
         wavesurfer.current.setTime(nextTime);
   
         // If it was playing, ensure we properly handle the play promise
@@ -689,16 +295,6 @@ const WaveformPlayer: React.FC<WaveformPlayerProps> = ({ audioUrl, subtitles, ti
     );
     dispatch(setActiveSubtitle(currentSubtitle ? currentSubtitle.text : ''));
   };
-
-  // const renderSubtitles = () => {
-  //   if (!subtitlesVisible) return null;
-
-  //   return (
-  //     <SubtitlesContainer>
-  //       {activeSubtitle}
-  //     </SubtitlesContainer>
-  //   );
-  // };
 
   const handleMarkerClick = async (time: number) => {
     if (wavesurfer.current) {
@@ -728,20 +324,6 @@ const WaveformPlayer: React.FC<WaveformPlayerProps> = ({ audioUrl, subtitles, ti
       
     return { start: startTime, end: endTime };
   };
-
-  // const handleTimeUpdate = () => {
-  //   if (!wavesurfer.current) return;
-    
-  //   const currentTime = wavesurfer.current.getCurrentTime();
-  //   const { start, end } = getMarkerTimes(currentMarkerIndex);
-    
-  //   // If we've passed the end of current marker
-  //   if (currentTime >= end) {
-  //     wavesurfer.current.pause();
-  //     wavesurfer.current.setTime(start);
-  //     setIsPlaying(false);
-  //   }
-  // };
 
   const toggleSubtitles = () => {
     dispatch(setSubtitlesVisible(!subtitlesVisible));
@@ -773,32 +355,6 @@ const WaveformPlayer: React.FC<WaveformPlayerProps> = ({ audioUrl, subtitles, ti
       }
     }
 };
-
-  // Function to go to next sentence
-  // const goToNextSentence = async () => {
-  //   if (!timeMarkers?.length || currentMarkerIndex >= timeMarkers.length - 1 || !wavesurfer.current) {
-  //     return;
-  //   }
-  
-  //   const nextIndex = currentMarkerIndex + 1;
-  //   const nextMarker = timeMarkers[nextIndex];
-  //   const nextTime = typeof nextMarker === 'object' ? nextMarker.time : nextMarker;
-  
-  //   if (isFinite(nextTime) && nextTime >= 0) {
-  //     setCurrentMarkerIndex(nextIndex);
-      
-  //     try {
-  //       await wavesurfer.current.setTime(nextTime);
-  //       if (isPlaying) {
-  //         // Add a small delay before playing
-  //         await new Promise(resolve => setTimeout(resolve, 50));
-  //         await wavesurfer.current.play();
-  //       }
-  //     } catch (error) {
-  //       console.error('Error in goToNextSentence:', error);
-  //     }
-  //   }
-  // };
 
   // Add a toggle for play mode
   const togglePlayMode = async () => {
@@ -1005,3 +561,43 @@ export default WaveformPlayer;
 //         wavesurfer.current.setTime(start);
 //     }
 // }, [currentMarkerIndex]);
+
+  // Function to go to next sentence
+  // const goToNextSentence = async () => {
+  //   if (!timeMarkers?.length || currentMarkerIndex >= timeMarkers.length - 1 || !wavesurfer.current) {
+  //     return;
+  //   }
+  
+  //   const nextIndex = currentMarkerIndex + 1;
+  //   const nextMarker = timeMarkers[nextIndex];
+  //   const nextTime = typeof nextMarker === 'object' ? nextMarker.time : nextMarker;
+  
+  //   if (isFinite(nextTime) && nextTime >= 0) {
+  //     setCurrentMarkerIndex(nextIndex);
+      
+  //     try {
+  //       await wavesurfer.current.setTime(nextTime);
+  //       if (isPlaying) {
+  //         // Add a small delay before playing
+  //         await new Promise(resolve => setTimeout(resolve, 50));
+  //         await wavesurfer.current.play();
+  //       }
+  //     } catch (error) {
+  //       console.error('Error in goToNextSentence:', error);
+  //     }
+  //   }
+  // };
+
+    // const handleTimeUpdate = () => {
+  //   if (!wavesurfer.current) return;
+    
+  //   const currentTime = wavesurfer.current.getCurrentTime();
+  //   const { start, end } = getMarkerTimes(currentMarkerIndex);
+    
+  //   // If we've passed the end of current marker
+  //   if (currentTime >= end) {
+  //     wavesurfer.current.pause();
+  //     wavesurfer.current.setTime(start);
+  //     setIsPlaying(false);
+  //   }
+  // };

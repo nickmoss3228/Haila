@@ -14,7 +14,7 @@ import Player from './pages/Player.tsx'
 import AudioLevels from './pages/AudioLevels.tsx'
 import { Provider } from 'react-redux';
 import { store } from './features/store.ts';
-// import Levels from './pages/Levels.tsx'
+import Levels from './pages/Levels.tsx'
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/list" element={<List/>} />
           <Route path="/list/sounds" element={<Sounds/>} /> 
-          {/* <Route path="/list/levels" element={<Levels/>} />  */}
+          <Route path="/list/levels" element={<Levels/>} /> 
           <Route path="/list/tenses" element={<Tenses/>}/>
           <Route path="/list/irregulars" element={<Irregulars/>}/>
           <Route path="/list/phrasals" element={<Phrasals/>}/>

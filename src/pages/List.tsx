@@ -11,7 +11,6 @@ const List = () => {
 
         <div className="gridlist">
 
-            
             <div className="listgriditem">
                 <Link to="player">
                     <div className="item-player">The Player</div> 
@@ -53,14 +52,13 @@ const List = () => {
                     <div className="hidden-content">Web for verbs.</div>
                 </Link>
             </div>
-
-{/* 
+          
             <div className="listgriditem">
-                <Link to="audiolevels">
-                    <div className="item-1">The Audio List</div> 
-                    <div className="hidden-content">dev</div>   
+                <Link to="Levels">
+                    <div className="item-audio"> Audio Files </div>
+                    <div className="hidden-content">Audios from the English File.</div>
                 </Link>
-            </div> */}
+            </div>
 
         </div>
     </div>
@@ -108,4 +106,12 @@ export default List
                     <div className="item-vowels">Vowels</div>
                     <div className="hidden-content">Vowel sounds.</div>
                 </Link>                
+            </div> */}
+
+            
+            {/* <div className="listgriditem">
+                <Link to="audiolevels">
+                    <div className="item-1">The Audio List</div> 
+                    <div className="hidden-content">dev</div>   
+                </Link>
             </div> */}
