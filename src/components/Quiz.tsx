@@ -11,14 +11,14 @@ interface QuizQuestion {
 interface QuizProps {
   onTimeJump: (time: number) => void;
   questions: QuizQuestion[];
-}
+} 
 
 interface QuizProps {
   onTimeJump: (time: number) => void;
 }
 
 const Quiz: React.FC<QuizProps> = ({ onTimeJump, questions }) => {
-  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [currentQuestion, setCurrentQuestion] =useState(0);
   const [score, setScore] = useState(0);
   const [showResults, setShowResults] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);

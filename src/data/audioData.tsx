@@ -1,12 +1,11 @@
 import tattoo from "../assets/tattoo.mp3"
 import popular from "../assets/popular.mp3"
 import {Subtitle, TimeMarker, QuizQuestion} from "../components/types"
-// import other audio files
 
 export interface AudioTrack {
   id: string;
   title: string;
-  audio: typeof tattoo;  // Changed from audioUrl to audio
+  audio: typeof tattoo; 
   subtitles: Subtitle[];
   timeMarkers: TimeMarker[];
   quiz: QuizQuestion[];

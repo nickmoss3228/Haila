@@ -22,22 +22,3 @@ const Home = () => {
 }
 
 export default Home
-
-
-// import Intro from "../assets/stickers/letsgetintroduced.png"
-// import Hello from "../assets/stickers/himan.png"
-// import Cucumber from "../assets/stickers/coocoomber.png"
-// import Heart from "../assets/stickers/heart.png"
-
-        {/* <div className="sticker-normal">
-          <img src={Intro} alt="sticker"/>
-        </div>
-        <div className="sticker-side">
-          <img src={Hello} alt="sticker" />
-        </div>
-        <div className="sticker-side2">
-          <img src={Cucumber} alt="sticker" />
-        </div>
-        <div className="sticker-side3"> 
-          <img src={Heart} alt="sticker" />
-        </div> */}

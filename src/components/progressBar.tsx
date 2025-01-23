@@ -423,7 +423,7 @@ const WaveformPlayer: React.FC<WaveformPlayerProps> = ({ audioUrl, subtitles, ti
               $position={position}
               color={marker.color}
               onClick={() => handleMarkerClick(marker.time)}
-              title={`Jump to ${marker.label}`} // Add tooltip
+              title={`Jump to ${marker.label}`}
             >
               <TimeMarkerLabel>{marker.label}</TimeMarkerLabel>
             </TimeMarkerLine>
