@@ -104,12 +104,12 @@
     background-position: center;
 } */
 
-/* .item-audio {
+.item-audio {
     background-image: url("../assets/newpics/audioprev.png");
     height: 100%;
     background-position: left;
     background-size: 460px;
-} */
+}
 
 .item-ger-inf {
     background-image: url("../assets/newpics/gerundprev.PNG");
