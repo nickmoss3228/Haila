@@ -79,6 +79,7 @@ const WaveformPlayer: React.FC<WaveformPlayerProps> = ({ audioUrl, subtitles, ti
 
   useEffect(() => {
     if (waveformRef.current) {
+      console.log(`Initializing${wavesurfer.current}`)
       wavesurfer.current = WaveSurfer.create({
       container: waveformRef.current as HTMLDivElement,
       waveColor: '#a8e4a0',
@@ -227,6 +228,10 @@ const WaveformPlayer: React.FC<WaveformPlayerProps> = ({ audioUrl, subtitles, ti
     };
 }, [currentMarkerIndex, timeMarkers]);
 
+// useEffect(() => {
+  
+// }, [])
+
   const handlePlayPause = async (): Promise<void> => {
     if (!wavesurfer.current || isTransitioning) return;
 
@@ -283,7 +288,6 @@ const WaveformPlayer: React.FC<WaveformPlayerProps> = ({ audioUrl, subtitles, ti
       }
     }
   };
-
 
   const updateActiveSubtitle = () => {
     if (!wavesurfer.current || !subtitles || !subtitles.length) return;
