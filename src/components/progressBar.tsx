@@ -102,7 +102,6 @@ const WaveformPlayer: React.FC<WaveformPlayerProps> = ({ audioUrl, subtitles, ti
     if (!audioUrl || !wavesurferInstance) return;
 
     wavesurferInstance.on('ready', () => {
-      // Set the volume from Redux state
       wavesurferInstance?.setVolume(volume);
       }
     );
@@ -173,7 +172,7 @@ const WaveformPlayer: React.FC<WaveformPlayerProps> = ({ audioUrl, subtitles, ti
       dispatch(setIsPlaying(false));
     });
 
-    onWavesurferMount(wavesurferInstance);
+    // onWavesurferMount(wavesurferInstance);
 
     wavesurferInstance.on('seek', handleSeek);
     wavesurferInstance.on('play', handlePlay);
@@ -228,9 +227,10 @@ const WaveformPlayer: React.FC<WaveformPlayerProps> = ({ audioUrl, subtitles, ti
     };
 }, [currentMarkerIndex, timeMarkers]);
 
-// useEffect(() => {
+useEffect(() => {
+  wavesurfer.current?.load(audioUrl);
   
-// }, [])
+}, [wavesurfer.current])
 
   const handlePlayPause = async (): Promise<void> => {
     if (!wavesurfer.current || isTransitioning) return;

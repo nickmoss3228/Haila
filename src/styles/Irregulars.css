@@ -106,12 +106,6 @@
         overflow: scroll;
     }
 
-    .menubar {
-        font-size: 32px;
-        font-weight: 400;
-        position: sticky;
-    }
-
     .grid-container-irregular {
         display: flex;
         justify-content: space-around;

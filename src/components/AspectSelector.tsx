@@ -1,9 +1,17 @@
 import React from 'react';
+import type { AspectSelectorProps } from './types';
 
-const AspectSelector = ({onChange, level}) => {
-  const aspects = ['Listening', 'Vocabulary', 'Video Listening','Revise And Check', 'Practical English', "Workbook"];
+const AspectSelector: React.FC<AspectSelectorProps> = ({onChange, level}) => {
+  const aspects = [
+    'Listening',
+    'Vocabulary', 
+    'Video Listening',
+    'Revise And Check', 
+    'Practical English', 
+    "Workbook"
+  ];
 
-  const getAspectsClass = (level) => {
+  const getAspectsClass = (level: string) => {
     switch(level) {
       case "Listening":
         return "listening-aspect";

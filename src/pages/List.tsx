@@ -11,10 +11,17 @@ const List = () => {
 
         <div className="gridlist">
 
-            <div className="listgriditem">
+            {/* <div className="listgriditem">
                 <Link to="player">
                     <div className="item-player">The Player</div> 
                     <div className="hidden-content">Practise your listening skills. </div>
+                </Link>
+            </div> */}
+
+            <div className="listgriditem">
+                <Link to="Levels">
+                    <div className="item-audio"> Audio Files </div>
+                    <div className="hidden-content">Audios from the English File.</div>
                 </Link>
             </div>
 
@@ -50,13 +57,6 @@ const List = () => {
                 <Link to="phrasals">
                     <div className="item-phrasals">Phrasal Verbs</div> 
                     <div className="hidden-content">Web for verbs.</div>
-                </Link>
-            </div>
-          
-            <div className="listgriditem">
-                <Link to="Levels">
-                    <div className="item-audio"> Audio Files </div>
-                    <div className="hidden-content">Audios from the English File.</div>
                 </Link>
             </div>
 

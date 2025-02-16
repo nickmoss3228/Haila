@@ -1,8 +1,10 @@
 import React from 'react';
+import type { UnitSelectorProps } from '../components/types';
 
-const UnitSelector = ({ aspect, data, onChange, level }) => {
 
-  const getUnitColor = (unitNumber, level) => {
+const UnitSelector: React.FC<UnitSelectorProps> = ({ aspect, data, onChange, level }) => {
+
+  const getUnitColor = (unitNumber: number, level:string) => {
     const colors = {
       Beginner: ['#701698', '#76b83a', '#f9372e', '#0aa4ae'],
       Elementary:['#f04d45', '#00abc5', '#f8931b', '#6dc05c'],

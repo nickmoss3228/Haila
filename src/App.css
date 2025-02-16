@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monomakh&display=swap');
+
 
 :root {
   --primarycolor: #f0f3ff;
@@ -256,8 +258,9 @@ a:active {
   text-align: center;
   justify-content: center;
   align-items: center;
-  font-size: 36px;
-  font-family: Montserrat;
+  font-size: 30px;
+  font-family: Monomakh;
+
   border-radius: 9px;
   margin-bottom: 20px;
   text-decoration: none;
@@ -324,12 +327,12 @@ a:active {
   }
 
   body {
-    min-height: 165vh;
+    min-height: 115vh;
   }
   .navbar {
     align-items: center; /* Center align items in navbar for mobile */
     padding: 10px; /* Reduce padding for mobile */
-    height: 100px;
+    height: 50px;
   }
   .homepage {
     border-radius: 40px;
@@ -394,10 +397,9 @@ a:active {
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
-    font-size: 22px;
-    font-family: Montserrat;
+    font-family: monospace;
     text-align: center;
-  }
-
+    font-size: 27px;
+    font-weight: 800;
 }
-
+  }

@@ -75,3 +75,44 @@ export interface SelectedExamples {
   }
   
   export type AudioRef = React.RefObject<HTMLAudioElement>;
+
+  export type AudioData = {
+    url: string;
+    title: string;
+  };
+  
+  export type UnitData = {
+    [key: string]: AudioData[];
+  };
+  
+  export type AspectData = {
+    [key: string]: UnitData;
+  };
+  
+  export type LevelData = {
+    [key: string]: Array<{ [key: string]: UnitData }>;
+  };
+  
+  // Props interfaces
+  export interface LevelSelectorProps {
+    onChange: (level: string) => void;
+  }
+  
+  export interface AspectSelectorProps {
+    onChange: (aspect: string) => void;
+    level: string;
+  }
+  
+  export interface UnitSelectorProps {
+    onChange: (unit: string) => void;
+    aspect: string;
+    data: UnitData;
+    level: string;
+  }
+  
+  export interface AudioListProps {
+    aspect: string;
+    unit: string;
+    level: string;
+    data: UnitData;
+  }

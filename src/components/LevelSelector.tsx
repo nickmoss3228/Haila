@@ -1,9 +1,10 @@
 import React from 'react'
+import type {LevelSelectorProps} from '../components/types';
 
-const LevelSelector = ({onChange}) => {
+const LevelSelector: React.FC<LevelSelectorProps> = ({onChange}) => {
     const levels = ['Beginner', 'Elementary', 'Pre-Intermediate', 'Intermediate'];
 
-    const getLevelClass = (level) => {
+    const getLevelClass = (level: string) => {
       switch(level) {
           case 'Beginner':
               return 'beginner-level';
