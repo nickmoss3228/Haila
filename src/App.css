@@ -327,7 +327,7 @@ a:active {
   }
 
   body {
-    min-height: 115vh;
+    min-height: 125vh;
   }
   .navbar {
     align-items: center; /* Center align items in navbar for mobile */
