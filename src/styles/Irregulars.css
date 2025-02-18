@@ -1,166 +1,156 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 .filterButton {
-    background-color: transparent;
-    border: 0px;
-    background-color: white;
-    border-radius: 6px;
-    min-width: 250px;
-    cursor: pointer;    
-    height: 25px;
-    margin-right: 10px; 
-    font-family: Montserrat;
-    font-size: 18px;
+  background-color: transparent;
+  border: 0px;
+  background-color: white;
+  border-radius: 6px;
+  min-width: 250px;
+  cursor: pointer;
+  height: 25px;
+  margin-right: 10px;
+  font-family: Montserrat;
+  font-size: 18px;
 }
 
 .versions {
-    display: flex;
-    justify-content:space-between;
-    background-color: inherit;
-    align-items: center;
-    position: sticky;
-    position: -webkit-sticky; /* For Safari */
-    top: 0; /* Stick to the top edge of its container */
-    z-index: 1000; /* Ensure it stays above other elements */
+  display: flex;
+  justify-content: space-between;
+  background-color: inherit;
+  align-items: center;
+  position: sticky;
+  position: -webkit-sticky; /* For Safari */
+  top: 0; 
+  z-index: 1000; 
 }
 .group {
-    color: rgb(44, 44, 44);
-    animation: fadeIn 1s ease-in-out forwards;
-}   
+  color: rgb(44, 44, 44);
+  animation: fadeIn 1s ease-in-out forwards;
+}
 .groupPres {
-    color: rgb(44, 44, 44);
-    font-size: inherit;
-    margin-left: 440px;
-    font-size: 36px;
-    animation: fadeIn 1s ease-in-out forwards;
-} 
+  color: rgb(44, 44, 44);
+  font-size: inherit;
+  margin-left: 440px;
+  font-size: 36px;
+  animation: fadeIn 1s ease-in-out forwards;
+}
 .groupPerf {
-    color:  rgb(44, 44, 44);
-    font-size: inherit;
-    margin-right:440px;
-    font-size: 36px;
-    animation: fadeIn 1s ease-in-out forwards;
-} 
+  color: rgb(44, 44, 44);
+  font-size: inherit;
+  margin-right: 440px;
+  font-size: 36px;
+  animation: fadeIn 1s ease-in-out forwards;
+}
 .buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    animation: fadeIn 1s ease-in-out forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  animation: fadeIn 1s ease-in-out forwards;
 }
 
-.filterButton{
-    background-color: #ffffff;
-    transition: background-color 0.4s ease, color 0.4s ease;
+.filterButton {
+  background-color: #ffffff;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 .filterButton.active {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
 }
 
 .verbs-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .verblist {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 50px;
-    animation: fadeIn 1s ease-in-out forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 50px;
+  animation: fadeIn 1s ease-in-out forwards;
 }
 
 .grid-container-irregular {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* grid-template-rows: repeat(3, 1fr); */
-    width: 70%;
-    height: 100%;
-    padding: 0px;
-    animation: fadeIn 1s ease-in-out forwards;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-rows: repeat(3, 1fr); */
+  width: 70%;
+  height: 100%;
+  padding: 0px;
+  animation: fadeIn 1s ease-in-out forwards;
 }
 
 .grid-item {
-    padding: 20px;
-    animation: fadeIn 1s ease-in-out forwards;
-    transition: all 0.1s ease;
+  padding: 20px;
+  animation: fadeIn 1s ease-in-out forwards;
+  transition: all 0.1s ease;
 }
 
 .verb-text {
-    display: inline-block;
-    transition: transform 0.1s ease;
+  display: inline-block;
+  transition: transform 0.1s ease;
 }
 
 .grid-item:active .verb-text {
-    transform: scale(0.9);
+  transform: scale(0.9);
 }
-/* .grid-item:active {
-    transform: scale(0.965);
-} */
 
 @media only screen and (max-width: 667px) {
-    .buttons {
-        display: flex;
-        flex-direction: column;
-        overflow: scroll;
-    }
-
-    .grid-container-irregular {
-        display: flex;
-        justify-content: space-around;
-        width: 350px;
-}
-    .filterButton {
-        background-color: white;
-        border-radius: 6px;
-        min-width: 240px;
-        min-height: 40px;
-        cursor: pointer;  
-        margin: 6px;  
-        height: 25px;
-        margin-right: 10px; 
-        font-family: Montserrat;
-        font-size: 19px;
-        white-space: nowrap;
-        overflow: hidden;
-    }
-
-    .verblist {
-        /* width: 380px; */
-    }
-    .versions {
-        display: flex;
-        justify-content: space-around;
-        margin: 0;
-        font-family: Montserrat;
-    }
-
-    .grid-container {
-        width: 90%;
-    }
-    
-    .grid-item {
-        padding: 12px;
-        font-size: 18px;
-        min-width: 90px;
-        overflow: hidden;
-    }
-    .group {
-        color: rgb(0, 0, 0);
-        font-size: inherit;
-        text-align: center;
-    }   
-    .groupPres {
-        color: rgb(0, 0, 0);
-        font-size: inherit;
-        margin-left: 10px;
-        text-align: center;
-    } 
-    .groupPerf {
-        color: rgb(0, 0, 0);
-        font-size: inherit;
-        margin-right: 10px;
-        text-align: center;
-    } 
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+  }
+  .grid-container-irregular {
+    display: flex;
+    justify-content: space-around;
+    width: 350px;
+  }
+  .filterButton {
+    background-color: white;
+    border-radius: 6px;
+    min-width: 240px;
+    min-height: 40px;
+    cursor: pointer;
+    margin: 6px;
+    height: 25px;
+    margin-right: 10px;
+    font-family: Montserrat;
+    font-size: 19px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .versions {
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    font-family: Montserrat;
+  }
+  .grid-container {
+    width: 90%;
+  }
+  .grid-item {
+    padding: 12px;
+    font-size: 18px;
+    min-width: 90px;
+    overflow: hidden;
+  }
+  .group {
+    color: rgb(0, 0, 0);
+    font-size: inherit;
+    text-align: center;
+  }
+  .groupPres {
+    color: rgb(0, 0, 0);
+    font-size: inherit;
+    margin-left: 10px;
+    text-align: center;
+  }
+  .groupPerf {
+    color: rgb(0, 0, 0);
+    font-size: inherit;
+    margin-right: 10px;
+    text-align: center;
+  }
 }

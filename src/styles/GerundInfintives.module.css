@@ -4,7 +4,8 @@ table {
   margin-bottom: 20px;
 }
 
-th, td {
+th,
+td {
   border: 1px solid black;
   padding: 5px;
 }
@@ -102,7 +103,7 @@ th, td {
 
 .closeButton::before,
 .closeButton::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 20px;
   height: 2px;
@@ -166,92 +167,92 @@ th, td {
   justify-content: start;
 }
 
-  /* Mobile Styles */
+/* Mobile Styles */
 @media screen and (max-width: 768px) {
   .gridContainerGerund {
-      grid-template-columns: repeat(3, 1fr);
-      width: 100%;
-      padding: 10px;
-      gap: 0px;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    padding: 10px;
+    gap: 0px;
   }
 
   .gridItemGerund {
-      padding: 10px;
-      font-size: 24px;
+    padding: 10px;
+    font-size: 24px;
   }
 
   .verbItem {
-      font-size: 18px;
-      padding: 8px;
-      margin: 5px 0;
-      width: 90px;
+    font-size: 18px;
+    padding: 8px;
+    margin: 5px 0;
+    width: 90px;
   }
 
   .modalContent {
-      width: 95%;
-      padding: 15px;
-      margin: 10px;
-      font-size: 16px;
-      max-height: 90vh;
-      overflow-y: auto;
+    width: 95%;
+    padding: 15px;
+    margin: 10px;
+    font-size: 16px;
+    max-height: 90vh;
+    overflow-y: auto;
   }
 
   .verbName {
-      font-size: 32px;
+    font-size: 32px;
   }
 
   .buttonClose {
-      padding: 6px 12px;
-      font-size: 14px;
+    padding: 6px 12px;
+    font-size: 14px;
   }
 
   .categoryHeader {
-      font-size: 24px;
-      margin: 10px 0;
+    font-size: 24px;
+    margin: 10px 0;
   }
 
   .details {
-      font-size: 16px;
+    font-size: 16px;
   }
 }
 
 /* Small Mobile Styles */
 @media screen and (max-width: 480px) {
   .gridItemGerund {
-      padding: 5px;
-      font-size: 20px;
+    padding: 5px;
+    font-size: 20px;
   }
 
   .verbItem {
-      font-size: 16px;
-      padding: 6px;
+    font-size: 16px;
+    padding: 6px;
   }
 
   .modalContent {
-      padding: 10px;
-      font-size: 14px;
+    padding: 10px;
+    font-size: 14px;
   }
 
   .verbName {
-      font-size: 28px;
+    font-size: 28px;
   }
 
   .categoryHeader {
-      font-size: 22px;
+    font-size: 22px;
   }
 
   .buttonClose {
-      padding: 5px 10px;
-      font-size: 12px;
+    padding: 5px 10px;
+    font-size: 12px;
   }
 }
 
 /* Animation */
 @keyframes fadeIn {
   from {
-      opacity: 0;
+    opacity: 0;
   }
   to {
-      opacity: 1;
+    opacity: 1;
   }
 }

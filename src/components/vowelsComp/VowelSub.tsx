@@ -7,7 +7,6 @@ const VowelSub = () => {
   return (
     <div className='vowelSub'>
         {vowelDict.map((sound, index) =>(<VowelRender sound={sound} index={index}/>))}
-        {/* {examples.map((example) => (<VowelRender example={example}/>))} */}
     </div>
   )
 }

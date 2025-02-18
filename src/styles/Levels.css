@@ -1,243 +1,203 @@
 .flexlevels {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-    margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 100px;
 }
 
 .levels {
-    display: flex;
-    justify-content: space-around;
-
+  display: flex;
+  justify-content: space-around;
 }
 
 .header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 48px;
-    font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  font-weight: 700;
 }
 
 .level {
-    display: flex;
-    width: 280px;
-    height: 200px;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    background-color:blanchedalmond;
-    font-size: 20px;
-    cursor: pointer;
-    margin-top: 100px;
-    
+  display: flex;
+  width: 280px;
+  height: 200px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: blanchedalmond;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 100px;
 }
 
 .btn-choose {
-    border: none;
-    width: 350px;
-    height: 300px;
-    margin: 10px;
-    background-color: rgb(246, 118, 103);
-    cursor: pointer; 
-    box-shadow: 10px 10px 30px 0px rgba(89, 89, 89, 0.7);
-    text-align: left;
-    color: white;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-
+  border: none;
+  width: 350px;
+  height: 300px;
+  margin: 10px;
+  background-color: rgb(246, 118, 103);
+  cursor: pointer;
+  box-shadow: 10px 10px 30px 0px rgba(89, 89, 89, 0.7);
+  text-align: left;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 .btn-choose:hover {
-    transform: scale(1.03);
+  transform: scale(1.03);
 }
 
 .btn-back {
-    border: none;
-    background-color: var(--primarycolor);
-    margin-right: 50px;
+  border: none;
+  background-color: var(--primarycolor);
+  margin-right: 50px;
 }
 
 .lvlname {
-    font-size: 24px;   
-    font-family: Montserrat; 
-    text-align:justify;
-    color: #ffffff;
+  font-size: 24px;
+  font-family: Montserrat;
+  text-align: justify;
+  color: #ffffff;
 }
 .aspname {
-    font-size: 22px;   
-    font-family: Montserrat; 
-    text-align:left;
-    color: #ffffff;
+  font-size: 22px;
+  font-family: Montserrat;
+  text-align: left;
+  color: #ffffff;
 }
 .unitname {
-    font-size: 24px;
-    font-family: Montserrat;
-    text-align: center;
+  font-size: 24px;
+  font-family: Montserrat;
+  text-align: center;
 }
 
 .btn-choose-unit {
-    border: none;
-    width:300px;
-    height: 200px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    display: flex;
-    background-color: rgb(246, 118, 103);
-    cursor: pointer; 
-    box-shadow: 10px 10px 10px 2px rgba(89, 89, 89, 0.6);
-    text-align: left;
-    color: white;
-    transition: all 0.3s ease;
+  border: none;
+  width: 300px;
+  height: 200px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  background-color: rgb(246, 118, 103);
+  cursor: pointer;
+  box-shadow: 10px 10px 10px 2px rgba(89, 89, 89, 0.6);
+  text-align: left;
+  color: white;
+  transition: all 0.3s ease;
 }
 
 .btn-choose-unit:hover {
-    transform: scale(1.03);
+  transform: scale(1.03);
 }
 
 .blank {
-    width: 91px; 
-    border: none; 
-    height: 26px; 
-    cursor:pointer;
-    background-color: var(--primarycolor);
+  width: 91px;
+  border: none;
+  height: 26px;
+  cursor: pointer;
+  background-color: var(--primarycolor);
 }
 
 .unitgrid {
-    display: grid;
-    grid-template-columns: repeat(4, 2fr); 
-    grid-template-rows: repeat(3, 2fr);
-
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  grid-template-rows: repeat(3, 2fr);
 }
 
 .unitselector {
-    width: 70%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .beginner-level {
-    background-image: url("../assets/beginnerpic.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: top;
-    color: #ffffff;
+  background-image: url("../assets/beginnerpic.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: top;
+  color: #ffffff;
 }
 
 .elementary-level {
-    background-image: url("../assets/elempic.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: top;
-    color: #ffffff;
+  background-image: url("../assets/elempic.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: top;
+  color: #ffffff;
 }
 
 .pre-intermediate-level {
-    background-image: url("../assets/preintpic.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: top;
-    color: #ffffff;
+  background-image: url("../assets/preintpic.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: top;
+  color: #ffffff;
 }
 
 .intermediate-level {
-    background-image: url("../assets/intpic.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: top;
-    color: #ffffff;
+  background-image: url("../assets/intpic.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: top;
+  color: #ffffff;
 }
 
 .hidden-content-levels {
-    position: absolute;
-    bottom: 0;  /* Start at the bottom */
-    left: 0;
-    right: 0;
-    height: 100px;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 10px;
-    box-sizing: border-box;
-    transform: translateY(100%);  /* Initially hidden (slid down) */
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+  position: absolute;
+  bottom: 0; /* Start at the bottom */
+  left: 0;
+  right: 0;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+  transform: translateY(100%); /* Initially hidden (slid down) */
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .btn-choose:hover .hidden-content-levels {
-    transform: translateY(0);  /* Slide up into view */
-    opacity: 1;
+  transform: translateY(0); /* Slide up into view */
+  opacity: 1;
 }
 
 .aspect-select {
-    width: 70%;
-    display: flex;  
-    align-items: center;
-    justify-content: center;
-    /* align-items: center;
-    justify-content: center;
-    display: flex; */
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 
 .listening-aspect {
-    background-color: #ff4e00;
-    background-image: linear-gradient(315deg, #ff4d00e0 0%, #ec9f05 74%);
-
+  background-color: #ff4e00;
+  background-image: linear-gradient(315deg, #ff4d00e0 0%, #ec9f05 74%);
 }
 .vocabulary-aspect {
-    background-color: #f8ef42;
-    background-image: linear-gradient(315deg, #ede558 0%, #109e3d 74%);
+  background-color: #f8ef42;
+  background-image: linear-gradient(315deg, #ede558 0%, #109e3d 74%);
 }
-.videolistening-aspect { 
-    background-color: #5dd6d4;
-    background-image: linear-gradient(315deg, hsl(180, 69%, 67%) 0%, #203153 60%);
+.videolistening-aspect {
+  background-color: #5dd6d4;
+  background-image: linear-gradient(315deg, hsl(180, 69%, 67%) 0%, #203153 60%);
 }
 .practical-aspect {
-    background-color: #e79087;
-    background-image: linear-gradient(315deg, hsl(6, 60%, 30%) 0%, #c59f58 74%);
+  background-color: #e79087;
+  background-image: linear-gradient(315deg, hsl(6, 60%, 30%) 0%, #c59f58 74%);
 }
 .rac-aspect {
-    background-color: #f8ef42;
-    background-image: linear-gradient(315deg, #e3603f 0%, #342346 74%);
+  background-color: #f8ef42;
+  background-image: linear-gradient(315deg, #e3603f 0%, #342346 74%);
 }
 .workbook-aspect {
-    background-color: #0dd9e8;
-    background-image: linear-gradient(315deg, #d380c8 0%, #342346 74%);
+  background-color: #0dd9e8;
+  background-image: linear-gradient(315deg, #d380c8 0%, #342346 74%);
 }
-
-/* .btn-unit-number {
-    width: 200px;
-    min-height: 80px;
-    max-height: 150px;
-}
-
-.audiolist-name {
-    margin-top: 30px;
-    margin-bottom: 20px;
-}
-
-.audiolist {
-    height: 500px;
-    width: 100%;
-}
-.audiolist-render {
-    display: flex;
-    flex-direction: column;
-    
-}
-.audios {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    max-width: 1000px;
-    height: 200px;
-    overflow-x:visible;
-} */
 
 .audios {
   display: flex;
@@ -246,230 +206,171 @@
   justify-content: center;
   padding: 10px;
   margin-bottom: 20px;
-  
+
   /* Ensures the container doesn't expand indefinitely */
-  height: 400px;  /* Adjust this value as needed */
+  height: 400px; 
   overflow-y: auto;
   box-sizing: border-box;
 }
-  
-  /* Existing audio list and button styles */
-  .audiolist-render {
+
+.audiolist-render {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  height: 600px;
+}
+
+.audiolist-name {
+  margin: 30px 0 20px;
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+}
+
+.btn-unit-number {
+  background-color: #fff;
+  border: 2px solid #eb7a7a;
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 24px;
+  color: #e96b6b;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-unit-number:hover:not(:disabled) {
+  background-color: #cf5f5f;
+  color: #fff;
+}
+
+.btn-unit-number:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Media Player Container: Reserve space so that loading a player doesn't shift other content */
+.media-player-container {
+  min-height: 160px; 
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.media-player-placeholder {
+  width: 80%;
+  height: 80%;
+  background-color: #f9f9f9; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: italic;
+  color: #aaa;
+}
+
+@media only screen and (max-width: 667px) {
+  .btn-choose {
+    width: 330px;
+    margin-bottom: 30px;
+  }
+  .hidden-content-levels {
+    transform: translateY(0); /* Fully visible */
+    opacity: 1;
+  }
+  .btn-unit-number {
+    width: 360px;
+    height: auto;
+    font-family: inherit;
+  }
+  .unitgrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .header-levels {
+    text-align: center;
+    font-size: 24px;
+  }
+  .btn-back {
+    width: 100px;
+    position: relative;
+    left: 0;
+    margin-top: 30px;
+    margin-right: 0;
+  }
+
+  .level-container {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0;
+    margin-top: 50px;
+  }
+
+  .unitselector {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-    height: 600px;
+    justify-content: center;
   }
-  
-  .audiolist-name {
-    margin: 30px 0 20px;
-    font-size: 36px;
-    font-weight: bold;
-    color: #333;
+
+  .btn-choose-unit {
+    margin: 0;
+    width: 350px;
+    margin-bottom: 30px;
   }
-  
-  .btn-unit-number {
-    background-color: #fff;
-    border: 2px solid #eb7a7a;
-    border-radius: 10px;
-    padding: 10px 15px;
-    font-size: 24px;
-    color: #e96b6b;
-    cursor: pointer;
-    transition: background-color 0.2s ease, color 0.2s ease;
-  }
-  
-  .btn-unit-number:hover:not(:disabled) {
-    background-color: #cf5f5f;
-    color: #fff;
-  }
-  
-  .btn-unit-number:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
-  
-  /* Media Player Container: Reserve space so that loading a player doesn't shift other content */
-  .media-player-container {
-    min-height: 160px; /* Set your fixed height here */
+
+  .btn-choose-unit {
     width: 100%;
-    /* background-color: #f5f5f5; 
-    border: 1px solid #ccc;  */
-    box-sizing: border-box;
+    max-width: 350px;
+    margin-bottom: 30px;
   }
-  
-  /* Optional: A placeholder style to indicate where the player will appear.
-     You can show this placeholder only when the player hasn't loaded yet. */
-  .media-player-placeholder {
-    width: 80%;
-    height: 80%;
-    background-color: #f9f9f9;  /* Light background for placeholder */
+
+  .btn-back {
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+
+  .aspect-select {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-style: italic;
-    color: #aaa;
+    text-align: left;
   }
 
+  .audio-player {
+    max-width: 400px;
+    min-height: 120px;
+  }
 
-@media only screen and (max-width: 667px) {
-    .btn-choose {
-        width: 330px;
-        margin-bottom: 30px;
-    }
-    .hidden-content-levels {
-        transform: translateY(0);  /* Fully visible */
-        opacity: 1;
-    }
-    .btn-unit-number {
-        width: 360px;
-        height: auto;
-        font-family: inherit;
-    }
-    .unitgrid {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .header-levels {
-        text-align: center;
-        font-size: 24px;
-    }
-    .btn-back {
-        width: 100px;
-        position: relative;
-        left: 0;
-        margin-top: 30px;
-        margin-right: 0;
-    }
+  .audios {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+    margin-bottom: 130px;
+    border-radius: 10px;
+    width: 100%;
+    height: 400px;
+    max-width: 360px;
+    max-height: 900px;
+  }
 
-    .level-container {
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-right: 0;
-        margin-top: 50px;
-    }
-
-    .unitselector {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .btn-choose-unit {
-        margin: 0;
-        width: 350px;
-        margin-bottom: 30px;
-    }   
-
-    /* .audiolist-name {
-        font-size: 24px;
-        text-align:center;
-    } */
-    /* .audiolist {
-
-        width: 90%;
-        margin: 0 auto;  
-        padding: 20px;   
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-      } */
-      /* .audiolist-render {
-        width: 100%;
-        margin-bottom: 20px;  
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        overflow-y: auto;
-        max-height: calc(100vh - 150px); 
-      } */
-    
-    /* .audiolist-name {
-        font-family: inherit;
-        font-size: 24px;
-        font-weight: 500;
-        width: 80%;
-        text-align: center;
-        margin-bottom: 20px;
-    } */
-    
-    .btn-choose-unit {
-        width: 100%;
-        max-width: 350px;
-        margin-bottom: 30px;
-    }
-    
-    /* .media-player-container {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        z-index: 1;
-        max-height: 50px;
-        width: 100%;
-
-        background: #fff;
-        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-      }
-     */
-      /* .player {
-        width: 100%;
-        padding: 10px;
-        background-color: #fff; 
-      } */
-    
-    .btn-back {
-        margin-top: 50px;
-        margin-bottom: 20px;
-    }
-    
-    .aspect-select {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: left;
-    }
-
-    .audio-player {
-        max-width: 400px;
-        min-height: 120px;
-    }
-    .audios {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction:row;
-        overflow: scroll;
-        margin-bottom: 130px;
-        border-radius: 10px;
-        width: 100%;
-        height: 400px;
-        max-width: 360px;
-        max-height: 900px;
-    }
-
-    .player {
-        position: absolute;
-        bottom: 0;
-    } 
-
-    
+  .player {
+    position: absolute;
+    bottom: 0;
+  }
 }
 
 @media only screen and (max-width: 375px) {
-    .audios {
-        height: 200px;
-    }
-    .audiolist-name {
-        margin: 0;
-    }
+  .audios {
+    height: 200px;
+  }
+  .audiolist-name {
+    margin: 0;
+  }
 }

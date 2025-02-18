@@ -1,7 +1,7 @@
 import React from 'react'
 
 interface IrregularRenderProps {
-  verb: Verb;
+  verb: any;
   index: number;
   level: string;
 }

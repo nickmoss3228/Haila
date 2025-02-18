@@ -1,33 +1,33 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 // Type definitions for styled components props
 interface SpeedButtonProps {
-    $active: boolean; // $-prefix to avoid DOM attribute warnings
-  }
-  
-  interface SubtitlesContainterProps {
-    $visible:boolean;
-  }
-  
-  interface SubtitlesButtonProps {
-    $active: boolean;
-  }
-  
-  interface PlayModeToggleProps {
-    $active: boolean;
-  }
+  $active: boolean; // $-prefix to avoid DOM attribute warnings
+}
 
- export const WaveformContainer = styled.div`
+interface SubtitlesContainterProps {
+  $visible: boolean;
+}
+
+interface SubtitlesButtonProps {
+  $active: boolean;
+}
+
+interface PlayModeToggleProps {
+  $active: boolean;
+}
+
+export const WaveformContainer = styled.div`
   width: 100%;
   height: 80px;
   background: #f5f5f5;
   margin: 0 auto;
   border-radius: 8px;
-  overflow: visible; 
+  overflow: visible;
   position: relative;
-  padding: 0 2px; 
+  padding: 0 2px;
 
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
     height: 80px;
   }
 
@@ -48,7 +48,7 @@ export const HoverEffect = styled.div`
   background: rgba(255, 255, 255, 0.4);
   opacity: 0;
   transition: opacity 0.2s ease;
-  
+
   ${WaveformContainer}:hover & {
     opacity: 1;
   }
@@ -58,7 +58,7 @@ export const Controls = styled.div`
   display: flex;
   gap: 10px;
   margin-top: 10px;
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
     gap: 10px;
   }
 `;
@@ -67,21 +67,18 @@ export const Button = styled.button`
   padding: 8px 16px;
   border-radius: 40px;
   border: none;
-  background: #4CAF50;
+  background: #4caf50;
   color: white;
   cursor: pointer;
-  
-  
+
   &:hover {
     background: #45a049;
   }
 
   @media (max-width: 768px) {
-
   }
 
   @media (max-width: 480px) {
-
   }
 `;
 
@@ -105,7 +102,7 @@ export const TimeLabel = styled.div`
     right: 5px;
   }
 
-    @media (max-width: 768px) {
+  @media (max-width: 768px) {
     font-size: 10px;
     padding: 1px 4px;
   }
@@ -129,10 +126,10 @@ export const VolumeControl = styled.div`
 
 export const VolumeIcon = styled.div`
   cursor: pointer;
-  color: #4CAF50;
+  color: #4caf50;
   display: flex;
   align-items: center;
-  
+
   &:hover {
     opacity: 0.8;
   }
@@ -157,7 +154,7 @@ export const VolumeSlider = styled.input`
     appearance: none;
     width: 12px;
     height: 12px;
-    background: #4CAF50;
+    background: #4caf50;
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.2s;
@@ -171,7 +168,7 @@ export const VolumeSlider = styled.input`
   &::-moz-range-thumb {
     width: 12px;
     height: 12px;
-    background: #4CAF50;
+    background: #4caf50;
     border-radius: 50%;
     cursor: pointer;
     border: none;
@@ -183,8 +180,8 @@ export const VolumeSlider = styled.input`
     }
 
     @media (max-width: 480px) {
-    width: 80px;
-  }
+      width: 80px;
+    }
   }
 `;
 
@@ -208,7 +205,7 @@ export const SpeedControls = styled.div`
   flex-wrap: wrap;
   justify-content: center;
 
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
     gap: 5px;
   }
 `;
@@ -216,19 +213,19 @@ export const SpeedControls = styled.div`
 export const SpeedButton = styled.button<SpeedButtonProps>`
   padding: 6px 12px;
   border-radius: 4px;
-  border: 1px solid #4CAF50;
-  background-color: ${props => props.$active ? '#4CAF50' : 'white'};
-  color: ${props => props.$active ? 'white' : '#4CAF50'};
+  border: 1px solid #4caf50;
+  background-color: ${(props) => (props.$active ? "#4CAF50" : "white")};
+  color: ${(props) => (props.$active ? "white" : "#4CAF50")};
   cursor: pointer;
   font-size: 12px;
   transition: all 0.2s;
   font-family: inherit;
 
   &:hover {
-    background-color: ${props => props.$active ? '#4CAF50' : '#4CAF50'};
+    background-color: ${(props) => (props.$active ? "#4CAF50" : "#4CAF50")};
   }
 
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
     padding: 4px 8px;
     font-size: 11px;
   }
@@ -245,9 +242,9 @@ export const SubtitlesContainer = styled.div<SubtitlesContainterProps>`
   background: #f5f5f5;
   border-radius: 4px;
   text-align: center;
-  display: ${props => props.$visible ? 'block' : 'none'};
+  display: ${(props) => (props.$visible ? "block" : "none")};
   z-index: 10; // Add this to ensure it appears above other elements
-  
+
   @media (max-width: 768px) {
     margin-top: 10px;
     height: 40px;
@@ -260,7 +257,7 @@ export const SubtitleText = styled.p`
   margin: 0;
   color: #333;
 
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
     font-size: 18px;
   }
 
@@ -270,8 +267,8 @@ export const SubtitleText = styled.p`
 `;
 
 export const SubtitlesButton = styled.button<SubtitlesButtonProps>`
-  background: ${props => props.$active ? '#4CAF50' : '#f5f5f5'};
-  color: ${props => props.$active ? 'white' : '#333'};
+  background: ${(props) => (props.$active ? "#4CAF50" : "#f5f5f5")};
+  color: ${(props) => (props.$active ? "white" : "#333")};
   border: 1px solid #ddd;
   padding: 8px 12px;
   border-radius: 4px;
@@ -279,13 +276,13 @@ export const SubtitlesButton = styled.button<SubtitlesButtonProps>`
   font-size: 14px;
   transition: all 0.2s ease;
   display: flex;
-  align-items: center;  
+  align-items: center;
   gap: 5px;
   margin-left: 10px;
-  font-family:inherit;
+  font-family: inherit;
 
   &:hover {
-    background: ${props => props.$active ? '#45a049' : '#e0e0e0'};
+    background: ${(props) => (props.$active ? "#45a049" : "#e0e0e0")};
   }
 `;
 
@@ -300,11 +297,11 @@ export const TimeMarkersContainer = styled.div`
 
 export const TimeMarkerLine = styled.div<{ $position: number; color?: string }>`
   position: absolute;
-  left: ${props => props.$position}%;
+  left: ${(props) => props.$position}%;
   top: 0;
   bottom: 0;
   width: 2px;
-  background-color: ${props => props.color || 'red'};
+  background-color: ${(props) => props.color || "red"};
   cursor: pointer;
   transition: opacity 0.3s ease;
   z-index: 10;
@@ -313,8 +310,8 @@ export const TimeMarkerLine = styled.div<{ $position: number; color?: string }>`
     opacity: 0.8;
   }
 
-   @media (max-width: 768px) {
-      width: 1px; 
+  @media (max-width: 768px) {
+    width: 1px;
   }
 `;
 
@@ -330,7 +327,7 @@ export const TimeMarkerLabel = styled.span`
   font-size: 11px;
   white-space: nowrap;
 
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
     padding: 2px 4px;
     font-size: 10px;
   }
@@ -342,7 +339,7 @@ export const PlayModeContainer = styled.div`
   gap: 20px;
   margin-left: 20px;
 
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
     margin-left: 0;
     gap: 10px;
     flex-wrap: wrap;
@@ -351,14 +348,14 @@ export const PlayModeContainer = styled.div`
 `;
 
 export const PlayModeToggle = styled.button<PlayModeToggleProps>`
-  background: ${props => props.$active ? '#4CAF50' : '#ccc'};
+  background: ${(props) => (props.$active ? "#4CAF50" : "#ccc")};
   color: white;
   border: none;
   border-radius: 20px;
   padding: 8px 16px;
   cursor: pointer;
   transition: all 0.2s ease;
-  font-family:inherit;
+  font-family: inherit;
 
   &:hover {
     opacity: 0.9;
@@ -369,14 +366,14 @@ export const NavigationControls = styled.div`
   display: flex;
   gap: 10px;
 
-   @media (max-width: 480px) {
+  @media (max-width: 480px) {
     gap: 5px;
   }
 `;
 
 export const NavButton = styled.button`
   background: none;
-  border: 2px solid #4CAF50;
+  border: 2px solid #4caf50;
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -384,11 +381,11 @@ export const NavButton = styled.button`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: #4CAF50;
+  color: #4caf50;
   transition: all 0.2s ease;
 
   &:hover {
-    background: #4CAF50;
+    background: #4caf50;
     color: white;
   }
 
@@ -405,4 +402,4 @@ export const NavButton = styled.button`
     width: 50px;
     height: 50px;
   }
-`;  
+`;

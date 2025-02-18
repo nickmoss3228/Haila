@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
- .bg {
+.bg {
   display: grid;
   background-color: inherit;
   padding: 10px;
@@ -12,7 +12,7 @@
   place-items: center;
   width: 60%;
   animation: fadeIn 1s ease-in-out forwards;
-  margin-top: 6 0px
+  margin-top: 6 0px;
 }
 
 .accent {
@@ -23,7 +23,6 @@
   height: 140px;
   width: 350px;
   background-color: #ffefbe;
-  /* background-color: #c4f6f2; */
   justify-content: center;
   align-items: center;
   padding: 10px;
@@ -65,7 +64,7 @@
   border-radius: 6px;
   margin-top: 30px;
   cursor: pointer;
-} 
+}
 
 @media only screen and (max-width: 667px) {
   .bg {
@@ -85,9 +84,8 @@
     border-radius: 10px;
     font-family: inherit;
     vertical-align: top;
-
   }
-  
+
   .sound {
     background-color: rgb(134, 199, 65);
     border-radius: 7px;
@@ -102,7 +100,7 @@
     font-size: 26px;
     margin-top: 10px;
   }
-  
+
   .example {
     background-color: rgb(254, 197, 178);
     min-width: 200px;
@@ -110,5 +108,5 @@
     font-size: 18px;
     border-radius: 6px;
     margin-top: 30px;
-  } 
+  }
 }

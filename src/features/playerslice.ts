@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface PlayerState {
   currentMarkerIndex: number;
@@ -25,12 +25,12 @@ const initialState: PlayerState = {
   currentTime: "0:00",
   durationSeconds: 0,
   duration: "0:00",
-  activeSubtitle: '',
+  activeSubtitle: "",
 };
 
 const playerSlice = createSlice({
-  name: 'player',
-  initialState, 
+  name: "player",
+  initialState,
   reducers: {
     setCurrentMarkerIndex: (state, action: PayloadAction<number>) => {
       state.currentMarkerIndex = action.payload;
@@ -64,8 +64,8 @@ const playerSlice = createSlice({
     },
     setActiveSubtitle: (state, action: PayloadAction<string>) => {
       state.activeSubtitle = action.payload;
-    }
-  }
+    },
+  },
 });
 
 export const {
@@ -79,7 +79,7 @@ export const {
   setCurrentTime,
   setDurationSeconds,
   setDuration,
-  setActiveSubtitle
+  setActiveSubtitle,
 } = playerSlice.actions;
 
 export default playerSlice.reducer;
