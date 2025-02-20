@@ -193,12 +193,27 @@ a:active {
   cursor: pointer;
   font-family: Montserrat;
 }
+.projectname {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-family: Monomakh;
+  text-decoration: none;
+  background-color: var(--primarycolor);
+  width: 300px;
+  color: rgb(0, 0, 0);
+}
+
+.projectname:active {
+  color: #fc6745;
+}
 
 .menubar {
   background-color: var(--primarycolor);
   color: rgb(0, 0, 0);
   display: flex;
-  width: 400px;
+  width: 200px;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -269,7 +284,11 @@ a:active {
   .navbar {
     align-items: center; /* Center align items in navbar for mobile */
     padding: 10px; /* Reduce padding for mobile */
-    height: 50px;
+    height: 70px;
+  }
+
+  .projectname {
+    font-size: 32px;
   }
   .homepage {
     border-radius: 40px;

@@ -13,6 +13,9 @@
   font-size: 18px;
 }
 
+.menubar {
+  font-family: Montserrat;
+}
 .versions {
   display: flex;
   justify-content: space-between;
