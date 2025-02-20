@@ -22,7 +22,7 @@ const AudioList: React.FC<AudioListProps> = ({ aspect, unit, data, level }) => {
     setError(null);
     try {
       const mediaSources = await getMediaSource(mediaNumber);
-      console.log(mediaSources);
+      // console.log(mediaSources);
       let newActivePlayer = null;
 
       if (
@@ -64,7 +64,7 @@ const AudioList: React.FC<AudioListProps> = ({ aspect, unit, data, level }) => {
           ? `${YANDEX_BASE_URL}/${level}/workbook/${mediaNumber}.mp3`
           : null,
     };
-    console.log("Constructed media URLs:", mediaSources);
+    // console.log("Constructed media URLs:", mediaSources);
     return mediaSources;
   };
 
@@ -91,7 +91,7 @@ const AudioList: React.FC<AudioListProps> = ({ aspect, unit, data, level }) => {
         {activePlayer === "audio" && currentMedia.audio && (
           <AudioPlayer
             src={currentMedia.audio}
-            onPlay={() => console.log("onPlay audio")}
+            // onPlay={() => console.log("onPlay audio")}
             style={{ height: "120px" }}
             className="audio-player"
           />
@@ -99,7 +99,7 @@ const AudioList: React.FC<AudioListProps> = ({ aspect, unit, data, level }) => {
         {activePlayer === "workbook" && currentMedia.workbook && (
           <AudioPlayer
             src={currentMedia.workbook}
-            onPlay={() => console.log("onPlay workbook")}
+            // onPlay={() => console.log("onPlay workbook")}
             style={{ height: "120px" }}
             className="audio-player"
           />

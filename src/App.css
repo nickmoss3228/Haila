@@ -230,13 +230,6 @@ a:active {
   color: rgb(255, 255, 255);
 }
 
-.audiolist {
-  width: 70%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .btn-unit-number {
   background-color: var(--secondarycolor);
   border: none;
@@ -271,7 +264,7 @@ a:active {
   }
 
   body {
-    min-height: 125vh;
+    /* min-height: 125vh; */
   }
   .navbar {
     align-items: center; /* Center align items in navbar for mobile */
@@ -289,16 +282,6 @@ a:active {
   }
   .homepage span {
     font-size: 28px;
-  }
-
-  .sticker-normal img,
-  .sticker-side img,
-  .sticker-side2 img,
-  .sticker-side3 img,
-  .alphabet-sticker-1 img,
-  .alphabet-sticker-2 img,
-  .alphabet-sticker-3 img {
-    display: none;
   }
 
   .homepage::before,

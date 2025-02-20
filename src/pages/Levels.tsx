@@ -34,7 +34,7 @@ const Levels: React.FC = () => {
     const levelData = levelAudios[level]; // Get data for the current level
     if (!levelData) return {}; // Return empty array if no data for the level
 
-    const aspectData = levelData.find((a) => Object.keys(a).includes(aspect));
+    const aspectData = levelData.find((a: any) => Object.keys(a).includes(aspect));
     return aspectData ? aspectData[aspect] : {};
   };
 
