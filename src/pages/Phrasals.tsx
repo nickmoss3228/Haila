@@ -2,18 +2,16 @@ import React, { useState } from "react";
 import "../styles/Phrasals.css";
 import PhrasalsModel from "../components/PhrasalsModel";
 import { phrasalVerbs } from "../components/phrasalVerbsTable";
-import { PhrasalVerbData } from '../components/types'
+import { PhrasalData } from '../components/types'
 
 const Phrasals: React.FC = () => {
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
   const [selectedPreposition, setSelectedPreposition] = useState<string>("");
-  const [selectedData, setSelectedData] = useState<PhrasalVerbData[] | null>(
-    null
-  );
+  const [selectedData, setSelectedData] = useState < PhrasalData[] | null>([]);
 
   const handlePrepositionClick = (
     preposition: string,
-    data: PhrasalVerbData[]
+    data: PhrasalData[]
   ): void => {
     setSelectedPreposition(preposition);
     setSelectedData(data);

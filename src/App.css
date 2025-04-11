@@ -4,11 +4,11 @@
 :root {
   --primarycolor: #f0f3ff;
   --secondarycolor: #f08a73;
-}
+} 
 
 #root {
   background-color: var(--primarycolor);
-  font-family: Montserrat;
+  font-family: Montserrat, 'Courier New', Courier, monospace;
 }
 
 html,
@@ -21,6 +21,8 @@ body {
   background-color: var(--primarycolor);
   box-sizing: border-box;
   animation: fadeIn 1s ease-in-out forwards;
+  font-display: swap;
+  font-family: Montserrat, 'Courier New', Courier, monospace;
 }
 
 @keyframes fadeIn {
@@ -191,14 +193,15 @@ a:active {
   right: 7rem;
   font-size: 24px;
   cursor: pointer;
-  font-family: Montserrat;
+  font-family: Montserrat, 'Courier New', Courier, monospace;
+  font-display: swap;
 }
 .projectname {
   text-align: center;
   justify-content: center;
   align-items: center;
   font-size: 30px;
-  font-family: Monomakh;
+  font-family: Monospace;
   text-decoration: none;
   background-color: var(--primarycolor);
   width: 300px;
@@ -213,12 +216,12 @@ a:active {
   background-color: var(--primarycolor);
   color: rgb(0, 0, 0);
   display: flex;
-  width: 200px;
+  width: 400px;
   text-align: center;
   justify-content: center;
   align-items: center;
   font-size: 30px;
-  font-family: Monomakh;
+  font-family: Montserrat, 'Courier New', Courier, monospace;
 
   border-radius: 9px;
   margin-bottom: 20px;
@@ -231,13 +234,13 @@ a:active {
 .vowels {
   font-size: 24px;
   cursor: pointer;
-  font-family: Montserrat;
+  font-family: Montserrat, 'Courier New', Courier, monospace;
 }
 
 .cons {
   font-size: 24px;
   cursor: pointer;
-  font-family: Montserrat;
+  font-family: Montserrat, 'Courier New', Courier, monospace;
 }
 
 .link {
@@ -278,9 +281,6 @@ a:active {
     background-color: var(--primarycolor);
   }
 
-  body {
-    /* min-height: 125vh; */
-  }
   .navbar {
     align-items: center; /* Center align items in navbar for mobile */
     padding: 10px; /* Reduce padding for mobile */

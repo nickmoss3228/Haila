@@ -9,12 +9,12 @@
   cursor: pointer;
   height: 25px;
   margin-right: 10px;
-  font-family: Montserrat;
+  font-family: Montserrat, 'Courier New', Courier, monospace;
   font-size: 18px;
 }
 
 .menubar {
-  font-family: Montserrat;
+  font-family: Montserrat, 'Courier New', Courier, monospace;
 }
 .versions {
   display: flex;
@@ -119,7 +119,7 @@
     margin: 6px;
     height: 25px;
     margin-right: 10px;
-    font-family: Montserrat;
+    font-family: Montserrat, 'Courier New', Courier, monospace;
     font-size: 19px;
     white-space: nowrap;
     overflow: hidden;
@@ -128,7 +128,7 @@
     display: flex;
     justify-content: space-around;
     margin: 0;
-    font-family: Montserrat;
+    font-family: Montserrat, 'Courier New', Courier, monospace;
   }
   .grid-container {
     width: 90%;

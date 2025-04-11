@@ -6,14 +6,15 @@ import AspectSelector from "../components/AspectSelector";
 import UnitSelector from "../components/UnitSelector";
 import AudioList from "../components/AudioList";
 import { IoArrowBack } from "react-icons/io5";
-import type { UnitData } from "../components/types";
+import type { UnitData} from "../components/types";
+import type { Level } from "../components/types"
 
 const Levels: React.FC = () => {
   const [aspect, setAspect] = useState<string | null>(null);
   const [unit, setUnit] = useState<string | null>(null);
-  const [level, setLevel] = useState<string | null>(null);
+  const [level, setLevel] = useState<Level | null>(null);
 
-  const handleLevelChange = (selectedLevel: string): void => {
+  const handleLevelChange = (selectedLevel: Level): void => {
     setLevel(selectedLevel);
     setUnit(null);
     setAspect(null);
@@ -31,11 +32,14 @@ const Levels: React.FC = () => {
   const getAudiosForAspect = (): UnitData => {
     if (!level || !aspect) return {};
 
-    const levelData = levelAudios[level]; // Get data for the current level
-    if (!levelData) return {}; // Return empty array if no data for the level
+    const levelData = levelAudios[level]; 
 
-    const aspectData = levelData.find((a: any) => Object.keys(a).includes(aspect));
-    return aspectData ? aspectData[aspect] : {};
+  const aspectData = levelData.find((item) => aspect in item);
+  
+  if (!aspectData) return {};
+  
+  // type assertion to tell TypeScript that aspect is a key in aspectData
+  return (aspectData as any)[aspect] || {};
   };
 
   const goBackToLevel = (): void => {
@@ -60,30 +64,16 @@ const Levels: React.FC = () => {
       {level && !aspect && (
         <div className="aspect-select">
           <button onClick={goBackToLevel} className="btn-back">
-            <IoArrowBack
-              style={{
-                width: "80px",
-                border: "none",
-                height: "40px",
-                cursor: "pointer",
-              }}
-            />
+            <IoArrowBack size={40}/>
           </button>
           <AspectSelector onChange={handleAspectChange} level={level} />
         </div>
       )}
 
-      {aspect && !unit && (
+      {aspect && !unit && level &&(
         <div className="unitselector">
           <button onClick={goBackToAspect} className="btn-back">
-            <IoArrowBack
-              style={{
-                width: "80px",
-                border: "none",
-                height: "40px",
-                cursor: "pointer",
-              }}
-            />
+            <IoArrowBack size={40}/>
           </button>
           <UnitSelector
             aspect={aspect}
@@ -94,17 +84,10 @@ const Levels: React.FC = () => {
         </div>
       )}
 
-      {aspect && unit && (
+      {aspect && unit && level && (
         <div className="audiolist">
           <button onClick={goBackToUnit} className="btn-back">
-            <IoArrowBack
-              style={{
-                width: "80px",
-                border: "none",
-                height: "40px",
-                cursor: "pointer",
-              }}
-            />
+            <IoArrowBack size={40}/>
           </button>
           <AudioList
             aspect={aspect}

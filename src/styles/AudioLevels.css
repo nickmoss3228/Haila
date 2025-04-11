@@ -60,7 +60,7 @@
 
 .lvlname {
   font-size: 24px;
-  font-family: Montserrat;
+  font-family: Montserrat, 'Courier New', Courier, monospace;
   text-align: justify;
   color: #ffffff;
 }

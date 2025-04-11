@@ -1,14 +1,40 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "../styles/GerundInfintives.module.css";
 import { gerundInfTable } from "../components/GerInfObject";
 import GerundInfinitivesModal from "../components/GerundInfinitivesModal";
 
+type VerbItem = {
+  verb: string;
+  gerund?: string[];
+  infinitive?: string[];
+  examples?: string[];
+}
+
+type CategoryData = {
+  description: string;
+  verbs: VerbItem[];
+}
+
+// type SelectedContent = {
+//   category?: string;
+//   description?: string;
+//   verb?: string;
+//   gerund?: string[];
+//   infinitive?: string[];
+//   examples?: string[];
+//   categoryDescription?: string;
+// }
+
 const GerundInfinitive = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const [selectedContent, setSelectedContent] = useState("");
+  const [selectedContent, setSelectedContent] = useState<any>({});
   const [contentType, setContentType] = useState("");
 
-  const handleClick = (content: any, type: any, categoryDescription = "") => {
+  const handleClick = (
+    content: VerbItem | { category: string; description: string},
+    type: "category" | "verb",
+    categoryDescription: string = ""
+      ) => {
     setSelectedContent({ ...content, categoryDescription });
     setContentType(type);
     setModalOpen(true);
@@ -21,7 +47,7 @@ const GerundInfinitive = () => {
   return (
     <div className={styles.gerundInfinitive}>
       <div className={styles.gridContainerGerund}>
-        {Object.entries(gerundInfTable).map(
+        {Object.entries(gerundInfTable as Record<string, CategoryData>).map(
           ([category, { description, verbs }]) => (
             <div className={styles.gridItemGerund} key={category}>
               <h3

@@ -343,4 +343,238 @@ export const levelAudios = {
       },
     },
   ],
+  "Intermediate Plus": [
+    {
+      Listening: {
+        "Unit 1": "1.7, 1.8, 1.9, 1.25",
+        "Unit 2": "2.8, 2.12, 2.13, 2.14",
+        "Unit 3": "3.10, 3.11, 3.15, 3.16, 3.17, 3.24",
+        "Unit 4": "4.9, 4.10, 4.11, 4.17, 4.18",
+        "Unit 5": "5.9, 5.10, 5.15, 5.22",
+        "Unit 6": "6.7, 6.8, 6.9, 6.19, 6.20",
+        "Unit 7": "7.7, 7.8, 7.9, 7.10, 7.11, 7.21, 7.22",
+        "Unit 8": "8.9, 8.10, 8.11, 8.12, 8.18, 8.19",
+        "Unit 9": "9.1, 9.2, 9.3, 9.12, 9.13",
+        "Unit 10": "10.3, 10.4, 10.7, 10.8, 10.9",
+      },
+    },
+    {
+      Vocabulary: {
+        "Unit 1": "1.2, 1.3, 1.4, 1.14, 1.22, 1.23,",
+        "Unit 2": "2.1, 2.2, 2.3, 2.4, 2.20",
+        "Unit 3": "3.2, 3.3, 3.4, 3.25, 3.26, 3.27",
+        "Unit 4": "4.1, 4.2, 4.19",
+        "Unit 5": "5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.20, 5.21",
+        "Unit 6": "6.4, 6.5, 6.6, 6.14, 6.15",
+        "Unit 7": "7.1, 7.2, 7.3, 7.4, 7.17, 7.18, 7.19",
+        "Unit 8": "8.1, 8.2, 8.3, 8.4, 8.20, 8.21",
+        "Unit 9": "9.7, 9.8, 9.9, 9.10, 9.11, ",
+        "Unit 10": "10.5, 10.6",
+      },
+    },
+    {
+      "Video Listening": {
+        "Unit 2": "The great OUP bake sale",
+        "Unit 4":
+          "Interview with Alex Rawlings - part 1, Interview with Alex Rawlings - part 2, Interview with Alex Rawlings - part 3",
+        "Unit 6":
+          "A day with a personal stylist - part 1, A day with a personal stylist - part 2",
+        "Unit 8": "How to complain - part 1, How to complain - part 2",
+        "Unit 10": "Queens of crime",
+      },
+    },
+    {
+      "Revise And Check": {
+        "Revise And Check 1-2": "Revise And Check 1-2",
+        "Revise And Check 3-4": "Revise And Check 3-4",
+        "Revise And Check 5-6": "Revise And Check 5-6",
+        "Revise And Check 7-8": "Revise And Check 7-8",
+        "Revise And Check 9-10": "Revise And Check 9-10",
+      },
+    },
+    {
+      "Practical English": {
+        "Practical English 1":
+          "Introduction, Reacting to what people say, Reacting to what people say - listen and check, Reacting to what people say - listen and repeat, Harry finds out more about Rob, Social English phrases - 1",
+        "Practical English 2":
+          "Rob's interview, Giving opinions, Giving opinions - listen and check, Giving opinions - listen and repeat, A surprise for Kerri, Social English phrases - 2",
+        "Practical English 3":
+          "Jenny has a coffee with a friend, Permissions and requests, Permissions and requests - listen and check, Permissions and requests - listen and repeat, Paul arrives, Social English phrases - 3",
+        "Practical English 4":
+          "Paul and Rob catch up, Making suggestions, Making suggestions - listen and check, Making suggestions - listen and repeat, The morning after the night before, Social English phrases - 4",
+        "Practical English 5":
+          "Jenny gets a surprise, Indirect questions, Indirect questions - listen and check, Indirect questions - listen and repeat, Rob gets serious, Social English phrases - 5",
+      },
+    },
+    {
+      Workbook: {
+        "Unit 1": "1.1, 1.2, 1.3",
+        "Unit 2": "2.1, 2.2, 2.3",
+        "Unit 3": "3.1, 3.2, 3.3, 3.4, 3.5",
+        "Unit 4": "4.1, 4.2",
+        "Unit 5": "5.1, 5.2, 5.3",
+        "Unit 6": "6.1, 6.2",
+        "Unit 7": "7.1, 7.2, 7.3",
+        "Unit 8": "8.1, 8.2",
+        "Unit 9": "9.1, 9.2, 9.3",
+        "Unit 10": "10.1, 10.2",
+      },
+    },
+  ],
+  "Upper-Intermediate": [
+    {
+      Listening: {
+        "Unit 1": "1.7, 1.8, 1.9, 1.25",
+        "Unit 2": "2.8, 2.12, 2.13, 2.14",
+        "Unit 3": "3.10, 3.11, 3.15, 3.16, 3.17, 3.24",
+        "Unit 4": "4.9, 4.10, 4.11, 4.17, 4.18",
+        "Unit 5": "5.9, 5.10, 5.15, 5.22",
+        "Unit 6": "6.7, 6.8, 6.9, 6.19, 6.20",
+        "Unit 7": "7.7, 7.8, 7.9, 7.10, 7.11, 7.21, 7.22",
+        "Unit 8": "8.9, 8.10, 8.11, 8.12, 8.18, 8.19",
+        "Unit 9": "9.1, 9.2, 9.3, 9.12, 9.13",
+        "Unit 10": "10.3, 10.4, 10.7, 10.8, 10.9",
+      },
+    },
+    {
+      Vocabulary: {
+        "Unit 1": "1.2, 1.3, 1.4, 1.14, 1.22, 1.23,",
+        "Unit 2": "2.1, 2.2, 2.3, 2.4, 2.20",
+        "Unit 3": "3.2, 3.3, 3.4, 3.25, 3.26, 3.27",
+        "Unit 4": "4.1, 4.2, 4.19",
+        "Unit 5": "5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.20, 5.21",
+        "Unit 6": "6.4, 6.5, 6.6, 6.14, 6.15",
+        "Unit 7": "7.1, 7.2, 7.3, 7.4, 7.17, 7.18, 7.19",
+        "Unit 8": "8.1, 8.2, 8.3, 8.4, 8.20, 8.21",
+        "Unit 9": "9.7, 9.8, 9.9, 9.10, 9.11, ",
+        "Unit 10": "10.5, 10.6",
+      },
+    },
+    {
+      "Video Listening": {
+        "Unit 2": "The great OUP bake sale",
+        "Unit 4":
+          "Interview with Alex Rawlings - part 1, Interview with Alex Rawlings - part 2, Interview with Alex Rawlings - part 3",
+        "Unit 6":
+          "A day with a personal stylist - part 1, A day with a personal stylist - part 2",
+        "Unit 8": "How to complain - part 1, How to complain - part 2",
+        "Unit 10": "Queens of crime",
+      },
+    },
+    {
+      "Revise And Check": {
+        "Revise And Check 1-2": "Revise And Check 1-2",
+        "Revise And Check 3-4": "Revise And Check 3-4",
+        "Revise And Check 5-6": "Revise And Check 5-6",
+        "Revise And Check 7-8": "Revise And Check 7-8",
+        "Revise And Check 9-10": "Revise And Check 9-10",
+      },
+    },
+    {
+      "Practical English": {
+        "Practical English 1":
+          "Introduction, Reacting to what people say, Reacting to what people say - listen and check, Reacting to what people say - listen and repeat, Harry finds out more about Rob, Social English phrases - 1",
+        "Practical English 2":
+          "Rob's interview, Giving opinions, Giving opinions - listen and check, Giving opinions - listen and repeat, A surprise for Kerri, Social English phrases - 2",
+        "Practical English 3":
+          "Jenny has a coffee with a friend, Permissions and requests, Permissions and requests - listen and check, Permissions and requests - listen and repeat, Paul arrives, Social English phrases - 3",
+        "Practical English 4":
+          "Paul and Rob catch up, Making suggestions, Making suggestions - listen and check, Making suggestions - listen and repeat, The morning after the night before, Social English phrases - 4",
+        "Practical English 5":
+          "Jenny gets a surprise, Indirect questions, Indirect questions - listen and check, Indirect questions - listen and repeat, Rob gets serious, Social English phrases - 5",
+      },
+    },
+    {
+      Workbook: {
+        "Unit 1": "1.1, 1.2, 1.3",
+        "Unit 2": "2.1, 2.2, 2.3",
+        "Unit 3": "3.1, 3.2, 3.3, 3.4, 3.5",
+        "Unit 4": "4.1, 4.2",
+        "Unit 5": "5.1, 5.2, 5.3",
+        "Unit 6": "6.1, 6.2",
+        "Unit 7": "7.1, 7.2, 7.3",
+        "Unit 8": "8.1, 8.2",
+        "Unit 9": "9.1, 9.2, 9.3",
+        "Unit 10": "10.1, 10.2",
+      },
+    },
+  ],
+  Advanced: [
+    {
+      Listening: {
+        "Unit 1": "1.7, 1.8, 1.9, 1.25",
+        "Unit 2": "2.8, 2.12, 2.13, 2.14",
+        "Unit 3": "3.10, 3.11, 3.15, 3.16, 3.17, 3.24",
+        "Unit 4": "4.9, 4.10, 4.11, 4.17, 4.18",
+        "Unit 5": "5.9, 5.10, 5.15, 5.22",
+        "Unit 6": "6.7, 6.8, 6.9, 6.19, 6.20",
+        "Unit 7": "7.7, 7.8, 7.9, 7.10, 7.11, 7.21, 7.22",
+        "Unit 8": "8.9, 8.10, 8.11, 8.12, 8.18, 8.19",
+        "Unit 9": "9.1, 9.2, 9.3, 9.12, 9.13",
+        "Unit 10": "10.3, 10.4, 10.7, 10.8, 10.9",
+      },
+    },
+    {
+      Vocabulary: {
+        "Unit 1": "1.2, 1.3, 1.4, 1.14, 1.22, 1.23,",
+        "Unit 2": "2.1, 2.2, 2.3, 2.4, 2.20",
+        "Unit 3": "3.2, 3.3, 3.4, 3.25, 3.26, 3.27",
+        "Unit 4": "4.1, 4.2, 4.19",
+        "Unit 5": "5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.20, 5.21",
+        "Unit 6": "6.4, 6.5, 6.6, 6.14, 6.15",
+        "Unit 7": "7.1, 7.2, 7.3, 7.4, 7.17, 7.18, 7.19",
+        "Unit 8": "8.1, 8.2, 8.3, 8.4, 8.20, 8.21",
+        "Unit 9": "9.7, 9.8, 9.9, 9.10, 9.11, ",
+        "Unit 10": "10.5, 10.6",
+      },
+    },
+    {
+      "Video Listening": {
+        "Unit 2": "The great OUP bake sale",
+        "Unit 4":
+          "Interview with Alex Rawlings - part 1, Interview with Alex Rawlings - part 2, Interview with Alex Rawlings - part 3",
+        "Unit 6":
+          "A day with a personal stylist - part 1, A day with a personal stylist - part 2",
+        "Unit 8": "How to complain - part 1, How to complain - part 2",
+        "Unit 10": "Queens of crime",
+      },
+    },
+    {
+      "Revise And Check": {
+        "Revise And Check 1-2": "Revise And Check 1-2",
+        "Revise And Check 3-4": "Revise And Check 3-4",
+        "Revise And Check 5-6": "Revise And Check 5-6",
+        "Revise And Check 7-8": "Revise And Check 7-8",
+        "Revise And Check 9-10": "Revise And Check 9-10",
+      },
+    },
+    {
+      "Practical English": {
+        "Practical English 1":
+          "Introduction, Reacting to what people say, Reacting to what people say - listen and check, Reacting to what people say - listen and repeat, Harry finds out more about Rob, Social English phrases - 1",
+        "Practical English 2":
+          "Rob's interview, Giving opinions, Giving opinions - listen and check, Giving opinions - listen and repeat, A surprise for Kerri, Social English phrases - 2",
+        "Practical English 3":
+          "Jenny has a coffee with a friend, Permissions and requests, Permissions and requests - listen and check, Permissions and requests - listen and repeat, Paul arrives, Social English phrases - 3",
+        "Practical English 4":
+          "Paul and Rob catch up, Making suggestions, Making suggestions - listen and check, Making suggestions - listen and repeat, The morning after the night before, Social English phrases - 4",
+        "Practical English 5":
+          "Jenny gets a surprise, Indirect questions, Indirect questions - listen and check, Indirect questions - listen and repeat, Rob gets serious, Social English phrases - 5",
+      },
+    },
+    {
+      Workbook: {
+        "Unit 1": "1.1, 1.2, 1.3",
+        "Unit 2": "2.1, 2.2, 2.3",
+        "Unit 3": "3.1, 3.2, 3.3, 3.4, 3.5",
+        "Unit 4": "4.1, 4.2",
+        "Unit 5": "5.1, 5.2, 5.3",
+        "Unit 6": "6.1, 6.2",
+        "Unit 7": "7.1, 7.2, 7.3",
+        "Unit 8": "8.1, 8.2",
+        "Unit 9": "9.1, 9.2, 9.3",
+        "Unit 10": "10.1, 10.2",
+      },
+    },
+  ],
 };

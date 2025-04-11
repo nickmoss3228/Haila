@@ -7,6 +7,28 @@
   margin-top: 100px;
 }
 
+.level-selector-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.level-header {
+  margin-bottom: 40px;
+  /* margin-right: 20px; */
+  text-align: center;
+  width: 100%;
+}
+
+.level-choices {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
 .levels {
   display: flex;
   justify-content: space-around;
@@ -55,23 +77,27 @@
   border: none;
   background-color: var(--primarycolor);
   margin-right: 50px;
+  width: 80px;
+  border: none;
+  height: 40px;
+  cursor: pointer;
 }
 
 .lvlname {
   font-size: 24px;
-  font-family: Montserrat;
+  font-family: Montserrat, 'Courier New', Courier, monospace;
   text-align: justify;
   color: #ffffff;
 }
 .aspname {
   font-size: 22px;
-  font-family: Montserrat;
+  font-family: Montserrat, 'Courier New', Courier, monospace;
   text-align: left;
   color: #ffffff;
 }
 .unitname {
   font-size: 24px;
-  font-family: Montserrat;
+  font-family: Montserrat, 'Courier New', Courier, monospace;
   text-align: center;
 }
 
@@ -147,6 +173,30 @@
   color: #ffffff;
 }
 
+.intermediate-plus-level {
+  background-image: url("../assets/intpluspic.JPG");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: top;
+  color: #ffffff;
+}
+
+.upper-intermediate-level {
+  background-image: url("../assets/upperintpic.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: top;
+  color: #ffffff;
+}
+
+.advanced-level {
+  background-image: url("../assets/advpic.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: top;
+  color: #ffffff;
+}
+
 .hidden-content-levels {
   position: absolute;
   bottom: 0; /* Start at the bottom */
@@ -206,8 +256,6 @@
   justify-content: center;
   padding: 10px;
   margin-bottom: 20px;
-
-  /* Ensures the container doesn't expand indefinitely */
   height: 400px; 
   overflow-y: auto;
   box-sizing: border-box;
@@ -249,7 +297,6 @@
   cursor: not-allowed;
 }
 
-/* Media Player Container: Reserve space so that loading a player doesn't shift other content */
 .media-player-container {
   min-height: 160px; 
   width: 100%;
@@ -266,6 +313,15 @@
   font-style: italic;
   color: #aaa;
 }
+
+.my-custom-icon {
+  width: 80px;
+  border: none;
+  height: 40px;
+  cursor: pointer;
+}
+
+
 
 @media only screen and (max-width: 667px) {
   .btn-choose {
@@ -364,6 +420,10 @@
     position: absolute;
     bottom: 0;
   }
+
+  .list {
+    margin-top: 0px;
+  }
 }
 
 @media only screen and (max-width: 375px) {
@@ -374,5 +434,16 @@
     margin: 0;
     margin-bottom: 20px;
     font-size: 28px;
+  }
+}
+
+@media only screen and (max-width: 667px) {
+  .level-choices {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .level-header {
+    margin-bottom: 20px;
   }
 }

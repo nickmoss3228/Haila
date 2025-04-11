@@ -1,5 +1,5 @@
 import React from "react";
-import type { UnitSelectorProps } from "../components/types";
+import type { UnitSelectorProps, Level } from "../components/types";
 
 const UnitSelector: React.FC<UnitSelectorProps> = ({
   aspect,
@@ -7,7 +7,7 @@ const UnitSelector: React.FC<UnitSelectorProps> = ({
   onChange,
   level,
 }) => {
-  const getUnitColor = (unitNumber: number, level: string) => {
+  const getUnitColor = (unitNumber: number, level: Level) => {
     const colors = {
       Beginner: ["#701698", "#76b83a", "#f9372e", "#0aa4ae"],
       Elementary: ["#f04d45", "#00abc5", "#f8931b", "#6dc05c"],
@@ -18,7 +18,7 @@ const UnitSelector: React.FC<UnitSelectorProps> = ({
     };
 
     if (!colors[level]) {
-      return "Gray"; // Default color if level is not found
+      return "Gray";
     }
 
     const colorScheme = colors[level];

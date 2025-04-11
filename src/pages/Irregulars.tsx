@@ -22,9 +22,9 @@ type LevelStyles = {
 
 const Irregulars: React.FC = () => {
   const [selectedLevels, setSelectedLevels] = useState<string[]>([]);
-  console.log(selectedLevels);
+  // console.log(selectedLevels);
   const [filteredVerbs, setFilteredVerbs] = useState<Verb[]>(verbList);
-  console.log(filteredVerbs);
+  // console.log(filteredVerbs);
 
   useEffect(() => {
     if (selectedLevels.length === 0) {
@@ -33,7 +33,7 @@ const Irregulars: React.FC = () => {
       setFilteredVerbs(
         verbList.filter((verb) => {
           const verbLevels = verb.level.split(", ");
-          console.log(verbLevels);
+          // console.log(verbLevels);
           return selectedLevels.some((level) => verbLevels.includes(level));
         })
       );
@@ -46,7 +46,7 @@ const Irregulars: React.FC = () => {
         ? prevLevels.filter((l) => l !== level)
         : [...prevLevels, level]
     );
-    console.log(level);
+    // console.log(level);
   };
 
   const getButtonStyle = (level: string): React.CSSProperties => {

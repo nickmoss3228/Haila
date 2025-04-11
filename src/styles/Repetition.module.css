@@ -9,7 +9,7 @@
 }
 
 .duration, .currentTime {
-    font-family: Montserrat;
+    font-family: Montserrat, 'Courier New', Courier, monospace;
     font-size: 16px;
     padding: 10px;
 }

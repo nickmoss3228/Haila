@@ -1,73 +1,45 @@
+.list {
+    margin-top: 200px
+}
+
 .gridlist {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     font-size: 28px;
     padding: 30px;
     animation: fadeIn 1s ease-in-out forwards;
+    max-width: 100%;
+    margin: 0 auto;
 }
 .choose {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-family: Montserrat;
+    font-family: Montserrat, 'Courier New', Courier, monospace;
     font-weight: 700;
+    margin-bottom: 20px;
   }
-  
-.sticker-pos1 img{
-    position: absolute;
-    width: 210px;
-    height: 190px;
-    top: 20px;
-    right:450px;
-    animation: fadeIn 1.4s ease-in-out forwards;
-}
-
-.sticker-pos1 img:hover {
-    transform: scale(1.1);
-}
-
-.sticker-pos2 img {
-    position: absolute;
-    width: 220px;
-    height: 210px;
-    bottom: 50px;
-    left:580px;
-    animation: fadeIn 1.4s ease-in-out forwards;
-    transform: rotate(30deg);
-}
-
-.sticker-pos2 img:hover {
-    transform: scale(1.1);
-}
-
-.sticker-pos3 img {
-    position: absolute;
-    width: 190px;
-    height: 210px;
-    bottom: 20px;
-    right:530px;
-    transform: rotate(350deg);
-    animation: fadeIn 1.4s ease-in-out forwards;
-}
-.sticker-pos3 img:hover {
-    transform: scale(1.1);
-}
 
 .listgriditem {
-    width: 460px;
     height: 200px;
     background-color: rgb(247, 173, 167);
-    margin: 30px;
-    margin-left: 100px;
     position: relative;
     overflow: hidden;
-    box-shadow: 10px 10px 30px 0px rgba(89, 89, 89, 0.7);
+    box-shadow: 6px 10px 10px 5px rgba(89, 89, 89, 0.6);
     transition: all 0.3s ease;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 .listgriditem a {
     color: black;
+    text-decoration: none;
+    display: block;
+    height: 100%;
+    width: 100%;
 }
 
 .listgriditem:hover{
@@ -75,68 +47,53 @@
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
+.item-alphabet, .item-tenses, .item-audio, .item-ger-inf, .item-phrasals, .item-player, .item-irregulars {
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+    font-size: 24px;
+    text-shadow: 0 0 10px white;
+
+}
+
+/* Individual background settings */
 .item-alphabet {
     background-image: url("../assets/newpics/alphprev.PNG");
-    height: 100%;
-    background-size: 800px;
+    background-position: left;
+    background-size: 300px;
 }
 
 .item-tenses {
     background-image: url("../assets/newpics/tensprev.PNG");
-    height: 100%;
-    background-position:top;
-    background-size: 470px;
-    background-repeat: no-repeat;
-}
-
-/* .item-vowels {
-    background-image: url("../assets/newpics/vowprev.PNG");
-    height: 100%;
-    background-size: 530px;
-    background-position: center; 
-}
-
-.item-cons {
-    background-image: url("../assets/newpics/consprev.PNG");
-    height: 100%;
-    background-size: 510px; 
     background-position: center;
-} */
+    background-size:290px;
+}
 
 .item-audio {
     background-image: url("../assets/newpics/audioprev.png");
-    height: 100%;
-    background-position: left;
-    background-size: 460px;
+    background-position: center;
+    background-size: 290px;
 }
 
 .item-ger-inf {
     background-image: url("../assets/newpics/gerundprev.PNG");
-    height: 100%;
-    background-size: 600px;
 }
 
 .item-phrasals {
     background-image: url("../assets/newpics/phrasalsprev.PNG");
-    height: 100%;
-    background-position:center;
-    background-size: 500px;
-    background-repeat: no-repeat;
 }
+
 .item-player {
     background-image: url("../assets/newpics/playerprev.PNG");
-    height: 100%;
-    background-position:left;
-    background-size: 550px;
-    background-repeat: no-repeat;
 }
 
 .item-irregulars {
     background-image: url("../assets/newpics/irregprev.PNG");
-    height: 100%;
-    background-position:top;
-    background-size: 950px;
-    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 350px;
 }
 
 .main-component {
@@ -153,17 +110,21 @@
 
 .hidden-content {
     position: absolute;
-    bottom: 0;  /* Start at the bottom */
+    bottom: 0;
     left: 0;
     right: 0;
-    height: 100px;
+    height: 80px;
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
     padding: 10px;
     box-sizing: border-box;
-    transform: translateY(100%);  /* Initially hidden (slid down) */
+    transform: translateY(100%);
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .listgriditem:hover .hidden-content {
@@ -175,7 +136,10 @@
 
     .choose {
         font-weight: 400;
-      }
+        font-size: 24px;
+        padding: 0 15px;
+        margin-bottom: 10px;
+    }
     .gridlist {
         margin-top: 70px;
         padding: 0px;
@@ -198,10 +162,6 @@
         opacity: 1;
     }
 
-    .sticker-pos1 img, .sticker-pos2 img, .sticker-pos3 img {
-        display: none;
-    }
-
     .listgriditem {
         width: 80%;
         height: 160px;
@@ -221,10 +181,6 @@
         font-size: 20px;
         background-size: 350px;
     }
-    /* .item-player {
-        font-size: 20px;
-        background-size: 300px;
-    } */
     .item-audio {
         font-size: 20px;
         background-size: 320px;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Alphabet from "./Alphabet";
 import Vowels from "./Vowels";
 import Cons from "./Cons";

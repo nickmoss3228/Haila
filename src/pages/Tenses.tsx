@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../styles/Tenses.css";
 import { tensesInfo } from "../components/tensesinfo";
 import Modal from "../components/Modal";
