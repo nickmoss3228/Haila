@@ -13,8 +13,9 @@ const UnitSelector: React.FC<UnitSelectorProps> = ({
       Elementary: ["#f04d45", "#00abc5", "#f8931b", "#6dc05c"],
       "Pre-Intermediate": ["#00abc5", "#f8931b", "#6dc05c", "#f04d45"],
       Intermediate: ["#6dc05c", "#f04d45", "#00abc5", "#f8931b"],
-      // Upper-Intermediate: [...]
-      // Advanced: [...]
+      "Intermediate Plus": ["#d2035b", "#00abc5", "#f8931b", "#6dc05c"],
+      "Upper-Intermediate": ["#f8931b", "#6dc05c", "#f04d45", "#00abc5"],
+      Advanced: ["#00abc5", "#f8931b", "#6dc05c", "#f04d45"]
     };
 
     if (!colors[level]) {
