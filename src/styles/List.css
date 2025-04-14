@@ -179,7 +179,8 @@
     }
     .item-tenses {
         font-size: 20px;
-        background-size: 350px;
+        background-size: 450px;
+        background-position: top;
     }
     .item-audio {
         font-size: 20px;
@@ -188,15 +189,15 @@
     .item-ger-inf {
         font-size: 20px;
         background-size: 420px;
+        background-position: center;
     }
     .item-phrasals {
         font-size: 20px;
-        background-size: 390px;
-        background-position: left;
+        background-size: 470px;
+        background-position:right;
     }
     .item-irregulars {
         font-size: 20px;
-        background-size: 510px;
-        background-position: center;
+        background-size: 500px;
     }
 }

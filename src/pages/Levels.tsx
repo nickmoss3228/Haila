@@ -20,7 +20,6 @@ const Levels: React.FC = () => {
     if (containerRef.current) {
       containerRef.current.scrollTop = 0;
     }
-    
     // Also try to scroll the window (which usually works on mobile)
     window.scrollTo(0, 0);
     
@@ -103,10 +102,11 @@ const Levels: React.FC = () => {
       )}
 
       {aspect && unit && level && (
-        <div className="audiolist">
+        <>
+          <div className="audiolist">
           <button onClick={goBackToUnit} className="btn-back">
             <IoArrowBack size={40}/>
-          </button>
+          </button>  
           <AudioList
             aspect={aspect}
             unit={unit}
@@ -114,6 +114,7 @@ const Levels: React.FC = () => {
             data={getAudiosForAspect()}
           />
         </div>
+        </> 
       )}
     </div>
   );

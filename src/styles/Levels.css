@@ -32,7 +32,6 @@
 .levels {
   display: flex;
   justify-content: space-around;
-  overflow-y: auto; /* Enable vertical scrolling */
   -webkit-overflow-scrolling: touch; /* Better scrolling on iOS */
 }
 
