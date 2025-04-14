@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef} from "react";
 import "../styles/Levels.css";
 import { levelAudios } from "../components/levelAudios";
 import LevelSelector from "../components/LevelSelector";
@@ -13,6 +13,25 @@ const Levels: React.FC = () => {
   const [aspect, setAspect] = useState<string | null>(null);
   const [unit, setUnit] = useState<string | null>(null);
   const [level, setLevel] = useState<Level | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Try to scroll the container
+    if (containerRef.current) {
+      containerRef.current.scrollTop = 0;
+    }
+    
+    // Also try to scroll the window (which usually works on mobile)
+    window.scrollTo(0, 0);
+    
+    // As a fallback, try with smooth behavior after a short delay
+    setTimeout(() => {
+      if (containerRef.current) {
+        containerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
+  }, [level, aspect, unit]);
 
   const handleLevelChange = (selectedLevel: Level): void => {
     setLevel(selectedLevel);
@@ -34,12 +53,11 @@ const Levels: React.FC = () => {
 
     const levelData = levelAudios[level]; 
 
-  const aspectData = levelData.find((item) => aspect in item);
+    const aspectData = levelData.find((item) => aspect in item);
   
-  if (!aspectData) return {};
+    if (!aspectData) return {};
   
-  // type assertion to tell TypeScript that aspect is a key in aspectData
-  return (aspectData as any)[aspect] || {};
+    return (aspectData as any)[aspect] || {};
   };
 
   const goBackToLevel = (): void => {
@@ -58,7 +76,7 @@ const Levels: React.FC = () => {
   };
 
   return (
-    <div className="levels">
+    <div className="levels" ref={containerRef}>
       {!level && <LevelSelector onChange={handleLevelChange} />}
 
       {level && !aspect && (

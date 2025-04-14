@@ -32,6 +32,8 @@
 .levels {
   display: flex;
   justify-content: space-around;
+  overflow-y: auto; /* Enable vertical scrolling */
+  -webkit-overflow-scrolling: touch; /* Better scrolling on iOS */
 }
 
 .header {
@@ -267,7 +269,8 @@
   align-items: center;
   padding: 20px;
   height: 600px;
-  min-width: 900px;
+  /* min-width: 900px; */
+  /* width: 700px; */
 }
 
 .audiolist-name {
@@ -324,6 +327,18 @@
 
 
 @media only screen and (max-width: 667px) {
+  .levels {
+    padding-bottom: 20px; /* Add padding at bottom for better UX */
+  }
+  .btn-back {
+    position: sticky;
+    top: 10px;
+    z-index: 10;
+    margin-bottom: 10px;
+  }
+  .header {
+    font-size: 28px;
+  }
   .btn-choose {
     width: 330px;
     margin-bottom: 30px;
