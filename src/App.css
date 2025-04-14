@@ -251,7 +251,7 @@ a:active {
 .btn-unit-number {
   background-color: var(--secondarycolor);
   border: none;
-  min-width: 150px;
+  min-width: 130px;
   max-width: 220px;
   max-height: 100px;
   min-height: 60px;
