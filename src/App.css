@@ -317,11 +317,11 @@ a:active {
   }
 
   .logo {
-    position: static; /* remove relative positioning */
-    left: auto; /* reset left property */
-    margin: 0 auto; /* center horizontally */
-    display: block; /* ensure it's a block-level element */
-    text-align: center; /* center any text within the logo */
+    position: static; 
+    left: auto;
+    margin: 0 auto;
+    display: block; 
+    text-align: center; 
   }
   .link {
     height: 30px;
@@ -330,9 +330,9 @@ a:active {
   }
 
   .menu {
-    width: 100%; /* Full width for the menu */
-    justify-content: center; /* Center menu items */
-    margin-top: 20px; /* Add some space between logo and menu */
+    width: 100%; 
+    justify-content: center; 
+    margin-top: 20px; 
   }
 
   .group {

@@ -12,7 +12,7 @@ const Home = () => {
             with a new set of apps designed for you!
           </span>
         </div>
-        <Link to="/List" className="btn-enter">
+        <Link to="/list" className="btn-enter">
           <span>Start</span>
         </Link>
       </div>

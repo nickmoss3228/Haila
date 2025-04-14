@@ -8,14 +8,14 @@ const List = () => {
 
       <div className="gridlist">
         <div className="listgriditem">
-          <Link to="Levels">
+          <Link to="levels">
             <div className="item-audio"> Audio Files </div>
             <div className="hidden-content">Audios from the English File.</div>
           </Link>
         </div>
 
         <div className="listgriditem">
-          <Link to="./sounds">
+          <Link to="sounds">
             <div className="item-alphabet">Sounds</div>
             <div className="hidden-content">
               Alphabet, vowels and consonants.
@@ -40,7 +40,7 @@ const List = () => {
         </div>
 
         <div className="listgriditem">
-          <Link to="gerundinfinitive">
+          <Link to="gerund-infinitive">
             <div className="item-ger-inf">Gerund / Infinitive</div>
             <div className="hidden-content">A table for verbs.</div>
           </Link>

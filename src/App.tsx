@@ -1,5 +1,5 @@
 import "./App.css";
-import Home from "./pages/Home";
+import Home from "./pages/Home.tsx";
 import Navbar from "./components/Navbar.tsx";
 import Tenses from "./pages/Tenses.tsx";
 import Irregulars from "./pages/Irregulars.tsx";
@@ -30,7 +30,7 @@ function App() {
             <Route path="/list/irregulars" element={<Irregulars />} />
             <Route path="/list/phrasals" element={<Phrasals />} />
             <Route
-              path="/list/gerundinfinitive"
+              path="/list/gerund-infinitive"
               element={<GerundInfinitive />}
             />
             {/* <Route path="/list/player" element={<Player />} /> */}
