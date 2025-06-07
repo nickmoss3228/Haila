@@ -9,7 +9,6 @@ import Sounds from "./pages/Sounds.tsx";
 import ScrollToTheTop from "./components/ScrollToTheTop.tsx";
 import Phrasals from "./pages/Phrasals.tsx";
 import GerundInfinitive from "./pages/GerundInfinitive.tsx";
-// import Player from "./pages/Player.tsx";
 import { Provider } from "react-redux";
 import { store } from "./features/store.ts";
 import Levels from "./pages/Levels.tsx";
@@ -33,7 +32,6 @@ function App() {
               path="/list/gerund-infinitive"
               element={<GerundInfinitive />}
             />
-            {/* <Route path="/list/player" element={<Player />} /> */}
           </Routes>
         </Router>
       </Provider>

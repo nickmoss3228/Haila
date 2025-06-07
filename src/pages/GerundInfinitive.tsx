@@ -15,16 +15,6 @@ type CategoryData = {
   verbs: VerbItem[];
 }
 
-// type SelectedContent = {
-//   category?: string;
-//   description?: string;
-//   verb?: string;
-//   gerund?: string[];
-//   infinitive?: string[];
-//   examples?: string[];
-//   categoryDescription?: string;
-// }
-
 const GerundInfinitive = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedContent, setSelectedContent] = useState<any>({});

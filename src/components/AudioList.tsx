@@ -35,7 +35,6 @@ const AudioList: React.FC<AudioListProps> = ({ aspect, unit, data, level }) => {
       } else if (aspect === "Workbook") {
         newActivePlayer = mediaSources.workbook ? "workbook" : null;
       }
-
       setCurrentMedia(mediaSources);
       setActivePlayer(newActivePlayer);
     } catch (err) {

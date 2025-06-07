@@ -6,7 +6,7 @@ import AspectSelector from "../components/AspectSelector";
 import UnitSelector from "../components/UnitSelector";
 import AudioList from "../components/AudioList";
 import { IoArrowBack } from "react-icons/io5";
-import type { UnitData} from "../components/types";
+import type { UnitData } from "../components/types";
 import type { Level } from "../components/types"
 
 const Levels: React.FC = () => {
@@ -16,20 +16,8 @@ const Levels: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Try to scroll the container
-    if (containerRef.current) {
-      containerRef.current.scrollTop = 0;
-    }
-    // Also try to scroll the window (which usually works on mobile)
+    // scroll the window (works on mobile)
     window.scrollTo(0, 0);
-    
-    // As a fallback, try with smooth behavior after a short delay
-    setTimeout(() => {
-      if (containerRef.current) {
-        containerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 100);
   }, [level, aspect, unit]);
 
   const handleLevelChange = (selectedLevel: Level): void => {
@@ -49,13 +37,11 @@ const Levels: React.FC = () => {
 
   const getAudiosForAspect = (): UnitData => {
     if (!level || !aspect) return {};
-
     const levelData = levelAudios[level]; 
 
     const aspectData = levelData.find((item) => aspect in item);
   
     if (!aspectData) return {};
-  
     return (aspectData as any)[aspect] || {};
   };
 

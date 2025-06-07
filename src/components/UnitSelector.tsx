@@ -34,7 +34,7 @@ const UnitSelector: React.FC<UnitSelectorProps> = ({
       <h1 className="header-levels">Select the Unit for {aspect}:</h1>
       <div className="unitgrid">
         {units.map((unit, index) => {
-          const unitNumber = index + 1; // Assuming units are numbered starting from 1
+          const unitNumber = index + 1; // units are numbered starting from 1
           const backgroundColor = getUnitColor(unitNumber, level);
 
           return (
